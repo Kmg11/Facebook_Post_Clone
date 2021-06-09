@@ -1,4 +1,5 @@
-import { useFetch } from "../../Hooks/useFetch";
+import { useFetchGet } from "../../Hooks/useFetchGet";
+
 import {
 	PostsStyle,
 	Post,
@@ -8,6 +9,7 @@ import {
 	LikeButton,
 	LikeCounter,
 	Loading,
+	Error,
 } from "./Style";
 
 export function Posts() {
@@ -16,9 +18,9 @@ export function Posts() {
 		isPending,
 		success,
 		error,
-	} = useFetch("./../../Apis/posts.json");
+	} = useFetchGet("http://localhost:8000/posts", {});
 
-	const postsList = [...posts]
+	const postsList = Array.from(posts)
 		.reverse()
 		.map(({ id, title, description, likes }, index) => {
 			return (
@@ -42,7 +44,7 @@ export function Posts() {
 
 				{success && postsList}
 
-				{error && <div>{error.message}</div>}
+				{error && <Error>{error.message} Please Try Again Later</Error>}
 			</div>
 		</PostsStyle>
 	);

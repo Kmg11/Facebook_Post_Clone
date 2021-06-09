@@ -1,0 +1,13 @@
+- [ Done ] test get error
+- [ Done ] Check empty
+- [ Done ] Error Message When Get Api
+- [ Done ] Add Link To Logo
+- Create useTitle Hook For Handling Page Title
+- Post Image Upload
+- Add Search Bar
+- Delet Post
+
+Targets:-
+1- Training On Fetch [ Get - Post - Delete ]
+2- Traninig On Styled Component
+3- Traning On Usable Components

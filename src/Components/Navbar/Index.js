@@ -5,7 +5,7 @@ export function Navbar() {
 		<NavbarStyle>
 			<div className="container">
 				<Row>
-					<Logo>Blog</Logo>
+					<Logo to="/">Blog</Logo>
 
 					<List>
 						<Item>

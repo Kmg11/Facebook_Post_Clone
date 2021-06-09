@@ -42,4 +42,11 @@ export const LikeCounter = styled.span`
 export const Loading = styled.div`
 	color: #fff;
 	font-size: 1.5rem;
+	line-height: 1.5;
+`;
+
+export const Error = styled.div`
+	color: #f00;
+	font-size: 1.5rem;
+	line-height: 1.5;
 `;

@@ -16,12 +16,17 @@ export const Input = styled.input`
 	margin-bottom: 20px;
 	font-size: 1.2rem;
 	color: #fff;
-
 	background-color: ${(props) => (props.submit ? "#1976D2" : "#232323")};
 	cursor: ${(props) => props.submit && "pointer"};
+	outline: 1px solid transparent;
+	transition: all 0.3s linear;
 
 	&::placeholder {
 		color: #999;
+	}
+
+	&:focus {
+		outline: 1px solid #1976d2;
 	}
 `;
 

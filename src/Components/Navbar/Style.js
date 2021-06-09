@@ -19,9 +19,10 @@ export const Row = styled.div`
 	align-items: center;
 `;
 
-export const Logo = styled.h1`
+export const Logo = styled(Link)`
 	color: #fff;
 	font-size: 2rem;
+	text-decoration: none;
 `;
 
 export const List = styled.ul`
