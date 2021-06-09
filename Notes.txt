@@ -3,10 +3,15 @@
 - [ Done ] Error Message When Get Api
 - [ Done ] Add Link To Logo
 - [ Done ] Create useDocumentTitle Hook For Handling Page Title
+- [ Done ] Clear Inputs After Publish
+- [ Done ] Improve Fetching
+- localStorage
 - Delet Post
 - Post Image Upload
 - Add Search Bar
 - Image Upload With Fetch
+- Remove setTimeout In Fetching
+- way to run json-server on github
 
 Targets:-
 1- Training On Fetch [ Get - Post - Delete ]

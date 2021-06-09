@@ -2,7 +2,7 @@ import { useDocumentTitle } from "../../Hooks/useDocumentTitle";
 import { useFetchGet } from "../../Hooks/useFetchGet";
 
 import {
-	PostsStyle,
+	PostsList,
 	Post,
 	Title,
 	Description,
@@ -21,34 +21,36 @@ export function Posts() {
 		isPending,
 		success,
 		error,
-	} = useFetchGet("http://localhost:8000/posts", {});
+	} = useFetchGet("http://localhost:8000/posts");
 
-	const postsList = Array.from(posts)
-		.reverse()
-		.map(({ id, title, description, likes }, index) => {
-			return (
-				<Post key={id}>
-					{title && <Title>{title}</Title>}
+	const postsList =
+		posts &&
+		Array.from(posts)
+			.reverse()
+			.map(({ id, title, description, likes }, index) => {
+				return (
+					<Post key={id}>
+						{title && <Title>{title}</Title>}
 
-					{description && <Description>{description}</Description>}
+						{description && <Description>{description}</Description>}
 
-					<LikeWrapper>
-						<LikeButton>Like</LikeButton>
-						<LikeCounter>{likes ? likes : 0}</LikeCounter>
-					</LikeWrapper>
-				</Post>
-			);
-		});
+						<LikeWrapper>
+							<LikeButton>Like</LikeButton>
+							<LikeCounter>{likes ? likes : 0}</LikeCounter>
+						</LikeWrapper>
+					</Post>
+				);
+			});
 
 	return (
-		<PostsStyle>
+		<PostsList>
 			<div className="container">
 				{isPending && <Loading>Loading...</Loading>}
 
 				{success && postsList}
 
-				{error && <Error>{error.message} Please Try Again Later</Error>}
+				{error && <Error>{error} Please Try Again Later</Error>}
 			</div>
-		</PostsStyle>
+		</PostsList>
 	);
 }

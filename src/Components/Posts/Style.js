@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const PostsStyle = styled.div``;
+export const PostsList = styled.div``;
 
 export const Post = styled.div`
 	background-color: #222;

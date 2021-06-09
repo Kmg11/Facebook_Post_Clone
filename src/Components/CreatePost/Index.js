@@ -10,6 +10,7 @@ export function CreatePost() {
 	const [title, setTitle] = useState("");
 	const [description, setDescription] = useState("");
 	const [buttonValue, setButtonValue] = useState("Publish");
+
 	const { postData, isPending, success, error } = useFetchPost();
 
 	const time = useRef();
@@ -19,6 +20,7 @@ export function CreatePost() {
 
 		if (buttonValue === "Publish") {
 			if (title !== "" || description !== "") {
+				// Request Data
 				postData("http://localhost:8000/posts", {
 					title,
 					description,
@@ -33,8 +35,10 @@ export function CreatePost() {
 
 	// Handle Button Value
 	useEffect(() => {
+		// Clear Timeout
 		clearTimeout(time);
 
+		// Setting Submit Button Value
 		if (isPending) {
 			setButtonValue("Loading...");
 		} else if (success === true) {
@@ -45,6 +49,12 @@ export function CreatePost() {
 			time.current = setTimeout(() => setButtonValue("Publish"), 3000);
 		} else {
 			setButtonValue("Publish");
+		}
+
+		// Empty Inputs
+		if (success) {
+			setTitle("");
+			setDescription("");
 		}
 	}, [isPending, success, error]);
 

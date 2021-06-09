@@ -15,18 +15,22 @@ export function useFetchPost() {
 					"Content-Type": "application/json",
 				},
 				body: JSON.stringify(data),
-			}).then(
-				(response) => {
+			})
+				.then((response) => {
+					// Handling Errors From Server
+					if (!response.ok) {
+						throw Error("Could Not Fetch The Data For That Resource");
+					}
+
 					setIsPending(false);
 					setSuccess(true);
-					setError(false);
-				},
-				(error) => {
+					setError(null);
+				})
+				.catch((err) => {
 					setIsPending(false);
-					setError(error.message);
-					setSuccess(false);
-				}
-			);
+					setError(err.message);
+					setSuccess(null);
+				});
 		}, 1000);
 	}
 
