@@ -1,12 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 import { useFetchPost } from "../../Hooks/useFetchPost";
+import { useDocumentTitle } from "../../Hooks/useDocumentTitle";
+
 import { CreatePostStyle, H1, Form, Input, Textarea } from "./Styme";
 
 export function CreatePost() {
+	useDocumentTitle("Create Post");
+
 	const [title, setTitle] = useState("");
 	const [description, setDescription] = useState("");
 	const [buttonValue, setButtonValue] = useState("Publish");
-
 	const { postData, isPending, success, error } = useFetchPost();
 
 	const time = useRef();

@@ -2,10 +2,11 @@
 - [ Done ] Check empty
 - [ Done ] Error Message When Get Api
 - [ Done ] Add Link To Logo
-- Create useTitle Hook For Handling Page Title
+- [ Done ] Create useDocumentTitle Hook For Handling Page Title
+- Delet Post
 - Post Image Upload
 - Add Search Bar
-- Delet Post
+- Image Upload With Fetch
 
 Targets:-
 1- Training On Fetch [ Get - Post - Delete ]
