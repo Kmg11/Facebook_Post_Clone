@@ -11,6 +11,7 @@ import {
 	LikeCounter,
 	Loading,
 	Error,
+	Empty,
 } from "./Style";
 
 export function Posts() {
@@ -24,23 +25,26 @@ export function Posts() {
 	} = useFetchGet("http://localhost:8000/posts");
 
 	const postsList =
-		posts &&
-		Array.from(posts)
-			.reverse()
-			.map(({ id, title, description, likes }, index) => {
-				return (
-					<Post key={id}>
-						{title && <Title>{title}</Title>}
+		posts && posts.length > 0 ? (
+			Array.from(posts)
+				.reverse()
+				.map(({ id, title, description, likes }, index) => {
+					return (
+						<Post key={id}>
+							{title && <Title>{title}</Title>}
 
-						{description && <Description>{description}</Description>}
+							{description && <Description>{description}</Description>}
 
-						<LikeWrapper>
-							<LikeButton>Like</LikeButton>
-							<LikeCounter>{likes ? likes : 0}</LikeCounter>
-						</LikeWrapper>
-					</Post>
-				);
-			});
+							<LikeWrapper>
+								<LikeButton>Like</LikeButton>
+								<LikeCounter>{likes ? likes : 0}</LikeCounter>
+							</LikeWrapper>
+						</Post>
+					);
+				})
+		) : (
+			<Empty>No Posts Added</Empty>
+		);
 
 	return (
 		<PostsList>
@@ -49,7 +53,7 @@ export function Posts() {
 
 				{success && postsList}
 
-				{error && <Error>{error} Please Try Again Later</Error>}
+				{error && <Error error>{error} Please Try Again Later</Error>}
 			</div>
 		</PostsList>
 	);

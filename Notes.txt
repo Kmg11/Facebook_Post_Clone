@@ -5,13 +5,17 @@
 - [ Done ] Create useDocumentTitle Hook For Handling Page Title
 - [ Done ] Clear Inputs After Publish
 - [ Done ] Improve Fetching
-- localStorage
+- [ Done ] Empty Posts When No Posts
+- [ Done ] localStorage
+- React State Update When Change Page & Cleanup
 - Delet Post
 - Post Image Upload
 - Add Search Bar
 - Image Upload With Fetch
 - Remove setTimeout In Fetching
 - way to run json-server on github
+- Infinity Scroll
+- Like Functionality
 
 Targets:-
 1- Training On Fetch [ Get - Post - Delete ]
