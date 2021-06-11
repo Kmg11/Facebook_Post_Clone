@@ -5,6 +5,7 @@ import "./App.css";
 import { Navbar } from "./Components/Navbar/Index";
 import { Posts } from "./Components/Posts/Index";
 import { CreatePost } from "./Components/CreatePost/Index";
+import { NotFound } from "./Components/NotFound/Index";
 
 function App() {
 	return (
@@ -15,6 +16,7 @@ function App() {
 				<Switch>
 					<Route exact path="/" component={Posts} />
 					<Route path="/create" component={CreatePost} />
+					<Route path="*" component={NotFound} />
 				</Switch>
 			</Router>
 		</div>
