@@ -7,8 +7,10 @@ export function useFetchGet(url) {
 	const [success, setSuccess] = useState(null);
 
 	useEffect(() => {
+		const abortCount = new AbortController();
+
 		setTimeout(() => {
-			fetch(url)
+			fetch(url, { signal: abortCount.signal })
 				.then((response) => {
 					// Handling Errors From Server
 					if (!response.ok) {
@@ -24,11 +26,15 @@ export function useFetchGet(url) {
 					setError(null);
 				})
 				.catch((err) => {
-					setIsPending(false);
-					setError(err.message);
-					setSuccess(null);
+					if (err.name !== "AbortError") {
+						setIsPending(false);
+						setError(err.message);
+						setSuccess(null);
+					}
 				});
 		}, 1000);
+
+		return () => abortCount.abort();
 	}, [url]);
 
 	return { data, isPending, error, success };
