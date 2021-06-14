@@ -1,13 +1,8 @@
-import { useDocumentTitle } from "../../Hooks/useDocumentTitle";
-import { useFetchGet } from "../../Hooks/useFetchGet";
-
+import { useFetchGet } from "../../Hooks/useFetch/useFetchGet";
 import { Post } from "./../Post/Post";
-
 import { PostsList, Loading, Error, Empty } from "./Style";
 
 export function Posts() {
-	useDocumentTitle();
-
 	const {
 		data: posts,
 		isPending,

@@ -1,15 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-
-import { useFetchPost } from "../../Hooks/useFetchPost";
-import { useDocumentTitle } from "../../Hooks/useDocumentTitle";
-import { useLocalStorage } from "../../Hooks/useLocalStorage";
-
+import { useFetchPost } from "../../Hooks/useFetch/useFetchPost";
+import { useLocalStorage } from "../../Hooks/useLocalStorage/useLocalStorage";
 import { CreatePostStyle, H1, FormStyle, Input, Textarea } from "./Style";
 
 export function Form() {
-	// Trigger Custome Hooks
-	useDocumentTitle("Create Post");
-
 	// Destruction Custome Hooks
 	const [titleLS, setTitleLS] = useLocalStorage("title", "");
 	const [descriptionLS, setDescriptionLS] = useLocalStorage("description", "");
@@ -65,6 +59,10 @@ export function Form() {
 			time.current = setTimeout(() => setButtonValue("Publish"), 3000);
 		} else {
 			setButtonValue("Publish");
+		}
+
+		return () => {
+			clearTimeout(time.current);
 		}
 	}, [isPending, success, error]);
 

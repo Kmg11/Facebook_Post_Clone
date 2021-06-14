@@ -5,7 +5,7 @@ import "./App.css";
 import { HomePage } from "./Pages/Home/Home";
 import { CreatePostPage } from "./Pages/CreatePost/CreatePost";
 import { PostPage } from "./Pages/Post/Post";
-import { NotFoundPage } from "./Pages/NotFoundPage/NotFoundPage";
+import { NotFoundPage } from "./Pages/NotFound/NotFound";
 
 function App() {
 	return (

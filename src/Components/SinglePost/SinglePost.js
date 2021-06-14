@@ -1,8 +1,8 @@
 import { Fragment } from "react";
 import { useParams } from "react-router";
-import { useFetchGet } from "../../Hooks/useFetchGet";
+import { useDocumentTitle } from "../../Hooks/useDocumentTitle/useDocumentTitle";
+import { useFetchGet } from "../../Hooks/useFetch/useFetchGet";
 import { Post } from "./../Post/Post";
-
 import { Loading, Error } from "./Style";
 
 export function SinglePost() {
@@ -14,6 +14,9 @@ export function SinglePost() {
 		success,
 		error,
 	} = useFetchGet(`http://localhost:8000/posts/${id}`);
+
+	// This Code Here Because I Need To Set Document Title Using Post Title
+	useDocumentTitle(post && post.title);
 
 	return (
 		<Fragment>
