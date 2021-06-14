@@ -2,21 +2,20 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./App.css";
 
-import { Navbar } from "./Components/Navbar/Index";
-import { Posts } from "./Components/Posts/Index";
-import { CreatePost } from "./Components/CreatePost/Index";
-import { NotFound } from "./Components/NotFound/Index";
+import { HomePage } from "./Pages/Home/Home";
+import { CreatePostPage } from "./Pages/CreatePost/CreatePost";
+import { PostPage } from "./Pages/Post/Post";
+import { NotFoundPage } from "./Pages/NotFoundPage/NotFoundPage";
 
 function App() {
 	return (
 		<div className="App">
 			<Router>
-				<Navbar />
-
 				<Switch>
-					<Route exact path="/" component={Posts} />
-					<Route path="/create" component={CreatePost} />
-					<Route path="*" component={NotFound} />
+					<Route exact path="/" component={HomePage} />
+					<Route path="/create" component={CreatePostPage} />
+					<Route path="/posts/:id/:title" component={PostPage} />
+					<Route path="*" component={NotFoundPage} />
 				</Switch>
 			</Router>
 		</div>

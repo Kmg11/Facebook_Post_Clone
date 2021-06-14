@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-export const PostsList = styled.div``;
-
 const Message = styled.p`
 	color: ${(props) => (props.error ? "#f00" : "#fff")};
 	font-size: 1.5rem;
@@ -10,4 +8,3 @@ const Message = styled.p`
 
 export const Loading = styled(Message)``;
 export const Error = styled(Message)``;
-export const Empty = styled(Message)``;

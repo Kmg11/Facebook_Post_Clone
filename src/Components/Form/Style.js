@@ -7,7 +7,7 @@ export const H1 = styled.h1`
 	margin-bottom: 20px;
 `;
 
-export const Form = styled.form``;
+export const FormStyle = styled.form``;
 
 export const Input = styled.input`
 	border: none;

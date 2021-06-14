@@ -17,6 +17,15 @@
 - way to run json-server on github
 - Infinity Scroll
 - Like Functionality
+- Show Less Description In Posts List
+- Change Document Title In Single Post By Using Post Title
+- Make Link Global On Post
+- Change Loading
+- Change Style
+- Add Animation
+- Make Post Usable
+- Global Style [ Message - Empty - Error - etc.. ]
+- Responsive
 
 Targets:-
 1- Training On Fetch [ Get - Post - Delete ]

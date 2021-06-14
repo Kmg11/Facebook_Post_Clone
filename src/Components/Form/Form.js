@@ -4,9 +4,9 @@ import { useFetchPost } from "../../Hooks/useFetchPost";
 import { useDocumentTitle } from "../../Hooks/useDocumentTitle";
 import { useLocalStorage } from "../../Hooks/useLocalStorage";
 
-import { CreatePostStyle, H1, Form, Input, Textarea } from "./Styme";
+import { CreatePostStyle, H1, FormStyle, Input, Textarea } from "./Style";
 
-export function CreatePost() {
+export function Form() {
 	// Trigger Custome Hooks
 	useDocumentTitle("Create Post");
 
@@ -83,7 +83,7 @@ export function CreatePost() {
 			<div className="container">
 				<H1>Create Post</H1>
 
-				<Form onSubmit={handleSubmit}>
+				<FormStyle onSubmit={handleSubmit}>
 					<Input
 						type="text"
 						placeholder="Post Title"
@@ -103,7 +103,7 @@ export function CreatePost() {
 						}}
 					/>
 					<Input type="submit" value={buttonValue} submit />
-				</Form>
+				</FormStyle>
 			</div>
 		</CreatePostStyle>
 	);

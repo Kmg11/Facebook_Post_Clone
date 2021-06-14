@@ -1,18 +1,9 @@
 import { useDocumentTitle } from "../../Hooks/useDocumentTitle";
 import { useFetchGet } from "../../Hooks/useFetchGet";
 
-import {
-	PostsList,
-	Post,
-	Title,
-	Description,
-	LikeWrapper,
-	LikeButton,
-	LikeCounter,
-	Loading,
-	Error,
-	Empty,
-} from "./Style";
+import { Post } from "./../Post/Post";
+
+import { PostsList, Loading, Error, Empty } from "./Style";
 
 export function Posts() {
 	useDocumentTitle();
@@ -28,18 +19,15 @@ export function Posts() {
 		posts && posts.length > 0 ? (
 			Array.from(posts)
 				.reverse()
-				.map(({ id, title, description, likes }, index) => {
+				.map(({ id, title, description, likes }) => {
 					return (
-						<Post key={id}>
-							{title && <Title>{title}</Title>}
-
-							{description && <Description>{description}</Description>}
-
-							<LikeWrapper>
-								<LikeButton>Like</LikeButton>
-								<LikeCounter>{likes ? likes : 0}</LikeCounter>
-							</LikeWrapper>
-						</Post>
+						<Post
+							key={id}
+							id={id}
+							title={title}
+							description={description}
+							likes={likes}
+						></Post>
 					);
 				})
 		) : (
@@ -51,9 +39,9 @@ export function Posts() {
 			<div className="container">
 				{isPending && <Loading>Loading...</Loading>}
 
-				{success && postsList}
-
 				{error && <Error error>{error} Please Try Again Later</Error>}
+
+				{success && postsList}
 			</div>
 		</PostsList>
 	);
