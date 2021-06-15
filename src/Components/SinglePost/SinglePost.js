@@ -3,7 +3,11 @@ import { useParams } from "react-router";
 import { useDocumentTitle } from "../../Hooks/useDocumentTitle/useDocumentTitle";
 import { useFetchGet } from "../../Hooks/useFetch/useFetchGet";
 import { Post } from "./../Post/Post";
-import { Loading, Error } from "./Style";
+
+import {
+	LoadingMessage,
+	ErrorMessage,
+} from "./../../Styles/Components/Components";
 
 export function SinglePost() {
 	const { id } = useParams();
@@ -21,9 +25,11 @@ export function SinglePost() {
 	return (
 		<Fragment>
 			<div className="container">
-				{isPending && <Loading>Loading...</Loading>}
+				{isPending && <LoadingMessage>Loading...</LoadingMessage>}
 
-				{error && <Error error>{error} Please Try Again Later</Error>}
+				{error && (
+					<ErrorMessage error>{error} Please Try Again Later</ErrorMessage>
+				)}
 
 				{success && post && (
 					<Post

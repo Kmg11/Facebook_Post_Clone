@@ -1,6 +1,14 @@
 import { useFetchGet } from "../../Hooks/useFetch/useFetchGet";
 import { Post } from "./../Post/Post";
-import { PostsList, Loading, Error, Empty } from "./Style";
+import styled from "styled-components";
+
+import {
+	LoadingMessage,
+	ErrorMessage,
+	EmptyMessage,
+} from "./../../Styles/Components/Components";
+
+export const PostsList = styled.div``;
 
 export function Posts() {
 	const {
@@ -28,15 +36,15 @@ export function Posts() {
 					);
 				})
 		) : (
-			<Empty>No Posts Added</Empty>
+			<EmptyMessage>No Posts Added</EmptyMessage>
 		);
 
 	return (
 		<PostsList>
 			<div className="container">
-				{isPending && <Loading>Loading...</Loading>}
+				{isPending && <LoadingMessage>Loading...</LoadingMessage>}
 
-				{error && <Error error>{error} Please Try Again Later</Error>}
+				{error && <ErrorMessage>{error} Please Try Again Later</ErrorMessage>}
 
 				{success && postsList}
 			</div>

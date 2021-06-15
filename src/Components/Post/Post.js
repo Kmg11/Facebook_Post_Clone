@@ -18,7 +18,7 @@ export function Post({ id, title, description, likes, getData }) {
 	return (
 		<Fragment>
 			<PostStyle>
-				{title && <Title>{title}</Title>}
+				{title && <Title as="h2">{title}</Title>}
 
 				{description && <Description>{description}</Description>}
 

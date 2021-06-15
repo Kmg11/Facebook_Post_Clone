@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { textColor, mainColor } from "./../../Styles/Variables/Variables";
 
 // Not Found Style
 const NotFoundStyle = styled.div`
@@ -8,13 +9,13 @@ const NotFoundStyle = styled.div`
 `;
 
 const Error = styled.p`
-	color: #fff;
+	color: ${textColor};
 	font-size: 1.5rem;
 `;
 
 const BackToHomePage = styled(Link)`
 	text-decoration: none;
-	color: #1976d2;
+	color: ${mainColor};
 `;
 
 export function NotFound() {

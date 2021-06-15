@@ -15,6 +15,7 @@
 - [ Done ] Delete Post
 - [ Done ] Create useFetchDelete
 - [ Done ] Word Break For Long WOrds
+- [ Done ] Global Style [ Message - Empty - Error - etc.. ]
 - Change Blog To Post [ Facebook Post Simulation ]
 - Create PostList Component
 - Post Image Upload
@@ -28,7 +29,6 @@
 - Change Loading
 - Change Style
 - Add Animation
-- Global Style [ Message - Empty - Error - etc.. ]
 
 - Responsive
 - way to run json-server on github

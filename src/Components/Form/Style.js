@@ -1,9 +1,15 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+import {
+	textColor,
+	elementsBG,
+	mainColor,
+} from "./../../Styles/Variables/Variables";
 
 export const CreatePostStyle = styled.div``;
 
 export const H1 = styled.h1`
-	color: #fff;
+	color: ${textColor};
 	margin-bottom: 20px;
 `;
 
@@ -15,18 +21,24 @@ export const Input = styled.input`
 	padding: 15px 20px;
 	margin-bottom: 20px;
 	font-size: 1.2rem;
-	color: #fff;
-	background-color: ${(props) => (props.submit ? "#1976D2" : "#232323")};
-	cursor: ${(props) => props.submit && "pointer"};
+	color: ${textColor};
 	outline: 1px solid transparent;
 	transition: all 0.3s linear;
+	background-color: ${elementsBG};
 
-	&::placeholder {
+	${(props) =>
+		props.submit &&
+		css`
+			background-color: ${mainColor};
+			cursor: pointer;
+		`}
+
+	::placeholder {
 		color: #999;
 	}
 
-	&:focus {
-		outline: 1px solid #1976d2;
+	:focus {
+		outline: 1px solid ${mainColor};
 	}
 `;
 

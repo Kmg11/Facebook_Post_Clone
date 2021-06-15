@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { textColor, elementsBG } from "./../../Styles/Variables/Variables";
 
 export const NavbarStyle = styled.nav`
 	position: fixed;
@@ -7,8 +8,8 @@ export const NavbarStyle = styled.nav`
 	left: 0;
 	right: 0;
 	width: 100%;
-	background-color: #232323;
-	padding: 20px;
+	background-color: ${elementsBG};
+	padding: 25px;
 	z-index: 1000;
 `;
 
@@ -20,8 +21,8 @@ export const Row = styled.div`
 `;
 
 export const Logo = styled(Link)`
-	color: #fff;
-	font-size: 2rem;
+	color: ${textColor};
+	font-size: 1.7rem;
 	text-decoration: none;
 `;
 
@@ -35,6 +36,6 @@ export const Item = styled.li`
 
 export const ItemLink = styled(Link)`
 	text-decoration: none;
-	color: #fff;
+	color: ${textColor};
 	margin: 10px 20px;
 `;
