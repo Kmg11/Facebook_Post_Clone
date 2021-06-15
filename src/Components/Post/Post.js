@@ -1,3 +1,6 @@
+import { Fragment } from "react";
+import { useFetchDelete } from "../../Hooks/useFetch/useFetchDelete";
+
 import {
 	PostStyle,
 	Title,
@@ -6,11 +9,14 @@ import {
 	LikeButton,
 	LikeCounter,
 	GoToPost,
+	DeleteBtn,
 } from "./Style";
 
-export function Post({ id, title, description, likes }) {
+export function Post({ id, title, description, likes, getData }) {
+	const { deleteData } = useFetchDelete();
+
 	return (
-		<div>
+		<Fragment>
 			<PostStyle>
 				{title && <Title>{title}</Title>}
 
@@ -22,7 +28,16 @@ export function Post({ id, title, description, likes }) {
 				</LikeWrapper>
 
 				{id && <GoToPost to={`posts/${id}/${title}`}>Go To Post</GoToPost>}
+				{id && (
+					<DeleteBtn
+						onClick={() =>
+							deleteData(`http://localhost:8000/posts/${id}`, getData)
+						}
+					>
+						Delete Post
+					</DeleteBtn>
+				)}
 			</PostStyle>
-		</div>
+		</Fragment>
 	);
 }

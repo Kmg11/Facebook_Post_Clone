@@ -12,6 +12,8 @@ export const Title = styled.h2`
 	margin-bottom: 15px;
 	padding-bottom: 10px;
 	border-bottom: 1px solid #555;
+	word-wrap: break-word;
+	line-height: 1.5;
 `;
 
 export const Description = styled.p`
@@ -20,9 +22,12 @@ export const Description = styled.p`
 	margin-bottom: 15px;
 	padding-bottom: 12px;
 	border-bottom: 1px solid #555;
+	word-wrap: break-word;
 `;
 
-export const LikeWrapper = styled.div``;
+export const LikeWrapper = styled.div`
+	margin-bottom: 15px;
+`;
 
 export const LikeButton = styled.button`
 	background: none;
@@ -40,4 +45,14 @@ export const LikeCounter = styled.span`
 
 export const GoToPost = styled(Link)`
 	color: #fff;
+`;
+
+export const DeleteBtn = styled.button`
+	color: #fff;
+	background: none;
+	border: none;
+	text-decoration: underline;
+	margin-left: 10px;
+	font-size: 1rem;
+	cursor: pointer;
 `;

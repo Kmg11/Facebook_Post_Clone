@@ -4,6 +4,7 @@ import { PostsList, Loading, Error, Empty } from "./Style";
 
 export function Posts() {
 	const {
+		getData,
 		data: posts,
 		isPending,
 		success,
@@ -22,6 +23,7 @@ export function Posts() {
 							title={title}
 							description={description}
 							likes={likes}
+							getData={getData}
 						></Post>
 					);
 				})

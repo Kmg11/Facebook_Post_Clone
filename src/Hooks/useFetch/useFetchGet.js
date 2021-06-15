@@ -1,13 +1,14 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 export function useFetchGet(url) {
 	const [data, setData] = useState(null);
-	const [isPending, setIsPending] = useState(true);
+	const [isPending, setIsPending] = useState(false);
 	const [error, setError] = useState(null);
 	const [success, setSuccess] = useState(null);
+	const [abortCount] = useState(new AbortController());
 
-	useEffect(() => {
-		const abortCount = new AbortController();
+	const getData = useCallback(() => {
+		setIsPending(true);
 
 		setTimeout(() => {
 			fetch(url, { signal: abortCount.signal })
@@ -33,9 +34,12 @@ export function useFetchGet(url) {
 					}
 				});
 		}, 1000);
+	}, [url, abortCount]);
 
+	useEffect(() => {
+		getData();
 		return () => abortCount.abort();
-	}, [url]);
+	}, [abortCount, getData]);
 
-	return { data, isPending, error, success };
+	return { getData, data, isPending, error, success };
 }

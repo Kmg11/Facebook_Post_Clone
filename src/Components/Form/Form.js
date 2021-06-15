@@ -1,9 +1,12 @@
 import { useEffect, useRef, useState } from "react";
+import { useHistory } from "react-router-dom";
 import { useFetchPost } from "../../Hooks/useFetch/useFetchPost";
 import { useLocalStorage } from "../../Hooks/useLocalStorage/useLocalStorage";
 import { CreatePostStyle, H1, FormStyle, Input, Textarea } from "./Style";
 
 export function Form() {
+	const history = useHistory();
+
 	// Destruction Custome Hooks
 	const [titleLS, setTitleLS] = useLocalStorage("title", "");
 	const [descriptionLS, setDescriptionLS] = useLocalStorage("description", "");
@@ -63,18 +66,23 @@ export function Form() {
 
 		return () => {
 			clearTimeout(time.current);
-		}
-	}, [isPending, success, error]);
+		};
+	}, [isPending, success, error, history]);
 
-	// Empty Inputs
+	// Empty Inputs & Redirect
 	useEffect(() => {
 		if (success) {
 			setTitle("");
 			setTitleLS("");
 			setDescription("");
 			setDescriptionLS("");
+
+			// Redirect To The Home Page
+			if (title === "" && description === "") {
+				history.push("/");
+			}
 		}
-	}, [success, setTitleLS, setDescriptionLS]);
+	}, [success, title, setTitleLS, description, setDescriptionLS, history]);
 
 	return (
 		<CreatePostStyle>
@@ -86,6 +94,7 @@ export function Form() {
 						type="text"
 						placeholder="Post Title"
 						value={title}
+						autoFocus
 						onChange={(e) => {
 							setTitle(e.target.value);
 							setTitleLS(e.target.value);

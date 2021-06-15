@@ -1,20 +1,16 @@
 import { useEffect, useState } from "react";
 
-export function useFetchPost() {
+export function useFetchDelete() {
 	const [isPending, setIsPending] = useState(false);
 	const [error, setError] = useState(null);
 	const [success, setSuccess] = useState(null);
 	const [abortCoun] = useState(new AbortController());
 
-	function postData(url, data) {
+	function deleteData(url, successFunction) {
 		setIsPending(true);
 
 		fetch(url, {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(data),
+			method: "DELETE",
 			signal: abortCoun.signal,
 		})
 			.then((response) => {
@@ -26,6 +22,7 @@ export function useFetchPost() {
 				setIsPending(false);
 				setSuccess(true);
 				setError(null);
+				successFunction()
 			})
 			.catch((err) => {
 				if (err.name !== "AbortError") {
@@ -40,5 +37,5 @@ export function useFetchPost() {
 		return () => abortCoun.abort();
 	}, [abortCoun]);
 
-	return { postData, isPending, error, success };
+	return { deleteData, isPending, error, success };
 }
