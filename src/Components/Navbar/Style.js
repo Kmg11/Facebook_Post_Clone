@@ -1,6 +1,10 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { textColor, elementsBG } from "./../../Styles/Variables/Variables";
+import { Link, NavLink } from "react-router-dom";
+import {
+	textColor,
+	elementsBG,
+	mainColor,
+} from "./../../Styles/Variables/Variables";
 
 export const NavbarStyle = styled.nav`
 	position: fixed;
@@ -34,8 +38,15 @@ export const Item = styled.li`
 	display: inline-block;
 `;
 
-export const ItemLink = styled(Link)`
+export const ItemLink = styled(NavLink)`
 	text-decoration: none;
 	color: ${textColor};
 	margin: 10px 20px;
+	transition: all 0.2s linear;
+
+	:hover,
+	&.active {
+		color: ${mainColor};
+		text-shadow: 0 0 0px ${textColor};
+	}
 `;

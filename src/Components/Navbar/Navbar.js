@@ -9,7 +9,7 @@ export function Navbar() {
 
 					<List>
 						<Item>
-							<Link to="/">Home</Link>
+							<Link exact to="/">Home</Link>
 						</Item>
 						<Item>
 							<Link to="/create">Create Post</Link>

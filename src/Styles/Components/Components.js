@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const Message = styled.p`
 	background-color: #222;
@@ -7,6 +7,9 @@ const Message = styled.p`
 	color: #fff;
 	font-size: 1.5rem;
 	line-height: 1.5;
+	border-radius: 10px;
+	transition: all 0.3s linear;
+	${(props) => (props.show ? css`opacity: 1;` : css`opacity: 0;`)}
 `;
 
 export const LoadingMessage = styled(Message)``;

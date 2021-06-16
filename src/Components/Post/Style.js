@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import {
 	textColor,
@@ -9,8 +8,19 @@ import {
 
 export const PostStyle = styled.article`
 	background-color: ${elementsBG};
-	padding: 15px;
+	padding: 20px;
 	margin-bottom: 20px;
+	border-radius: 10px;
+	transition: all 0.3s linear;
+	opacity: 0;
+	transform: translateY(50%);
+
+	${(props) =>
+		props.show &&
+		css`
+			opacity: 1;
+			transform: translateY(0);
+		`}
 `;
 
 const TitleDesc = styled.p`
@@ -29,35 +39,77 @@ export const Description = styled(TitleDesc)`
 	color: #ddd;
 `;
 
-export const LikeWrapper = styled.div`
-	padding-top: 15px;
-	margin-bottom: 15px;
+export const Buttons = styled.div`
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	text-align: center;
+	padding-top: 20px;
 `;
 
-export const LikeButton = styled.button`
-	background: none;
-	border: none;
-	display: inline-block;
-	color: ${(props) => (props.liked ? mainColor : textColor)};
-	cursor: pointer;
-	margin-right: 10px;
+export const ButtonWrapper = styled.div``;
+
+export const ButtonIcon = styled.div`
+	color: #999;
+	font-size: 1.5rem;
+	display: block;
+	transition: color 0.2s linear;
+
+	svg {
+		display: block;
+	}
 `;
 
-export const LikeCounter = styled.span`
-	display: inline-block;
-	color: ${textColor};
-`;
-
-export const GoToPost = styled(Link)`
-	color: ${textColor};
-`;
-
-export const DeleteBtn = styled.button`
-	color: ${textColor};
-	background: none;
-	border: none;
-	text-decoration: underline;
-	margin-left: 10px;
+export const ButtonText = styled.div`
 	font-size: 1rem;
+	color: #999;
+	font-weight: 600;
+	transition: color 0.2s linear;
+`;
+
+export const ButtonCounter = styled.span`
+	color: #999;
+	font-size: 1.1rem;
+	font-weight: 600;
+	transition: color 0.2s linear;
+`;
+
+export const Button = styled.button`
+	background: none;
+	border: none;
 	cursor: pointer;
+	text-decoration: none;
+	display: block;
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(2, auto);
+	gap: 10px;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	${(props) =>
+		props.counter &&
+		css`
+			grid-template-columns: repeat(3, auto);
+		`}
+
+	${(props) =>
+		props.liked &&
+		css`
+			${ButtonIcon},
+			${ButtonText},
+			${ButtonCounter} {
+				color: ${mainColor};
+			}
+		`}
+
+	:hover {
+		${ButtonIcon},
+		${ButtonText},
+		${ButtonCounter} {
+			color: ${mainColor};
+		}
+	}
 `;

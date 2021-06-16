@@ -16,9 +16,11 @@
 - [ Done ] Create useFetchDelete
 - [ Done ] Word Break For Long WOrds
 - [ Done ] Global Style [ Message - Empty - Error - etc.. ]
-- Change Blog To Post [ Facebook Post Simulation ]
-- Create PostList Component
+- [ Done ] Change Style
+- [ Done ] Change Blog To Post [ Facebook Post Simulation ]
 - Post Image Upload
+- User Bame & User Image
+- Medhad Dahwod Random Images With Diffrent Colors
 - Add Search Bar
 - Image Upload With Fetch
 - Remove setTimeout In Fetching
@@ -27,8 +29,8 @@
 - Show Less Description In Posts List
 - Make Link Global On Post Not On Image
 - Change Loading
-- Change Style
 - Add Animation
+- Remove not usedd dependinces
 
 - Responsive
 - way to run json-server on github
