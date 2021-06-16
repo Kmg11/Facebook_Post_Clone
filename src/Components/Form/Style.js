@@ -26,9 +26,10 @@ export const Input = styled.input`
 	margin-bottom: 20px;
 	font-size: 1.2rem;
 	color: ${textColor};
-	outline: 1px solid transparent;
+	border: 1px solid transparent;
 	transition: all 0.3s linear;
 	background-color: ${elementsBG};
+	border-radius: 10px;
 
 	${(props) =>
 		props.submit &&
@@ -46,7 +47,8 @@ export const Input = styled.input`
 	}
 
 	:focus {
-		outline: 1px solid ${mainColor};
+		outline: none;
+		border: 1px solid ${mainColor};
 	}
 `;
 

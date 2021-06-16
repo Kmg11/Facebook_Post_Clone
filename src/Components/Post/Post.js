@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useFetchDelete } from "../../Hooks/useFetch/useFetchDelete";
 import { BiLike } from "react-icons/bi";
 import { GoCommentDiscussion } from "react-icons/go";
@@ -18,7 +18,9 @@ import {
 	ButtonCounter,
 } from "./Style";
 
-export function Post({ id, title, description, likes, getData, success }) {
+export function Post({ single, response }) {
+	const history = useHistory();
+	const { id, title, description, likes, getData, success } = response;
 	const { deleteData } = useFetchDelete();
 	const [animatePost, setAnimatePost] = useState(false);
 
@@ -37,7 +39,7 @@ export function Post({ id, title, description, likes, getData, success }) {
 
 				{description && <Description>{description}</Description>}
 
-				<Buttons>
+				<Buttons single={!single}>
 					<ButtonWrapper>
 						<Button counter>
 							<ButtonIcon>
@@ -57,7 +59,7 @@ export function Post({ id, title, description, likes, getData, success }) {
 						</Button>
 					</ButtonWrapper>
 
-					{id && (
+					{!single && (
 						<ButtonWrapper>
 							<Button as={Link} to={`posts/${id}/${title}`}>
 								<ButtonIcon>
@@ -68,20 +70,21 @@ export function Post({ id, title, description, likes, getData, success }) {
 						</ButtonWrapper>
 					)}
 
-					{id && (
-						<ButtonWrapper>
-							<Button
-								onClick={() =>
-									deleteData(`http://localhost:8000/posts/${id}`, getData)
-								}
-							>
-								<ButtonIcon>
-									<RiDeleteBin7Line />
-								</ButtonIcon>
-								<ButtonText>Delete</ButtonText>
-							</Button>
-						</ButtonWrapper>
-					)}
+					<ButtonWrapper>
+						<Button
+							onClick={() => {
+								deleteData(
+									`http://localhost:8000/posts/${id}`,
+									single ? () => history.push("/") : getData
+								);
+							}}
+						>
+							<ButtonIcon>
+								<RiDeleteBin7Line />
+							</ButtonIcon>
+							<ButtonText>Delete</ButtonText>
+						</Button>
+					</ButtonWrapper>
 				</Buttons>
 			</PostStyle>
 		</Fragment>

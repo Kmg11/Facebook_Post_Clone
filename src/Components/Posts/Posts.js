@@ -1,15 +1,13 @@
 import { useEffect, useState } from "react";
 import { useFetchGet } from "../../Hooks/useFetch/useFetchGet";
 import { Post } from "./../Post/Post";
-import styled from "styled-components";
+import { PostsList, LoadingWrapper } from "./Style";
 
 import {
-	LoadingMessage,
+	Loading,
 	ErrorMessage,
 	EmptyMessage,
 } from "./../../Styles/Components/Components";
-
-export const PostsList = styled.div``;
 
 export function Posts() {
 	// State For Animate Loding & Error Message
@@ -41,12 +39,15 @@ export function Posts() {
 					return (
 						<Post
 							key={id}
-							id={id}
-							title={title}
-							description={description}
-							likes={likes}
-							getData={getData}
-							success={success}
+							single={false}
+							response={{
+								id: id,
+								title: title,
+								description: description,
+								likes: likes,
+								getData: getData,
+								success: success,
+							}}
 						></Post>
 					);
 				})
@@ -58,9 +59,9 @@ export function Posts() {
 		<PostsList>
 			<div className="container">
 				{isPending && (
-					<LoadingMessage show={animateLE ? true : false}>
-						Loading...
-					</LoadingMessage>
+					<LoadingWrapper show={animateLE ? true : false}>
+						<Loading />
+					</LoadingWrapper>
 				)}
 
 				{error && (

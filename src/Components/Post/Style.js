@@ -33,8 +33,8 @@ const TitleDesc = styled.p`
 export const Title = styled(TitleDesc)`
 	color: ${textColor};
 
-	@media (max-width: 650px ) {
-		font-size: 1.2rem;	
+	@media (max-width: 650px) {
+		font-size: 1.2rem;
 	}
 `;
 
@@ -45,14 +45,15 @@ export const Description = styled(TitleDesc)`
 
 export const Buttons = styled.div`
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: ${(props) =>
+		props.single ? "repeat(4, 1fr)" : "repeat(3, 1fr)"};
 	justify-content: center;
 	align-items: center;
 	gap: 10px;
 	text-align: center;
 	padding-top: 20px;
 
-	@media (max-width: 650px ) {
+	@media (max-width: 650px) {
 		grid-template-columns: repeat(2, 1fr);
 		gap: 20px;
 	}

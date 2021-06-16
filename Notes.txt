@@ -20,6 +20,10 @@
 - [ Done ] Change Blog To Post [ Facebook Post Simulation ]
 - [ Done ] Add Animation
 - [ Done ] Responsive
+- [ Done ] Change Loading
+- [ Done ] Fixing Delete From Single Page
+- Change Loading For Form
+- Remove Spaces From URl
 - Post Image Upload
 - User Bame & User Image
 - Medhad Dahwod Random Images With Diffrent Colors
@@ -27,13 +31,14 @@
 - Image Upload With Fetch
 - Infinity Scroll
 - Show Less Description In Posts List
-- Change Loading
 - Like Functionalitys
+- Copy Post Link
 
 - Remove setTimeout In Fetching
 - way to run json-server on github
 - Change Repo Name
 - Remove not usedd dependinces
+- Edit README FIle
 
 Targets:-
 1- Training On Fetch [ Get - Post - Delete ]
