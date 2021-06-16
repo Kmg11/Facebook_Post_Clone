@@ -32,6 +32,10 @@ const TitleDesc = styled.p`
 
 export const Title = styled(TitleDesc)`
 	color: ${textColor};
+
+	@media (max-width: 650px ) {
+		font-size: 1.2rem;	
+	}
 `;
 
 export const Description = styled(TitleDesc)`
@@ -47,6 +51,11 @@ export const Buttons = styled.div`
 	gap: 10px;
 	text-align: center;
 	padding-top: 20px;
+
+	@media (max-width: 650px ) {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 20px;
+	}
 `;
 
 export const ButtonWrapper = styled.div``;

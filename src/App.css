@@ -18,3 +18,13 @@ body {
 	padding-right: 15px;
 	margin: auto;
 }
+
+@media (max-width: 650px) {
+	body {
+		padding-top: 150px;
+	}
+
+	.container {
+		width: 100%;
+	}
+}

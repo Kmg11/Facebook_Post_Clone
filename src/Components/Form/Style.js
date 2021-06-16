@@ -11,6 +11,10 @@ export const CreatePostStyle = styled.div``;
 export const H1 = styled.h1`
 	color: ${textColor};
 	margin-bottom: 20px;
+
+	@media (max-width: 650px) {
+		font-size: 1.5rem;
+	}
 `;
 
 export const FormStyle = styled.form``;
@@ -32,6 +36,10 @@ export const Input = styled.input`
 			background-color: ${mainColor};
 			cursor: pointer;
 		`}
+
+	@media (max-width: 650px ) {
+		font-size: 1.1rem;
+	}
 
 	::placeholder {
 		color: #999;

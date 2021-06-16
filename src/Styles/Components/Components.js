@@ -10,6 +10,10 @@ const Message = styled.p`
 	border-radius: 10px;
 	transition: all 0.3s linear;
 	${(props) => (props.show ? css`opacity: 1;` : css`opacity: 0;`)}
+
+	@media (max-width: 650px ) {
+		font-size: 1.2rem;
+	}
 `;
 
 export const LoadingMessage = styled(Message)``;
