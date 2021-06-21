@@ -78,33 +78,3 @@ export const SubmitButton = styled(Input)`
 			}
 		`}
 `;
-
-const LoadingKeyFrame = keyframes`
-	0% {transform: rotate(0deg);}
-	100% {transform: rotate(360deg);}
-`;
-
-export const Loading = styled.div`
-	display: inline-block;
-	margin: auto;
-	width: 45px;
-	height: 45px;
-	background-color: transparent;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-
-	:after {
-		content: " ";
-		display: block;
-		width: 25px;
-		height: 25px;
-		margin: 5px;
-		border-radius: 50%;
-		border-width: 5px;
-		border-style: solid;
-		border-color: ${mainColor} transparent ${mainColor} transparent;
-		animation: ${LoadingKeyFrame} 1.2s linear infinite;
-	}
-`;

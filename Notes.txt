@@ -30,18 +30,16 @@
 - [ Done ] Fix Single Post Problem Without Title
 - [ Done ] Fix Routes Problem With Single Post
 - [ Done ] Add setTimeout For useFetchPost For Testing
-- Make Loading For Deleting Posts
-- Post Image Upload
+- [ Done ] Make Loading For Deleting Posts
+- Like Functionalitys
+- Post Image Upload & Upload With Fetch
 - User Bame & User Image
 - Medhad Dahwod Random Images With Diffrent Colors
 - Add Search Bar
-- Image Upload With Fetch
 - Infinity Scroll
-- Like Functionalitys
 - Copy Post Link
 
 - way to run json-server on github
-- Remove not used dependinces By Checking NPM
 - Edit README FIle
 
 Targets:-

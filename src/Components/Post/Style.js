@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { SmallLoading } from "./../../Styles/Components/Components";
 
 import {
 	textColor,
@@ -7,6 +8,7 @@ import {
 } from "./../../Styles/Variables/Variables";
 
 export const PostStyle = styled.article`
+	position: relative;
 	background-color: ${elementsBG};
 	padding: 20px;
 	margin-bottom: 20px;
@@ -24,18 +26,26 @@ export const PostStyle = styled.article`
 `;
 
 const TitleDesc = styled.p`
-	padding-bottom: 15px;
-	border-bottom: 1px solid #555;
 	word-wrap: break-word;
 	line-height: 1.5;
 `;
 
 export const Title = styled(TitleDesc)`
 	color: ${textColor};
+	border-bottom: 1px solid #555;
+	padding-bottom: 15px;
 
 	@media (max-width: 650px) {
 		font-size: 1.2rem;
 	}
+`;
+
+export const Loading = styled(SmallLoading)`
+	transform: none;
+	left: auto;
+	right: 0;
+	top: 0;
+	background-color: #232323;
 `;
 
 export const Description = styled(TitleDesc)`

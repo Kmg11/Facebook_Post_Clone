@@ -59,3 +59,15 @@ export const Loading = styled.div`
 		animation: ${LoadingKeyFrame} 1.2s linear infinite;
 	}
 `;
+
+export const SmallLoading = styled(Loading)`
+	width: 45px;
+	height: 45px;
+
+	:after {
+		width: 25px;
+		height: 25px;
+		margin: 5px;
+		border-width: 5px;
+	}
+`;

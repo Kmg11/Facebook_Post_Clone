@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useFetchPost } from "../../Hooks/useFetch/useFetchPost";
 import { useLocalStorage } from "../../Hooks/useLocalStorage/useLocalStorage";
+import { SmallLoading } from "./../../Styles/Components/Components";
 import {
 	CreatePostStyle,
 	H1,
@@ -9,7 +10,6 @@ import {
 	Input,
 	Textarea,
 	SubmitButton,
-	Loading,
 	SubmitButtonText,
 } from "./Style";
 
@@ -62,7 +62,7 @@ export function Form() {
 	// Handle Submit Button Value
 	useEffect(() => {
 		if (isPending) {
-			setButtonValue(<Loading />);
+			setButtonValue(<SmallLoading />);
 		} else if (success === true) {
 			setButtonValue("Published");
 			time.current = setTimeout(() => setButtonValue("Publish"), 3000);

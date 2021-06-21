@@ -16,12 +16,13 @@ import {
 	ButtonIcon,
 	ButtonText,
 	ButtonCounter,
+	Loading,
 } from "./Style";
 
 export function Post({ single, response }) {
 	const history = useHistory();
 	const { id, title, description, likes, getData, success } = response;
-	const { deleteData } = useFetchDelete();
+	const { deleteData, isPending } = useFetchDelete();
 	const [animatePost, setAnimatePost] = useState(false);
 
 	useEffect(() => {
@@ -33,6 +34,8 @@ export function Post({ single, response }) {
 	return (
 		<Fragment>
 			<PostStyle show={animatePost ? true : false}>
+				{isPending && <Loading />}
+
 				{title && (
 					<Title as="h2">
 						{!single && title.length >= 30 ? title.slice(0, 30) + "..." : title}
