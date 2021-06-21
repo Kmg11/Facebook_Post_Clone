@@ -2,7 +2,16 @@ import { useEffect, useRef, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useFetchPost } from "../../Hooks/useFetch/useFetchPost";
 import { useLocalStorage } from "../../Hooks/useLocalStorage/useLocalStorage";
-import { CreatePostStyle, H1, FormStyle, Input, Textarea } from "./Style";
+import {
+	CreatePostStyle,
+	H1,
+	FormStyle,
+	Input,
+	Textarea,
+	SubmitButton,
+	Loading,
+	SubmitButtonText,
+} from "./Style";
 
 export function Form() {
 	const history = useHistory();
@@ -53,7 +62,7 @@ export function Form() {
 	// Handle Submit Button Value
 	useEffect(() => {
 		if (isPending) {
-			setButtonValue("Loading...");
+			setButtonValue(<Loading />);
 		} else if (success === true) {
 			setButtonValue("Published");
 			time.current = setTimeout(() => setButtonValue("Publish"), 3000);
@@ -109,7 +118,14 @@ export function Form() {
 							setDescriptionLS(e.target.value);
 						}}
 					/>
-					<Input type="submit" value={buttonValue} submit />
+
+					<SubmitButton
+						as="button"
+						type="submit"
+						clickable={buttonValue !== "Publish" && true}
+					>
+						<SubmitButtonText>{buttonValue}</SubmitButtonText>
+					</SubmitButton>
 				</FormStyle>
 			</div>
 		</CreatePostStyle>

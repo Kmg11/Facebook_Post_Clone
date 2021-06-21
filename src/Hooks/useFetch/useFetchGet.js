@@ -33,7 +33,7 @@ export function useFetchGet(url) {
 						setSuccess(null);
 					}
 				});
-		}, 1000);
+		}, 500);
 	}, [url, abortCount]);
 
 	useEffect(() => {

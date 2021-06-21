@@ -21,7 +21,7 @@ export function SinglePost() {
 	} = useFetchGet(`http://localhost:8000/posts/${id}`);
 
 	// This Code Here Because I Need To Set Document Title Using Post Title
-	useDocumentTitle(post && post.title);
+	useDocumentTitle(success && post.title);
 
 	useEffect(() => {
 		let tiem;

@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 
 import {
 	textColor,
@@ -31,14 +31,7 @@ export const Input = styled.input`
 	background-color: ${elementsBG};
 	border-radius: 10px;
 
-	${(props) =>
-		props.submit &&
-		css`
-			background-color: ${mainColor};
-			cursor: pointer;
-		`}
-
-	@media (max-width: 650px ) {
+	@media (max-width: 650px) {
 		font-size: 1.1rem;
 	}
 
@@ -55,4 +48,63 @@ export const Input = styled.input`
 export const Textarea = styled(Input)`
 	height: 200px;
 	resize: none;
+`;
+
+const animateButton = keyframes`
+	from {opacity: 0;}
+	to {opacity: 1;}
+`;
+
+export const SubmitButtonText = styled.span``;
+
+export const SubmitButton = styled(Input)`
+	background-color: ${mainColor};
+	cursor: pointer;
+	position: relative;
+
+	${(props) =>
+		props.clickable &&
+		css`
+			background-color: ${elementsBG};
+			height: 54px;
+			cursor: default;
+
+			${SubmitButtonText} {
+				animation: ${animateButton} 0.3s linear;
+			}
+
+			:focus {
+				border: 1px solid transparent;
+			}
+		`}
+`;
+
+const LoadingKeyFrame = keyframes`
+	0% {transform: rotate(0deg);}
+	100% {transform: rotate(360deg);}
+`;
+
+export const Loading = styled.div`
+	display: inline-block;
+	margin: auto;
+	width: 45px;
+	height: 45px;
+	background-color: transparent;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	:after {
+		content: " ";
+		display: block;
+		width: 25px;
+		height: 25px;
+		margin: 5px;
+		border-radius: 50%;
+		border-width: 5px;
+		border-style: solid;
+		border-color: ${mainColor} transparent ${mainColor} transparent;
+		animation: ${LoadingKeyFrame} 1.2s linear infinite;
+	}
 `;

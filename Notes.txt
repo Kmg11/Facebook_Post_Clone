@@ -22,22 +22,22 @@
 - [ Done ] Responsive
 - [ Done ] Change Loading
 - [ Done ] Fixing Delete From Single Page
-- Change Loading For Form
-- Remove Spaces From URl
+- [ Done ] Remove Spaces From URl
+- [ Done ] Change Loading For Form
+- [ Done ] Reduce setTimeout In Fetching
+- Show Less Description In Posts List
 - Post Image Upload
 - User Bame & User Image
 - Medhad Dahwod Random Images With Diffrent Colors
 - Add Search Bar
 - Image Upload With Fetch
 - Infinity Scroll
-- Show Less Description In Posts List
 - Like Functionalitys
 - Copy Post Link
 
-- Remove setTimeout In Fetching
 - way to run json-server on github
 - Change Repo Name
-- Remove not usedd dependinces
+- Remove not used dependinces By Checking NPM
 - Edit README FIle
 
 Targets:-

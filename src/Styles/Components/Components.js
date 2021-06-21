@@ -31,13 +31,8 @@ export const ErrorMessage = styled(Message)`
 export const EmptyMessage = styled(Message)``;
 
 const LoadingKeyFrame = keyframes`
-	0% {
-		transform: rotate(0deg);
-	}
-
-	100% {
-		transform: rotate(360deg);
-	}
+	0% {transform: rotate(0deg);}
+	100% {transform: rotate(360deg);}
 `;
 
 export const Loading = styled.div`

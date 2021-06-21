@@ -61,7 +61,7 @@ export function Post({ single, response }) {
 
 					{!single && (
 						<ButtonWrapper>
-							<Button as={Link} to={`posts/${id}/${title}`}>
+							<Button as={Link} to={`posts/${id}/${title.replace(" ", "-")}`}>
 								<ButtonIcon>
 									<IoEyeOutline />
 								</ButtonIcon>

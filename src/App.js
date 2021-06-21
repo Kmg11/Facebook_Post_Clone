@@ -1,11 +1,9 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
-import "./App.css";
-
 import { HomePage } from "./Pages/Home/Home";
 import { CreatePostPage } from "./Pages/CreatePost/CreatePost";
 import { PostPage } from "./Pages/Post/Post";
 import { NotFoundPage } from "./Pages/NotFound/NotFound";
+import "./App.css";
 
 function App() {
 	return (
