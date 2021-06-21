@@ -25,7 +25,12 @@
 - [ Done ] Remove Spaces From URl
 - [ Done ] Change Loading For Form
 - [ Done ] Reduce setTimeout In Fetching
-- Show Less Description In Posts List
+- [ Done ] Change Repo Name
+- [ Done ] Show Less Description In Posts List
+- [ Done ] Fix Single Post Problem Without Title
+- [ Done ] Fix Routes Problem With Single Post
+- [ Done ] Add setTimeout For useFetchPost For Testing
+- Make Loading For Deleting Posts
 - Post Image Upload
 - User Bame & User Image
 - Medhad Dahwod Random Images With Diffrent Colors
@@ -36,7 +41,6 @@
 - Copy Post Link
 
 - way to run json-server on github
-- Change Repo Name
 - Remove not used dependinces By Checking NPM
 - Edit README FIle
 

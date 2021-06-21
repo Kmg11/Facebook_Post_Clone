@@ -59,12 +59,6 @@ export function SinglePost() {
 							getData: getData,
 							success: success,
 						}}
-						id={id}
-						title={post.title}
-						description={post.description}
-						likes={post.likes}
-						getData={getData}
-						success={success}
 					/>
 				)}
 			</div>

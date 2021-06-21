@@ -26,18 +26,26 @@ export function Post({ single, response }) {
 
 	useEffect(() => {
 		let time;
-
 		success && (time = setTimeout(() => setAnimatePost(true)));
-
 		return () => clearTimeout(time);
 	}, [success]);
 
 	return (
 		<Fragment>
 			<PostStyle show={animatePost ? true : false}>
-				{title && <Title as="h2">{title}</Title>}
+				{title && (
+					<Title as="h2">
+						{!single && title.length >= 30 ? title.slice(0, 30) + "..." : title}
+					</Title>
+				)}
 
-				{description && <Description>{description}</Description>}
+				{description && (
+					<Description>
+						{!single && description.length >= 150
+							? description.slice(0, 150) + "..."
+							: description}
+					</Description>
+				)}
 
 				<Buttons single={!single}>
 					<ButtonWrapper>
@@ -61,7 +69,10 @@ export function Post({ single, response }) {
 
 					{!single && (
 						<ButtonWrapper>
-							<Button as={Link} to={`posts/${id}/${title.replace(" ", "-")}`}>
+							<Button
+								as={Link}
+								to={`posts/${id}/${title && title.replaceAll(" ", "-")}`}
+							>
 								<ButtonIcon>
 									<IoEyeOutline />
 								</ButtonIcon>

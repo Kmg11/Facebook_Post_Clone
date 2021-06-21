@@ -9,28 +9,30 @@ export function useFetchDelete() {
 	function deleteData(url, successFunction) {
 		setIsPending(true);
 
-		fetch(url, {
-			method: "DELETE",
-			signal: abortCoun.signal,
-		})
-			.then((response) => {
-				// Handling Errors From Server
-				if (!response.ok) {
-					throw Error("Could Not Fetch The Data For That Resource");
-				}
-
-				setIsPending(false);
-				setSuccess(true);
-				setError(null);
-				successFunction()
+		setTimeout(() => {
+			fetch(url, {
+				method: "DELETE",
+				signal: abortCoun.signal,
 			})
-			.catch((err) => {
-				if (err.name !== "AbortError") {
+				.then((response) => {
+					// Handling Errors From Server
+					if (!response.ok) {
+						throw Error("Could Not Fetch The Data For That Resource");
+					}
+
 					setIsPending(false);
-					setError(err.message);
-					setSuccess(null);
-				}
-			});
+					setSuccess(true);
+					setError(null);
+					successFunction();
+				})
+				.catch((err) => {
+					if (err.name !== "AbortError") {
+						setIsPending(false);
+						setError(err.message);
+						setSuccess(null);
+					}
+				});
+		}, 500);
 	}
 
 	useEffect(() => {

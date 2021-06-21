@@ -9,31 +9,33 @@ export function useFetchPost() {
 	function postData(url, data) {
 		setIsPending(true);
 
-		fetch(url, {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(data),
-			signal: abortCoun.signal,
-		})
-			.then((response) => {
-				// Handling Errors From Server
-				if (!response.ok) {
-					throw Error("Could Not Fetch The Data For That Resource");
-				}
-
-				setIsPending(false);
-				setSuccess(true);
-				setError(null);
+		setTimeout(() => {
+			fetch(url, {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(data),
+				signal: abortCoun.signal,
 			})
-			.catch((err) => {
-				if (err.name !== "AbortError") {
+				.then((response) => {
+					// Handling Errors From Server
+					if (!response.ok) {
+						throw Error("Could Not Fetch The Data For That Resource");
+					}
+
 					setIsPending(false);
-					setError(err.message);
-					setSuccess(null);
-				}
-			});
+					setSuccess(true);
+					setError(null);
+				})
+				.catch((err) => {
+					if (err.name !== "AbortError") {
+						setIsPending(false);
+						setError(err.message);
+						setSuccess(null);
+					}
+				});
+		}, 500);
 	}
 
 	useEffect(() => {

@@ -12,6 +12,7 @@ function App() {
 				<Switch>
 					<Route exact path="/" component={HomePage} />
 					<Route path="/create" component={CreatePostPage} />
+					<Route path="/posts/:id" component={PostPage} />
 					<Route path="/posts/:id/:title" component={PostPage} />
 					<Route path="*" component={NotFoundPage} />
 				</Switch>
