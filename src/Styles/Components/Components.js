@@ -1,5 +1,10 @@
-import styled, { css, keyframes } from "styled-components";
-import { mainColor } from "./../Variables/Variables";
+import styled, { keyframes } from "styled-components";
+import { mainColor, elementsBG } from "./../Variables/Variables";
+
+const MessageAnimation = keyframes`
+	from {opacity: 0;}
+	to {opacity: 1;}
+`;
 
 const Message = styled.p`
 	background-color: #222;
@@ -10,16 +15,9 @@ const Message = styled.p`
 	line-height: 1.5;
 	border-radius: 10px;
 	transition: all 0.3s linear;
-	${(props) =>
-		props.show
-			? css`
-					opacity: 1;
-			  `
-			: css`
-					opacity: 0;
-			  `}
+	animation: ${MessageAnimation} 0.3s linear;
 
-	@media (max-width: 650px ) {
+	@media (max-width: 650px) {
 		font-size: 1.2rem;
 	}
 `;
@@ -30,7 +28,19 @@ export const ErrorMessage = styled(Message)`
 
 export const EmptyMessage = styled(Message)``;
 
-const LoadingKeyFrame = keyframes`
+export const LoadingWrapper = styled.div`
+	position: relative;
+	height: 70px;
+	background-color: ${elementsBG};
+	border-radius: 10px;
+	margin-bottom: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	transition: all 0.3s linear;
+	animation: ${MessageAnimation} 0.3s linear;
+`;
+
+const LoadingAniamtion = keyframes`
 	0% {transform: rotate(0deg);}
 	100% {transform: rotate(360deg);}
 `;
@@ -56,7 +66,7 @@ export const Loading = styled.div`
 		border-width: 6px;
 		border-style: solid;
 		border-color: ${mainColor} transparent ${mainColor} transparent;
-		animation: ${LoadingKeyFrame} 1.2s linear infinite;
+		animation: ${LoadingAniamtion} 1.2s linear infinite;
 	}
 `;
 

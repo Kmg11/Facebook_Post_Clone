@@ -1,16 +1,17 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment } from "react";
 import { useParams } from "react-router";
 import { useDocumentTitle } from "../../Hooks/useDocumentTitle/useDocumentTitle";
 import { useFetchGet } from "../../Hooks/useFetch/useFetchGet";
 import { Post } from "./../Post/Post";
-import { LoadingWrapper } from "./Style";
-import { Loading, ErrorMessage } from "./../../Styles/Components/Components";
+
+import {
+	LoadingWrapper,
+	Loading,
+	ErrorMessage,
+} from "./../../Styles/Components/Components";
 
 export function SinglePost() {
 	const { id } = useParams();
-
-	// State For Animate Loding & Error Message
-	const [animateLE, setAnimateLE] = useState(false);
 
 	const {
 		getData,
@@ -23,29 +24,17 @@ export function SinglePost() {
 	// This Code Here Because I Need To Set Document Title Using Post Title
 	useDocumentTitle(success && post.title);
 
-	useEffect(() => {
-		let tiem;
-
-		isPending && setTimeout(() => setAnimateLE(true));
-		error && setTimeout(() => setAnimateLE(true));
-		success && setAnimateLE(false);
-
-		return () => clearTimeout(tiem);
-	}, [isPending, error, success]);
-
 	return (
 		<Fragment>
 			<div className="container">
 				{isPending && (
-					<LoadingWrapper show={animateLE ? true : false}>
+					<LoadingWrapper>
 						<Loading />
 					</LoadingWrapper>
 				)}
 
 				{error && (
-					<ErrorMessage error show={animateLE ? true : false}>
-						{error} Please Try Again Later
-					</ErrorMessage>
+					<ErrorMessage error>{error} Please Try Again Later</ErrorMessage>
 				)}
 
 				{success && post && (
@@ -56,6 +45,7 @@ export function SinglePost() {
 							title: post.title,
 							description: post.description,
 							likes: post.likes,
+							like_status: post.like_status,
 							getData: getData,
 							success: success,
 						}}

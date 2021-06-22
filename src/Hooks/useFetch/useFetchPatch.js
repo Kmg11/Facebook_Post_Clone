@@ -1,16 +1,20 @@
 import { useEffect, useState } from "react";
 
-export function useFetchDelete() {
+export function useFetchPatch() {
 	const [isPending, setIsPending] = useState(false);
 	const [error, setError] = useState(null);
 	const [success, setSuccess] = useState(null);
 	const [abortCoun] = useState(new AbortController());
 
-	function deleteData(url, successFunction) {
+	function updateData(url, data) {
 		setIsPending(true);
 
 		fetch(url, {
-			method: "DELETE",
+			method: "PATCH",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(data),
 			signal: abortCoun.signal,
 		})
 			.then((response) => {
@@ -22,7 +26,6 @@ export function useFetchDelete() {
 				setIsPending(false);
 				setSuccess(true);
 				setError(null);
-				successFunction();
 			})
 			.catch((err) => {
 				if (err.name !== "AbortError") {
@@ -37,5 +40,5 @@ export function useFetchDelete() {
 		return () => abortCoun.abort();
 	}, [abortCoun]);
 
-	return { deleteData, isPending, error, success };
+	return { updateData, isPending, error, success };
 }

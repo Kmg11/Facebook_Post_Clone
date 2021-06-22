@@ -4,37 +4,36 @@
       "id": 1,
       "title": "JavaScript Basics",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam porro animi necessitatibus soluta quo dolorem facilis nostrum sequi veniam repellat dolores, debitis, asperiores eaque deserunt! Exercitationem veritatis quisquam nostrum similique.",
-      "likes": "10"
+      "likes": 10111,
+      "like_status": false
     },
     {
       "id": 2,
       "title": "JavaScript ES6",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam porro animi necessitatibus soluta quo dolorem facilis nostrum sequi veniam repellat dolores, debitis, asperiores eaque deserunt! Exercitationem veritatis quisquam nostrum similique.",
-      "likes": "20"
+      "likes": "2500",
+      "like_status": true
     },
     {
-      "id": 3,
-      "title": "JavaScript Features",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam porro animi necessitatibus soluta quo dolorem facilis nostrum sequi veniam repellat dolores, debitis, asperiores eaque deserunt! Exercitationem veritatis quisquam nostrum similique.",
-      "likes": "15"
-    },
-    {
-      "title": "hello",
-      "description": "",
+      "title": "Javascript Features",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam porro animi necessitatibus soluta quo dolorem facilis nostrum sequi veniam repellat dolores, debitis, asperiores eaque deserunt! Exercitationem veritatis quisquam nostrum similique.\n\n\n",
       "likes": 0,
+      "like_status": false,
+      "id": 3
+    },
+    {
+      "title": "Hello Again",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam porro animi necessitatibus soluta quo dolorem facilis nostrum sequi veniam repellat dolores, debitis, asperiores eaque deserunt! Exercitationem veritatis quisquam nostrum similique.\n\n\n",
+      "likes": 0,
+      "like_status": false,
       "id": 4
     },
     {
-      "title": "dsadsad ",
-      "description": "dsadsada",
+      "title": "Javascript Power",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam porro animi necessitatibus soluta quo dolorem facilis nostrum sequi veniam repellat dolores, debitis, asperiores eaque deserunt! Exercitationem veritatis quisquam nostrum similique.\n\nLorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam porro animi necessitatibus soluta quo dolorem facilis nostrum sequi veniam repellat dolores, debitis, asperiores eaque deserunt! Exercitationem veritatis quisquam nostrum similique.\n\n\n",
       "likes": 0,
+      "like_status": false,
       "id": 5
-    },
-    {
-      "title": "dsadsadsa;d'a",
-      "description": "dsadsadsad",
-      "likes": 0,
-      "id": 6
     }
   ]
 }

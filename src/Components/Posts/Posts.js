@@ -1,18 +1,15 @@
-import { useEffect, useState } from "react";
 import { useFetchGet } from "../../Hooks/useFetch/useFetchGet";
 import { Post } from "./../Post/Post";
-import { PostsList, LoadingWrapper } from "./Style";
+import { PostsList } from "./Style";
 
 import {
+	LoadingWrapper,
 	Loading,
 	ErrorMessage,
 	EmptyMessage,
 } from "./../../Styles/Components/Components";
 
 export function Posts() {
-	// State For Animate Loding & Error Message
-	const [animateLE, setAnimateLE] = useState(false);
-
 	const {
 		getData,
 		data: posts,
@@ -21,21 +18,11 @@ export function Posts() {
 		error,
 	} = useFetchGet("http://localhost:8000/posts");
 
-	useEffect(() => {
-		let tiem;
-
-		isPending && setTimeout(() => setAnimateLE(true));
-		error && setTimeout(() => setAnimateLE(true));
-		success && setAnimateLE(false);
-
-		return () => clearTimeout(tiem);
-	}, [isPending, error, success]);
-
 	const postsList =
 		posts && posts.length > 0 ? (
 			Array.from(posts)
 				.reverse()
-				.map(({ id, title, description, likes }) => {
+				.map(({ id, title, description, likes, like_status }) => {
 					return (
 						<Post
 							key={id}
@@ -45,6 +32,7 @@ export function Posts() {
 								title: title,
 								description: description,
 								likes: likes,
+								like_status: like_status,
 								getData: getData,
 								success: success,
 							}}
@@ -59,16 +47,12 @@ export function Posts() {
 		<PostsList>
 			<div className="container">
 				{isPending && (
-					<LoadingWrapper show={animateLE ? true : false}>
+					<LoadingWrapper>
 						<Loading />
 					</LoadingWrapper>
 				)}
 
-				{error && (
-					<ErrorMessage show={animateLE ? true : false}>
-						{error} Please Try Again Later
-					</ErrorMessage>
-				)}
+				{error && <ErrorMessage>{error} Please Try Again Later</ErrorMessage>}
 
 				{success && postsList}
 			</div>

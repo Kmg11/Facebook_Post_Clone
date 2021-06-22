@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import { SmallLoading } from "./../../Styles/Components/Components";
 
 import {
@@ -7,6 +7,11 @@ import {
 	mainColor,
 } from "./../../Styles/Variables/Variables";
 
+const PostKeyframe = keyframes`
+	from {opacity: 0; transform: translateY(50%);}
+	to {opacity: 1; transform: translateY(0);}
+`;
+
 export const PostStyle = styled.article`
 	position: relative;
 	background-color: ${elementsBG};
@@ -14,15 +19,7 @@ export const PostStyle = styled.article`
 	margin-bottom: 20px;
 	border-radius: 10px;
 	transition: all 0.3s linear;
-	opacity: 0;
-	transform: translateY(50%);
-
-	${(props) =>
-		props.show &&
-		css`
-			opacity: 1;
-			transform: translateY(0);
-		`}
+	animation: ${PostKeyframe} 0.3s linear;
 `;
 
 const TitleDesc = styled.p`
@@ -60,7 +57,6 @@ export const Buttons = styled.div`
 	justify-content: center;
 	align-items: center;
 	gap: 10px;
-	text-align: center;
 	padding-top: 20px;
 
 	@media (max-width: 650px) {
@@ -108,7 +104,12 @@ export const Button = styled.button`
 	gap: 10px;
 	justify-content: center;
 	align-items: center;
-	text-align: center;
+
+	@media (max-width: 650px) {
+		width: auto;
+		justify-content: start;
+	}
+
 	${(props) =>
 		props.counter &&
 		css`
@@ -124,12 +125,4 @@ export const Button = styled.button`
 				color: ${mainColor};
 			}
 		`}
-
-	:hover {
-		${ButtonIcon},
-		${ButtonText},
-		${ButtonCounter} {
-			color: ${mainColor};
-		}
-	}
 `;

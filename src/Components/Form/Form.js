@@ -41,6 +41,7 @@ export function Form() {
 					title,
 					description,
 					likes: 0,
+					like_status: false,
 				});
 			} else {
 				setButtonValue("Please Type Someting");

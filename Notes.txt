@@ -31,7 +31,10 @@
 - [ Done ] Fix Routes Problem With Single Post
 - [ Done ] Add setTimeout For useFetchPost For Testing
 - [ Done ] Make Loading For Deleting Posts
-- Like Functionalitys
+- [ Done ] Like Functionalitys
+- [ Done ] post animation using css animation
+- [ Done ] Make Loading Wrapper Global
+- [ Done ] if likes number more than 1000 add k
 - Post Image Upload & Upload With Fetch
 - User Bame & User Image
 - Medhad Dahwod Random Images With Diffrent Colors

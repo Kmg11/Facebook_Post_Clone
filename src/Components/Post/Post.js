@@ -1,6 +1,7 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useFetchDelete } from "../../Hooks/useFetch/useFetchDelete";
+import { useFetchPatch } from "../../Hooks/useFetch/useFetchPatch";
 import { BiLike } from "react-icons/bi";
 import { GoCommentDiscussion } from "react-icons/go";
 import { IoEyeOutline } from "react-icons/io5";
@@ -20,20 +21,36 @@ import {
 } from "./Style";
 
 export function Post({ single, response }) {
+	const { id, title, description, likes, like_status, getData } = response;
 	const history = useHistory();
-	const { id, title, description, likes, getData, success } = response;
 	const { deleteData, isPending } = useFetchDelete();
-	const [animatePost, setAnimatePost] = useState(false);
+	const { updateData } = useFetchPatch();
+	const [likeCounter, setLikeCounter] = useState(likes);
+	const [likeStatue, setLikeStatue] = useState(like_status);
 
-	useEffect(() => {
-		let time;
-		success && (time = setTimeout(() => setAnimatePost(true)));
-		return () => clearTimeout(time);
-	}, [success]);
+	const likePost = () => {
+		setLikeStatue((prevValue) => !prevValue);
+
+		if (likeStatue) {
+			setLikeCounter((prevValue) => prevValue - 1);
+
+			updateData(`http://localhost:8000/posts/${id}`, {
+				likes: likeCounter - 1,
+				like_status: false,
+			});
+		} else {
+			setLikeCounter((prevValue) => prevValue + 1);
+
+			updateData(`http://localhost:8000/posts/${id}`, {
+				likes: likeCounter + 1,
+				like_status: true,
+			});
+		}
+	};
 
 	return (
 		<Fragment>
-			<PostStyle show={animatePost ? true : false}>
+			<PostStyle>
 				{isPending && <Loading />}
 
 				{title && (
@@ -52,12 +69,24 @@ export function Post({ single, response }) {
 
 				<Buttons single={!single}>
 					<ButtonWrapper>
-						<Button counter>
+						<Button
+							counter
+							liked={likeStatue ? true : false}
+							onClick={likePost}
+						>
 							<ButtonIcon>
 								<BiLike />
 							</ButtonIcon>
 							<ButtonText>Like</ButtonText>
-							<ButtonCounter>{likes ? likes : 0}</ButtonCounter>
+							<ButtonCounter>
+								{likeCounter
+									? likeCounter >= 1000
+										? !single
+											? Math.round(likeCounter / 1000) + "K"
+											: (likeCounter / 1000).toFixed(2) + "K"
+										: likeCounter
+									: 0}
+							</ButtonCounter>
 						</Button>
 					</ButtonWrapper>
 
