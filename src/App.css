@@ -10,6 +10,15 @@ body {
 	padding-top: 130px;
 }
 
+::-webkit-scrollbar {
+	width: 10px;
+	background-color: #232323;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #444;
+}
+
 .container {
 	display: block;
 	position: relative;

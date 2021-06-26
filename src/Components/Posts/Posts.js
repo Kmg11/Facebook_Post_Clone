@@ -34,7 +34,6 @@ export function Posts() {
 								likes: likes,
 								like_status: like_status,
 								getData: getData,
-								success: success,
 							}}
 						></Post>
 					);

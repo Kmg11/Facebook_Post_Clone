@@ -35,19 +35,27 @@
 - [ Done ] post animation using css animation
 - [ Done ] Make Loading Wrapper Global
 - [ Done ] if likes number more than 1000 add k
-- Post Image Upload & Upload With Fetch
-- User Bame & User Image
-- Medhad Dahwod Random Images With Diffrent Colors
-- Add Search Bar
+- [ Done ] Improve Form Structure
+- [ Done ] Create Uplode Images
+- [ Done ] Prevent add none images files
+- [ Done ] Post Image Upload
+- [ Done ] Delete Uploded Images Function
+- [ Done ] Error when change page form to home
+- [ Done ] Handle Not Submit When Empty With Images
+- [ Done ] Send Data With Fetch
+- [ Done ] Space Checkinig
+- User Bame & User Image - Medhad Dahwod Random Images With Diffrent Colors
 - Infinity Scroll
-- Copy Post Link
+- Search For CreatObject Url and revoke and URL
+- Fetch Image
 
 - way to run json-server on github
 - Edit README FIle
 
 Targets:-
-1- Training On Fetch [ Get - Post - Delete ]
+1- Training On Fetch [ Get - Post - Delete - Patch ]
 2- Traninig On Styled Component
 3- Traning On Usable Components
 4- Improve Files Structure
 5- Traning On React Router
+6- String & Arrays Methods

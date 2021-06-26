@@ -47,7 +47,6 @@ export function SinglePost() {
 							likes: post.likes,
 							like_status: post.like_status,
 							getData: getData,
-							success: success,
 						}}
 					/>
 				)}

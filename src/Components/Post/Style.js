@@ -67,7 +67,7 @@ export const Buttons = styled.div`
 
 export const ButtonWrapper = styled.div``;
 
-export const ButtonIcon = styled.div`
+export const ButtonIcon = styled.span`
 	color: #999;
 	font-size: 1.5rem;
 	display: block;
@@ -78,7 +78,7 @@ export const ButtonIcon = styled.div`
 	}
 `;
 
-export const ButtonText = styled.div`
+export const ButtonText = styled.span`
 	font-size: 1rem;
 	color: #999;
 	font-weight: 600;
