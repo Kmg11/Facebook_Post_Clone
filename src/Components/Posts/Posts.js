@@ -22,18 +22,19 @@ export function Posts() {
 		posts && posts.length > 0 ? (
 			Array.from(posts)
 				.reverse()
-				.map(({ id, title, description, likes, like_status }) => {
+				.map(({ id, title, description, likes, like_status, images }) => {
 					return (
 						<Post
 							key={id}
 							single={false}
 							response={{
-								id: id,
-								title: title,
-								description: description,
-								likes: likes,
-								like_status: like_status,
-								getData: getData,
+								id,
+								title,
+								description,
+								likes,
+								like_status,
+								images,
+								getData,
 							}}
 						></Post>
 					);

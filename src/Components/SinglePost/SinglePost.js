@@ -41,12 +41,13 @@ export function SinglePost() {
 					<Post
 						single={true}
 						response={{
-							id: id,
+							id,
 							title: post.title,
 							description: post.description,
 							likes: post.likes,
 							like_status: post.like_status,
-							getData: getData,
+							images: post.images,
+							getData,
 						}}
 					/>
 				)}

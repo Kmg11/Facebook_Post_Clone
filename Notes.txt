@@ -44,10 +44,13 @@
 - [ Done ] Handle Not Submit When Empty With Images
 - [ Done ] Send Data With Fetch
 - [ Done ] Space Checkinig
+- [ Done ] Delete Problem When CLick On Image
+- [ Done ] Image Overlay
+- [ Done ] Grid Images
+- [ Done ] Improve Uploding Images
 - User Bame & User Image - Medhad Dahwod Random Images With Diffrent Colors
-- Infinity Scroll
-- Search For CreatObject Url and revoke and URL
-- Fetch Image
+- Infinity Scroll On HOme Page & Images In Post
+- Search For FileReader & FormData
 
 - way to run json-server on github
 - Edit README FIle

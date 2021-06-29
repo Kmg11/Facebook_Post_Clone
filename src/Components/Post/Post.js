@@ -18,13 +18,23 @@ import {
 	ButtonText,
 	ButtonCounter,
 	Loading,
+	ImagesPreview,
+	ImageContainer,
+	Image,
+	ImageOverlay,
 } from "./Style";
 
 export function Post({ single, response }) {
-	const { id, title, description, likes, like_status, getData } = response;
+	const { id, title, description, likes, like_status, getData, images } =
+		response;
+
+	const slicedImages =
+		images && (!single && images.length > 4 ? images.slice(0, 4) : images);
+
 	const history = useHistory();
 	const { deleteData, isPending } = useFetchDelete();
 	const { updateData } = useFetchPatch();
+
 	const [likeCounter, setLikeCounter] = useState(likes);
 	const [likeStatue, setLikeStatue] = useState(like_status);
 
@@ -65,6 +75,25 @@ export function Post({ single, response }) {
 							? description.slice(0, 150) + "..."
 							: description}
 					</Description>
+				)}
+
+				{slicedImages && (
+					<ImagesPreview imagesNumber={slicedImages.length} single={single}>
+						{slicedImages.map((image, index) => {
+							return (
+								<ImageContainer key={index}>
+									{index === 3 && images.length > 4 && !single && (
+										<ImageOverlay
+											to={`posts/${id}/${title && title.replaceAll(" ", "-")}`}
+										>
+											+{images.length - slicedImages.length}
+										</ImageOverlay>
+									)}
+									<Image src={image} alt={`Number ${index}`} />
+								</ImageContainer>
+							);
+						})}
+					</ImagesPreview>
 				)}
 
 				<Buttons single={!single}>
