@@ -1,13 +1,13 @@
 import { useFetchGet } from "../../Hooks/useFetch/useFetchGet";
+import { PostsList } from "./Posts.style";
 import { Post } from "./../Post/Post";
-import { PostsList } from "./Style";
 
 import {
 	LoadingWrapper,
 	Loading,
 	ErrorMessage,
 	EmptyMessage,
-} from "./../../Styles/Components/Components";
+} from "./../../Styles/Components/Components.style";
 
 export function Posts() {
 	const {

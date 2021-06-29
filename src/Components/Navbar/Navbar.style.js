@@ -5,7 +5,7 @@ import {
 	textColor,
 	elementsBG,
 	mainColor,
-} from "./../../Styles/Variables/Variables";
+} from "../../Styles/Variables/Variables.style";
 
 export const NavbarStyle = styled.nav`
 	position: fixed;

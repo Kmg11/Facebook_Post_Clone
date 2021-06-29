@@ -8,7 +8,7 @@ import {
 	LoadingWrapper,
 	Loading,
 	ErrorMessage,
-} from "./../../Styles/Components/Components";
+} from "./../../Styles/Components/Components.style";
 
 export function SinglePost() {
 	const { id } = useParams();

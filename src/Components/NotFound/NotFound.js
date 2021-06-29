@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { textColor, mainColor } from "./../../Styles/Variables/Variables";
+import { textColor, mainColor } from "./../../Styles/Variables/Variables.style";
 
 // Not Found Style
 const NotFoundStyle = styled.div`

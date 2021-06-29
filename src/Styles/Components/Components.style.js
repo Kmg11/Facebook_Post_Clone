@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import { mainColor, elementsBG } from "./../Variables/Variables";
+import { mainColor, elementsBG } from "./../Variables/Variables.style";
 
 const MessageAnimation = keyframes`
 	from {opacity: 0;}

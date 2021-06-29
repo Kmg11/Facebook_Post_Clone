@@ -1,4 +1,11 @@
-import { NavbarStyle, Row, Logo, List, Item, ItemLink as Link } from "./Style";
+import {
+	NavbarStyle,
+	Row,
+	Logo,
+	List,
+	Item,
+	ItemLink as Link,
+} from "./Navbar.style";
 
 export function Navbar() {
 	return (
@@ -9,7 +16,9 @@ export function Navbar() {
 
 					<List>
 						<Item>
-							<Link exact to="/">Home</Link>
+							<Link exact to="/">
+								Home
+							</Link>
 						</Item>
 						<Item>
 							<Link to="/create">Create Post</Link>

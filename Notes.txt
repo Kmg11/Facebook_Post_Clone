@@ -48,6 +48,9 @@
 - [ Done ] Image Overlay
 - [ Done ] Grid Images
 - [ Done ] Improve Uploding Images
+- [ Done ] Rebuild Big Components To Small Components
+			- [ Done ] Post
+			- [ Done ] Form
 - User Bame & User Image - Medhad Dahwod Random Images With Diffrent Colors
 - Infinity Scroll On HOme Page & Images In Post
 - Search For FileReader & FormData
@@ -61,4 +64,6 @@ Targets:-
 3- Traning On Usable Components
 4- Improve Files Structure
 5- Traning On React Router
-6- String & Arrays Methods
+6- Traning On Hooks [ useContext - useReduces - useEffect - useState - useRef ]
+7- Training On Custome Hooks
+8- String & Arrays Methods
