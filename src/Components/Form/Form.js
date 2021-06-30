@@ -1,17 +1,19 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useFetchPost } from "../../Hooks/useFetch/useFetchPost";
 import { useLocalStorage } from "../../Hooks/useLocalStorage/useLocalStorage";
-import { SubmitButton } from "./FormSubmitButton/FormSubmitButton";
+import { FormTitle } from "./FormTitle/FormTitle";
+import { FormDescription } from "./FormDescription/FormDescription";
 import { UploadImages } from "./FormUploadImages/FormUploadImages";
+import { SubmitButton } from "./FormSubmitButton/FormSubmitButton";
+import { SmallLoading } from "../../Styles/Components/Components.style";
+import { CreatePostContainer, H1, FormStyle } from "./Form.style";
 
-import {
-	CreatePostContainer,
-	H1,
-	FormStyle,
-	Input,
-	Textarea,
-} from "./Form.style";
+// Constants For Button Value
+const BTNPUBLISH = "Publish";
+const BTNPUBLISHED = "Published";
+const BTNERROR = "Error Please Try Again Later";
+const BTNLOADING = <SmallLoading />;
 
 export function Form() {
 	const history = useHistory();
@@ -19,61 +21,44 @@ export function Form() {
 	const [descriptionLS, setDescriptionLS] = useLocalStorage("description", "");
 	const { postData, isPending, success, error } = useFetchPost();
 
-	const [mounted, setMounted] = useState(false);
-	const [title, setTitle] = useState("");
-	const [description, setDescription] = useState("");
-	const [buttonValue, setButtonValue] = useState("Publish");
+	const [title, setTitle] = useState(titleLS);
+	const [description, setDescription] = useState(descriptionLS);
 	const [images, setImages] = useState([]);
+	const [buttonValue, setButtonValue] = useState(BTNPUBLISH);
 
 	// Timing Variable
 	const time = useRef();
 
-	// Set Values From Local Storage
-	useEffect(() => {
-		setMounted(true);
-
-		if (!mounted) {
-			titleLS !== "" && setTitle(titleLS);
-			descriptionLS !== "" && setDescription(descriptionLS);
-		}
-	}, [mounted, titleLS, descriptionLS]);
-
-	// Empty Inputs & Redirect
-	useEffect(() => {
-		if (success) {
-			setTitle("");
-			setTitleLS("");
-			setDescription("");
-			setDescriptionLS("");
-
-			// Redirect To The Home Page
-			if (title === "" && description === "") {
-				history.push("/");
-			}
-		}
-	}, [success, title, setTitleLS, description, setDescriptionLS, history]);
-
-	// Handle Submit Form
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
-		if (buttonValue === "Publish") {
+		if (buttonValue === BTNPUBLISH) {
 			if (
 				title.trim() !== "" ||
 				description.trim() !== "" ||
 				images.length > 0
 			) {
 				// Request Data
-				postData("http://localhost:8000/posts", {
-					title,
-					description,
-					likes: 0,
-					like_status: false,
-					images,
-				});
+				postData(
+					"http://localhost:8000/posts",
+					{
+						title,
+						description,
+						likes: 0,
+						like_status: false,
+						images,
+					},
+					() => {
+						setTitle("");
+						setTitleLS("");
+						setDescription("");
+						setDescriptionLS("");
+						history.push("/");
+					}
+				);
 			} else {
 				setButtonValue("Please Type Someting");
-				time.current = setTimeout(() => setButtonValue("Publish"), 3000);
+				time.current = setTimeout(() => setButtonValue(BTNPUBLISH), 3000);
 			}
 		}
 	};
@@ -84,25 +69,16 @@ export function Form() {
 				<H1>Create Post</H1>
 
 				<FormStyle onSubmit={handleSubmit}>
-					<Input
-						type="text"
-						placeholder="Post Title"
-						value={title}
-						autoFocus
-						onChange={(e) => {
-							setTitle(e.target.value);
-							setTitleLS(e.target.value);
-						}}
+					<FormTitle
+						title={title}
+						setTitle={setTitle}
+						setTitleLS={setTitleLS}
 					/>
 
-					<Textarea
-						as="textarea"
-						placeholder="Post Description"
-						value={description}
-						onChange={(e) => {
-							setDescription(e.target.value);
-							setDescriptionLS(e.target.value);
-						}}
+					<FormDescription
+						description={description}
+						setDescription={setDescription}
+						setDescriptionLS={setDescriptionLS}
 					/>
 
 					<UploadImages images={images} setImages={setImages} />
@@ -112,6 +88,12 @@ export function Form() {
 							isPending: isPending,
 							success: success,
 							error: error,
+						}}
+						buttonConstants={{
+							BTNPUBLISH: BTNPUBLISH,
+							BTNPUBLISHED: BTNPUBLISHED,
+							BTNERROR: BTNERROR,
+							BTNLOADING: BTNLOADING,
 						}}
 						buttonValue={buttonValue}
 						setButtonValue={setButtonValue}

@@ -6,7 +6,7 @@ export function useFetchPost() {
 	const [success, setSuccess] = useState(null);
 	const [abortCoun] = useState(new AbortController());
 
-	function postData(url, data) {
+	function postData(url, data, successCallback, errorCallback) {
 		setIsPending(true);
 
 		setTimeout(() => {
@@ -27,12 +27,16 @@ export function useFetchPost() {
 					setIsPending(false);
 					setSuccess(true);
 					setError(null);
+
+					if (successCallback) successCallback();
 				})
 				.catch((err) => {
 					if (err.name !== "AbortError") {
 						setIsPending(false);
 						setError(err.message);
 						setSuccess(null);
+
+						if (errorCallback) errorCallback();
 					}
 				});
 		}, 500);

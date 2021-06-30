@@ -53,7 +53,8 @@
 			- [ Done ] Form
 - User Bame & User Image - Medhad Dahwod Random Images With Diffrent Colors
 - Infinity Scroll On HOme Page & Images In Post
-- Search For FileReader & FormData
+- useReducer In LocalStorage
+- Comments
 
 - way to run json-server on github
 - Edit README FIle
@@ -64,6 +65,6 @@ Targets:-
 3- Traning On Usable Components
 4- Improve Files Structure
 5- Traning On React Router
-6- Traning On Hooks [ useContext - useReduces - useEffect - useState - useRef ]
+6- Traning On Hooks [ useContext - useReducer - useEffect - useState - useRef ]
 7- Training On Custome Hooks
 8- String & Arrays Methods

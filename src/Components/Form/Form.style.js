@@ -65,8 +65,3 @@ export const Input = styled.input`
 		border: 1px solid ${mainColor};
 	}
 `;
-
-export const Textarea = styled(Input)`
-	height: 200px;
-	resize: none;
-`;
