@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useFetchPost } from "../../Hooks/useFetch/useFetchPost";
 import { useLocalStorage } from "../../Hooks/useLocalStorage/useLocalStorage";
@@ -10,23 +10,19 @@ import { SmallLoading } from "../../Styles/Components/Components.style";
 import { CreatePostContainer, H1, FormStyle } from "./Form.style";
 
 const BTNPUBLISH = "Publish";
-const BTNPUBLISHED = "Published";
 const BTNERROR = "Error Please Try Again Later";
 const BTNTYPESOMETHING = "Please Type Someting";
 const BTNLOADING = <SmallLoading />;
 
 export function Form() {
 	const history = useHistory();
+	const { postData } = useFetchPost();
 	const [titleLS, setTitleLS] = useLocalStorage("title", "");
 	const [descriptionLS, setDescriptionLS] = useLocalStorage("description", "");
-	const { postData, isPending, success, error } = useFetchPost();
-
 	const [title, setTitle] = useState(titleLS);
 	const [description, setDescription] = useState(descriptionLS);
 	const [images, setImages] = useState([]);
 	const [buttonValue, setButtonValue] = useState(BTNPUBLISH);
-
-	const time = useRef(0);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -37,6 +33,8 @@ export function Form() {
 				description.trim() !== "" ||
 				images.length > 0
 			) {
+				setButtonValue(BTNLOADING);
+
 				postData(
 					"http://localhost:8000/posts",
 					{
@@ -52,14 +50,23 @@ export function Form() {
 						setDescription("");
 						setDescriptionLS("");
 						history.push("/");
+					},
+					() => {
+						setButtonValue(BTNERROR);
 					}
 				);
 			} else {
 				setButtonValue(BTNTYPESOMETHING);
-				// time.current = setTimeout(() => setButtonValue(BTNPUBLISH), 3000);
 			}
 		}
 	};
+
+	useEffect(() => {
+		let time = 0;
+		clearTimeout(time);
+		time = setTimeout(() => setButtonValue(BTNPUBLISH), 3000);
+		return () => clearTimeout(time);
+	}, [buttonValue]);
 
 	return (
 		<CreatePostContainer>
@@ -81,25 +88,7 @@ export function Form() {
 
 					<UploadImages images={images} setImages={setImages} />
 
-					<SubmitButton
-						response={{
-							isPending: isPending,
-							success: success,
-							error: error,
-						}}
-						buttonConstants={{
-							BTNPUBLISH,
-							BTNPUBLISHED,
-							BTNERROR,
-							BTNLOADING,
-							BTNTYPESOMETHING,
-						}}
-						buttonState={{
-							buttonValue,
-							setButtonValue,
-						}}
-						time={time}
-					/>
+					<SubmitButton BTNPUBLISH={BTNPUBLISH} buttonValue={buttonValue} />
 				</FormStyle>
 			</div>
 		</CreatePostContainer>
