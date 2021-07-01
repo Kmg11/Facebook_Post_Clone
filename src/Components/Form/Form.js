@@ -9,10 +9,10 @@ import { SubmitButton } from "./FormSubmitButton/FormSubmitButton";
 import { SmallLoading } from "../../Styles/Components/Components.style";
 import { CreatePostContainer, H1, FormStyle } from "./Form.style";
 
-// Constants For Button Value
 const BTNPUBLISH = "Publish";
 const BTNPUBLISHED = "Published";
 const BTNERROR = "Error Please Try Again Later";
+const BTNTYPESOMETHING = "Please Type Someting";
 const BTNLOADING = <SmallLoading />;
 
 export function Form() {
@@ -26,8 +26,7 @@ export function Form() {
 	const [images, setImages] = useState([]);
 	const [buttonValue, setButtonValue] = useState(BTNPUBLISH);
 
-	// Timing Variable
-	const time = useRef();
+	const time = useRef(0);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -38,7 +37,6 @@ export function Form() {
 				description.trim() !== "" ||
 				images.length > 0
 			) {
-				// Request Data
 				postData(
 					"http://localhost:8000/posts",
 					{
@@ -57,8 +55,8 @@ export function Form() {
 					}
 				);
 			} else {
-				setButtonValue("Please Type Someting");
-				time.current = setTimeout(() => setButtonValue(BTNPUBLISH), 3000);
+				setButtonValue(BTNTYPESOMETHING);
+				// time.current = setTimeout(() => setButtonValue(BTNPUBLISH), 3000);
 			}
 		}
 	};
@@ -90,13 +88,16 @@ export function Form() {
 							error: error,
 						}}
 						buttonConstants={{
-							BTNPUBLISH: BTNPUBLISH,
-							BTNPUBLISHED: BTNPUBLISHED,
-							BTNERROR: BTNERROR,
-							BTNLOADING: BTNLOADING,
+							BTNPUBLISH,
+							BTNPUBLISHED,
+							BTNERROR,
+							BTNLOADING,
+							BTNTYPESOMETHING,
 						}}
-						buttonValue={buttonValue}
-						setButtonValue={setButtonValue}
+						buttonState={{
+							buttonValue,
+							setButtonValue,
+						}}
 						time={time}
 					/>
 				</FormStyle>

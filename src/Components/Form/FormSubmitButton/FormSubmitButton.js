@@ -1,47 +1,36 @@
 import { useEffect } from "react";
 import { SubmitButtonStyle, SubmitButtonText } from "./FormSubmitButton.style";
 
-export function SubmitButton({
-	response,
-	time,
-	buttonValue,
-	setButtonValue,
-	buttonConstants,
-}) {
-	const { isPending, success, error } = response;
-
-	// Handle Submit Button Value
+export function SubmitButton({ response, buttonState, buttonConstants, time }) {
 	useEffect(() => {
-		if (isPending) {
-			setButtonValue(buttonConstants.BTNLOADING);
-		} else if (success === true) {
-			setButtonValue(buttonConstants.BTNPUBLISHED);
-			time.current = setTimeout(
-				() => setButtonValue(buttonConstants.BTNPUBLISH),
-				3000
-			);
-		} else if (error !== null) {
-			setButtonValue(buttonConstants.BTNERROR);
-			time.current = setTimeout(
-				() => setButtonValue(buttonConstants.BTNPUBLISH),
-				3000
-			);
-		} else {
-			setButtonValue(buttonConstants.BTNPUBLISH);
+		const { isPending, error, success } = response;
+		const { BTNPUBLISH, BTNPUBLISHED, BTNLOADING, BTNERROR, BTNTYPESOMETHING } =
+			buttonConstants;
+		const { buttonValue, setButtonValue } = buttonState;
+		const addTime = setTimeout(() => setButtonValue(BTNPUBLISH), 3000);
+
+		if (buttonValue !== BTNTYPESOMETHING) {
+			if (isPending) setButtonValue(BTNLOADING);
+			else if (success) setButtonValue(BTNPUBLISHED);
+			else if (error !== null) setButtonValue(BTNERROR);
+			else setButtonValue(BTNPUBLISH);
+
+			if (success || error !== null) time.current = addTime;
 		}
 
 		return () => {
+			setButtonValue("");
 			clearTimeout(time.current);
 		};
-	}, [isPending, success, error, setButtonValue, time, buttonConstants]);
+	}, [time, response, buttonState, buttonConstants]);
 
 	return (
 		<SubmitButtonStyle
 			as="button"
 			type="submit"
-			clickable={buttonValue !== buttonConstants.BTNPUBLISH && true}
+			clickable={buttonState.buttonValue !== buttonConstants.BTNPUBLISH && true}
 		>
-			<SubmitButtonText>{buttonValue}</SubmitButtonText>
+			<SubmitButtonText>{buttonState.buttonValue}</SubmitButtonText>
 		</SubmitButtonStyle>
 	);
 }
