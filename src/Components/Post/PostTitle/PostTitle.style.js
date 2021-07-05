@@ -4,8 +4,7 @@ import { PostText } from "./../Post.style";
 
 export const Title = styled(PostText)`
 	color: ${textColor};
-	border-bottom: 1px solid #555;
-	padding-bottom: 15px;
+	font-weight: 400;
 
 	@media (max-width: 650px) {
 		font-size: 1.2rem;

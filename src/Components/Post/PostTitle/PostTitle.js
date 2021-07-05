@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { PostContext } from "./../Post";
+import { PostContext } from "../Post";
 import { Title } from "./PostTitle.style";
 
 export function PostTitle() {

@@ -71,9 +71,9 @@ export function Form() {
 				postData(
 					"http://localhost:8000/posts",
 					{
-						userInfo: {
-							userName,
-							userImage,
+						user_info: {
+							user_name: userName,
+							user_image: userImage,
 						},
 						title,
 						description,

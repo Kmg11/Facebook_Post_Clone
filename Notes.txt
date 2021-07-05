@@ -56,8 +56,8 @@
 - [ Done ] Review Components useEffect proplem with fetch
 - [ Done ] Save Images In LocalStorage & Rename Some Variables
 - [ Done ] User Bame & User Image
+- [ Done ] Add User Info To Post To See User Name & Image
 - Post Date & Medhad Dahwod Random Images With Diffrent Colors
-- Edit Post To See User Name & Image & Date
 - Add Object For Post Info & Buttons Info
 - Comments
 - Infinity Scroll On HOme Page & Images In Post

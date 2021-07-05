@@ -19,7 +19,7 @@ export const PostContainer = styled.article`
 
 export const PostText = styled.p`
 	word-wrap: break-word;
-	line-height: 1.5;
+	line-height: 1.7;
 `;
 
 export const Loading = styled(SmallLoading)`

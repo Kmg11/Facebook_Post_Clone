@@ -8,8 +8,8 @@ export function PostDescription() {
 
 	return (
 		<Description>
-			{!single && description.length >= 150
-				? description.slice(0, 150) + "..."
+			{!single && description.length >= 200
+				? description.slice(0, 200) + "..."
 				: description}
 		</Description>
 	);
