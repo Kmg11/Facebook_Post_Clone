@@ -8,7 +8,7 @@ import {
 	ImagesPreview,
 } from "./FormUploadImages.style";
 
-export function UploadImages({ images, setImages }) {
+export function UploadImages({ images, setImages, setImagesLS }) {
 	const handleImages = async (e) => {
 		if (e.target.files) {
 			// This Code For Real Websites To Send Images To The Server
@@ -86,19 +86,22 @@ export function UploadImages({ images, setImages }) {
 			 * 		- But It's The Best Way For Preformance & Stabilty
 			 */
 
-			let newFiles = Array.from(e.target.files).map((image) =>
+			let newImages = Array.from(e.target.files).map((image) =>
 				image.type.indexOf("image") !== -1 ? `/images/${image.name}` : null
 			);
 
-			setImages((prevFiles) =>
-				prevFiles.concat(newFiles.filter((file) => file !== null))
-			);
+			const setImagesStates = (prevImages) =>
+				prevImages.concat(newImages.filter((image) => image !== null));
+
+			setImages(setImagesStates);
+			setImagesLS(setImagesStates);
 		}
 	};
 
 	const deleteImage = (index) => {
-		let newArray = images.filter((element, imgIndex) => imgIndex !== index);
-		setImages(newArray);
+		let newImages = images.filter((element, imgIndex) => imgIndex !== index);
+		setImages(newImages);
+		setImagesLS(newImages);
 	};
 
 	return (

@@ -54,11 +54,15 @@
 - [ Done ] Enhance Form Components
 - [ Done ] Make Functions Callback For Fetch
 - [ Done ] Review Components useEffect proplem with fetch
-- User Bame & User Image - Medhad Dahwod Random Images With Diffrent Colors
+- [ Done ] Save Images In LocalStorage & Rename Some Variables
+- [ Done ] User Bame & User Image
+- Post Date & Medhad Dahwod Random Images With Diffrent Colors
+- Edit Post To See User Name & Image & Date
+- Add Object For Post Info & Buttons Info
 - Comments
 - Infinity Scroll On HOme Page & Images In Post
-- useReducer In LocalStorage
 - SEO
+- improve style with Change Page Title With New Font
 
 - way to run json-server on github
 - Edit README FIle

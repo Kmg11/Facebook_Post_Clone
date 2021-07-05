@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
+
 import { useFetchPost } from "../../Hooks/useFetch/useFetchPost";
 import { useLocalStorage } from "../../Hooks/useLocalStorage/useLocalStorage";
+
+import { FormUserDetails } from "./FormUserDetails/FormUserDetails";
 import { FormTitle } from "./FormTitle/FormTitle";
 import { FormDescription } from "./FormDescription/FormDescription";
 import { UploadImages } from "./FormUploadImages/FormUploadImages";
 import { SubmitButton } from "./FormSubmitButton/FormSubmitButton";
+
 import { SmallLoading } from "../../Styles/Components/Components.style";
 import { CreatePostContainer, H1, FormStyle } from "./Form.style";
 
@@ -17,18 +21,47 @@ const BTNLOADING = <SmallLoading />;
 export function Form() {
 	const history = useHistory();
 	const { postData } = useFetchPost();
+
+	const [userImageLS, setUserImageLS] = useLocalStorage("user_image", "");
+	const [userImage, setUserImage] = useState(userImageLS);
+
+	const [userNameLS, setUserNameLS] = useLocalStorage("user_name", "");
+	const [userName, setUserName] = useState(userNameLS);
+
 	const [titleLS, setTitleLS] = useLocalStorage("title", "");
-	const [descriptionLS, setDescriptionLS] = useLocalStorage("description", "");
 	const [title, setTitle] = useState(titleLS);
+
+	const [descriptionLS, setDescriptionLS] = useLocalStorage("description", "");
 	const [description, setDescription] = useState(descriptionLS);
-	const [images, setImages] = useState([]);
+
+	const [imagesLS, setImagesLS] = useLocalStorage("images", []);
+	const [images, setImages] = useState(imagesLS);
+
 	const [buttonValue, setButtonValue] = useState(BTNPUBLISH);
+
+	const requestSuccessCallback = () => {
+		setUserImage("");
+		setUserImageLS("");
+		setUserName("");
+		setUserNameLS("");
+		setTitle("");
+		setTitleLS("");
+		setDescription("");
+		setDescriptionLS("");
+		setImages([]);
+		setImagesLS([]);
+		history.push("/");
+	};
+
+	const requestErrorCallback = () => setButtonValue(BTNERROR);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
 		if (buttonValue === BTNPUBLISH) {
 			if (
+				userImage.trim() !== "" ||
+				userName.trim() !== "" ||
 				title.trim() !== "" ||
 				description.trim() !== "" ||
 				images.length > 0
@@ -38,22 +71,18 @@ export function Form() {
 				postData(
 					"http://localhost:8000/posts",
 					{
+						userInfo: {
+							userName,
+							userImage,
+						},
 						title,
 						description,
 						likes: 0,
 						like_status: false,
 						images,
 					},
-					() => {
-						setTitle("");
-						setTitleLS("");
-						setDescription("");
-						setDescriptionLS("");
-						history.push("/");
-					},
-					() => {
-						setButtonValue(BTNERROR);
-					}
+					requestSuccessCallback,
+					requestErrorCallback
 				);
 			} else {
 				setButtonValue(BTNTYPESOMETHING);
@@ -74,6 +103,19 @@ export function Form() {
 				<H1>Create Post</H1>
 
 				<FormStyle onSubmit={handleSubmit}>
+					<FormUserDetails
+						userImageInfo={{
+							userImage: userImage,
+							setUserImage: setUserImage,
+							setUserImageLS: setUserImageLS,
+						}}
+						userNameInfo={{
+							userName: userName,
+							setUserName: setUserName,
+							setUserNameLS: setUserNameLS,
+						}}
+					/>
+
 					<FormTitle
 						title={title}
 						setTitle={setTitle}
@@ -86,7 +128,11 @@ export function Form() {
 						setDescriptionLS={setDescriptionLS}
 					/>
 
-					<UploadImages images={images} setImages={setImages} />
+					<UploadImages
+						images={images}
+						setImages={setImages}
+						setImagesLS={setImagesLS}
+					/>
 
 					<SubmitButton BTNPUBLISH={BTNPUBLISH} buttonValue={buttonValue} />
 				</FormStyle>

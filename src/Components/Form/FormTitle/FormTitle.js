@@ -7,7 +7,6 @@ export function FormTitle({ title, setTitle, setTitleLS }) {
 			placeholder="Post Title"
 			value={title}
 			name="title"
-			autoFocus
 			autoComplete="off"
 			onChange={(e) => {
 				setTitle(e.target.value);
