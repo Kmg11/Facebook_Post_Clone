@@ -28,7 +28,7 @@ export function useFetchPost() {
 					setSuccess(true);
 					setError(null);
 
-					if (successCallback) successCallback();
+					if (successCallback instanceof Function) successCallback();
 				})
 				.catch((err) => {
 					if (err.name !== "AbortError") {
@@ -36,7 +36,7 @@ export function useFetchPost() {
 						setError(err.message);
 						setSuccess(null);
 
-						if (errorCallback) errorCallback();
+						if (errorCallback instanceof Function) errorCallback();
 					}
 				});
 		}, 500);

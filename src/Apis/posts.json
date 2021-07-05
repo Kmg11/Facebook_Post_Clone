@@ -11,7 +11,7 @@
       "id": 2,
       "title": "JavaScript ES6",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam porro animi necessitatibus soluta quo dolorem facilis nostrum sequi veniam repellat dolores, debitis, asperiores eaque deserunt! Exercitationem veritatis quisquam nostrum similique.",
-      "likes": "2500",
+      "likes": 2500,
       "like_status": true
     },
     {
@@ -720,76 +720,12 @@
       "id": 77
     },
     {
-      "title": "asdsadasdsadda",
-      "description": "kdsadsadadsdsadad",
-      "likes": 0,
-      "like_status": false,
-      "images": [],
-      "id": 78
-    },
-    {
       "title": "",
       "description": "dsaddadsda",
       "likes": 0,
       "like_status": false,
       "images": [],
       "id": 79
-    },
-    {
-      "title": "",
-      "description": "dasdsadad",
-      "likes": 0,
-      "like_status": false,
-      "images": [],
-      "id": 80
-    },
-    {
-      "title": "",
-      "description": "55dsadadad",
-      "likes": 0,
-      "like_status": false,
-      "images": [],
-      "id": 81
-    },
-    {
-      "title": "",
-      "description": "dasdadsad",
-      "likes": 0,
-      "like_status": false,
-      "images": [],
-      "id": 82
-    },
-    {
-      "title": "",
-      "description": "Hello",
-      "likes": 0,
-      "like_status": false,
-      "images": [],
-      "id": 83
-    },
-    {
-      "title": "Kirolos",
-      "description": "dsadadadsdasdsadadss",
-      "likes": 0,
-      "like_status": false,
-      "images": [],
-      "id": 84
-    },
-    {
-      "title": "hi",
-      "description": "",
-      "likes": 0,
-      "like_status": false,
-      "images": [],
-      "id": 85
-    },
-    {
-      "title": "ahmed",
-      "description": "",
-      "likes": 0,
-      "like_status": false,
-      "images": [],
-      "id": 86
     }
   ]
 }

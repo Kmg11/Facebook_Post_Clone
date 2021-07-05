@@ -11,10 +11,10 @@ export const PostContext = createContext();
 export function Post({ single, response }) {
 	const { title, description, images } = response;
 	const { deleteData, isPending } = useFetchDelete();
-	const postData = { single, response, deleteData, isPending };
+	const postContextData = { single, response, deleteData };
 
 	return (
-		<PostContext.Provider value={postData}>
+		<PostContext.Provider value={postContextData}>
 			<PostContainer>
 				{isPending && <Loading />}
 

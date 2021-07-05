@@ -6,7 +6,7 @@ export function useFetchDelete() {
 	const [success, setSuccess] = useState(null);
 	const [abortCoun] = useState(new AbortController());
 
-	function deleteData(url, successFunction) {
+	function deleteData(url, successCallback, errorCallback) {
 		setIsPending(true);
 
 		fetch(url, {
@@ -22,13 +22,17 @@ export function useFetchDelete() {
 				setIsPending(false);
 				setSuccess(true);
 				setError(null);
-				successFunction();
+				successCallback();
+
+				if (successCallback instanceof Function) successCallback();
 			})
 			.catch((err) => {
 				if (err.name !== "AbortError") {
 					setIsPending(false);
 					setError(err.message);
 					setSuccess(null);
+
+					if (errorCallback instanceof Function) errorCallback();
 				}
 			});
 	}

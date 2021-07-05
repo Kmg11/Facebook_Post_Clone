@@ -52,12 +52,13 @@
 			- [ Done ] Post
 			- [ Done ] Form
 - [ Done ] Enhance Form Components
+- [ Done ] Make Functions Callback For Fetch
+- [ Done ] Review Components useEffect proplem with fetch
 - User Bame & User Image - Medhad Dahwod Random Images With Diffrent Colors
+- Comments
 - Infinity Scroll On HOme Page & Images In Post
 - useReducer In LocalStorage
-- Comments
-- Make Functions Callback For Fetch
-- Accessabilty
+- SEO
 
 - way to run json-server on github
 - Edit README FIle

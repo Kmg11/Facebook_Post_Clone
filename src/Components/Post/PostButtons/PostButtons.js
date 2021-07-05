@@ -18,12 +18,10 @@ import {
 } from "./PostButtons.style";
 
 export function PostButtons() {
-	const { single, response } = useContext(PostContext);
-	const { id, title, likes, like_status, getData, deleteData } = response;
-
 	const history = useHistory();
 	const { updateData } = useFetchPatch();
-
+	const { single, response, deleteData } = useContext(PostContext);
+	const { id, title, likes, like_status, getData } = response;
 	const [likeCounter, setLikeCounter] = useState(likes);
 	const [likeStatue, setLikeStatue] = useState(like_status);
 
@@ -31,19 +29,23 @@ export function PostButtons() {
 		setLikeStatue((prevValue) => !prevValue);
 
 		if (likeStatue) {
-			setLikeCounter((prevValue) => prevValue - 1);
-
-			updateData(`http://localhost:8000/posts/${id}`, {
-				likes: likeCounter - 1,
-				like_status: false,
-			});
+			updateData(
+				`http://localhost:8000/posts/${id}`,
+				{
+					likes: likeCounter - 1,
+					like_status: false,
+				},
+				() => setLikeCounter((prevValue) => prevValue - 1)
+			);
 		} else {
-			setLikeCounter((prevValue) => prevValue + 1);
-
-			updateData(`http://localhost:8000/posts/${id}`, {
-				likes: likeCounter + 1,
-				like_status: true,
-			});
+			updateData(
+				`http://localhost:8000/posts/${id}`,
+				{
+					likes: likeCounter + 1,
+					like_status: true,
+				},
+				() => setLikeCounter((prevValue) => prevValue + 1)
+			);
 		}
 	};
 
@@ -93,10 +95,9 @@ export function PostButtons() {
 			<ButtonWrapper>
 				<Button
 					onClick={() => {
-						deleteData(
-							`http://localhost:8000/posts/${id}`,
-							single ? () => history.push("/") : getData
-						);
+						deleteData(`http://localhost:8000/posts/${id}`, () => {
+							single ? history.push("/") : getData();
+						});
 					}}
 				>
 					<ButtonIcon>

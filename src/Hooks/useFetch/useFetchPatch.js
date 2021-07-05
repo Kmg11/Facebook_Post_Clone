@@ -6,7 +6,7 @@ export function useFetchPatch() {
 	const [success, setSuccess] = useState(null);
 	const [abortCoun] = useState(new AbortController());
 
-	function updateData(url, data) {
+	function updateData(url, data, successCallback, errorCallback) {
 		setIsPending(true);
 
 		fetch(url, {
@@ -26,12 +26,16 @@ export function useFetchPatch() {
 				setIsPending(false);
 				setSuccess(true);
 				setError(null);
+
+				if (successCallback instanceof Function) successCallback();
 			})
 			.catch((err) => {
 				if (err.name !== "AbortError") {
 					setIsPending(false);
 					setError(err.message);
 					setSuccess(null);
+
+					if (errorCallback instanceof Function) errorCallback();
 				}
 			});
 	}
