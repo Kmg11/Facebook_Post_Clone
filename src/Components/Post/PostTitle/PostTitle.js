@@ -3,8 +3,12 @@ import { PostContext } from "../Post";
 import { Title } from "./PostTitle.style";
 
 export function PostTitle() {
-	const { single, response } = useContext(PostContext);
-	const { title } = response;
+	const {
+		single,
+		response: {
+			post_info: { title },
+		},
+	} = useContext(PostContext);
 
 	return (
 		<Title as="h2">

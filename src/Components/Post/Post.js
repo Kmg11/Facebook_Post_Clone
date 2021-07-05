@@ -10,7 +10,7 @@ import { PostUserInfo } from "./PostUserInfo/PostUserInfo";
 export const PostContext = createContext();
 
 export function Post({ single, response }) {
-	const { user_info, title, description, images } = response;
+	const { user_info, post_info } = response;
 	const { deleteData, isPending } = useFetchDelete();
 	const postContextData = { single, response, deleteData };
 
@@ -21,11 +21,11 @@ export function Post({ single, response }) {
 
 				{user_info && <PostUserInfo />}
 
-				{title && <PostTitle />}
+				{post_info.title && <PostTitle />}
 
-				{description && <PostDescription />}
+				{post_info.description && <PostDescription />}
 
-				{images && <PostImages />}
+				{post_info.images && <PostImages />}
 
 				<PostButtons />
 			</PostContainer>

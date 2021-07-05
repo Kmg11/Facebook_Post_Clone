@@ -4,7 +4,7 @@ import { Description } from "./PostDescription.style";
 
 export function PostDescription() {
 	const { single, response } = useContext(PostContext);
-	const { description } = response;
+	const { description } = response.post_info;
 
 	return (
 		<Description>

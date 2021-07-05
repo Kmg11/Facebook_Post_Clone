@@ -75,11 +75,17 @@ export function Form() {
 							user_name: userName,
 							user_image: userImage,
 						},
-						title,
-						description,
-						likes: 0,
-						like_status: false,
-						images,
+						post_info: {
+							title,
+							description,
+							images,
+						},
+						buttons_info: {
+							like: {
+								likes: 0,
+								like_status: false,
+							},
+						},
 					},
 					requestSuccessCallback,
 					requestErrorCallback

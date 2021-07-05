@@ -10,7 +10,10 @@ import {
 
 export function PostImages() {
 	const { single, response } = useContext(PostContext);
-	const { id, title, images } = response;
+	const {
+		id,
+		post_info: { title, images },
+	} = response;
 
 	const slicedImages =
 		images && (!single && images.length > 4 ? images.slice(0, 4) : images);

@@ -43,11 +43,8 @@ export function SinglePost() {
 						response={{
 							id,
 							user_info: post.user_info,
-							title: post.title,
-							description: post.description,
-							likes: post.likes,
-							like_status: post.like_status,
-							images: post.images,
+							post_info: post.post_info,
+							buttons_info: post.buttons_info,
 							getData,
 						}}
 					/>

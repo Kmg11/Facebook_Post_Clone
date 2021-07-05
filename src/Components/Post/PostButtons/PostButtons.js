@@ -21,7 +21,16 @@ export function PostButtons() {
 	const history = useHistory();
 	const { updateData } = useFetchPatch();
 	const { single, response, deleteData } = useContext(PostContext);
-	const { id, title, likes, like_status, getData } = response;
+
+	const {
+		id,
+		post_info: { title },
+		buttons_info: {
+			like: { likes, like_status },
+		},
+		getData,
+	} = response;
+
 	const [likeCounter, setLikeCounter] = useState(likes);
 	const [likeStatue, setLikeStatue] = useState(like_status);
 
@@ -32,8 +41,12 @@ export function PostButtons() {
 			updateData(
 				`http://localhost:8000/posts/${id}`,
 				{
-					likes: likeCounter - 1,
-					like_status: false,
+					buttons_info: {
+						like: {
+							likes: likeCounter - 1,
+							like_status: false,
+						},
+					},
 				},
 				() => setLikeCounter((prevValue) => prevValue - 1)
 			);
@@ -41,8 +54,12 @@ export function PostButtons() {
 			updateData(
 				`http://localhost:8000/posts/${id}`,
 				{
-					likes: likeCounter + 1,
-					like_status: true,
+					buttons_info: {
+						like: {
+							likes: likeCounter + 1,
+							like_status: true,
+						},
+					},
 				},
 				() => setLikeCounter((prevValue) => prevValue + 1)
 			);

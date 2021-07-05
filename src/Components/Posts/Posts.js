@@ -22,34 +22,21 @@ export function Posts() {
 		posts && posts.length > 0 ? (
 			Array.from(posts)
 				.reverse()
-				.map(
-					({
-						id,
-						user_info,
-						title,
-						description,
-						likes,
-						like_status,
-						images,
-					}) => {
-						return (
-							<Post
-								key={id}
-								single={false}
-								response={{
-									id,
-									user_info,
-									title,
-									description,
-									likes,
-									like_status,
-									images,
-									getData,
-								}}
-							></Post>
-						);
-					}
-				)
+				.map(({ id, user_info, post_info, buttons_info }) => {
+					return (
+						<Post
+							key={id}
+							single={false}
+							response={{
+								id,
+								user_info,
+								post_info,
+								buttons_info,
+								getData,
+							}}
+						></Post>
+					);
+				})
 		) : (
 			<EmptyMessage>No Posts Added</EmptyMessage>
 		);

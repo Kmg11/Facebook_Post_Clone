@@ -57,8 +57,8 @@
 - [ Done ] Save Images In LocalStorage & Rename Some Variables
 - [ Done ] User Bame & User Image
 - [ Done ] Add User Info To Post To See User Name & Image
+- [ Done ] Add Object For Post Info & Buttons Info
 - Post Date & Medhad Dahwod Random Images With Diffrent Colors
-- Add Object For Post Info & Buttons Info
 - Comments
 - Infinity Scroll On HOme Page & Images In Post
 - SEO
