@@ -58,11 +58,15 @@
 - [ Done ] User Bame & User Image
 - [ Done ] Add User Info To Post To See User Name & Image
 - [ Done ] Add Object For Post Info & Buttons Info
-- Post Date & Medhad Dahwod Random Images With Diffrent Colors
+- [ Done ] Add Dynamic Avater If No User Image
+- [ Done ] Make Avater Colors Fixed
+- Post Date
 - Comments
 - Infinity Scroll On HOme Page & Images In Post
 - SEO
 - improve style with Change Page Title With New Font
+- Make API Link Global Using Context
+- Form Validation
 
 - way to run json-server on github
 - Edit README FIle
@@ -75,4 +79,30 @@ Targets:-
 5- Traning On React Router
 6- Traning On Hooks [ useContext - useReducer - useEffect - useState - useRef ]
 7- Training On Custome Hooks
-8- String & Arrays Methods
+8- String, Arrays & Numbers Methods
+9- Images Upload
+
+Project Features:-
+- Like Post
+- Comment Post
+- Delete Post
+- Single Page For Every Post
+- Create Post Form
+- User Image
+- User Name
+- Post Title
+- Post Description
+- Post Images
+- Good File Structure
+- Reusable Component
+- Responsive
+- Uploade Images
+- Reandom Images For User Without Images
+- Loading Handler
+- Error Handler
+- Simple Animation
+- Handle Requests With Custome React Hooks
+- Styled Components
+- Custome Hooks For Handle Repeated Parts In The App
+- 404 Page
+- Dynamic User Image

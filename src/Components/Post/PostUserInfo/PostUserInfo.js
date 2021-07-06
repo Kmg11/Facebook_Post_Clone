@@ -1,6 +1,12 @@
 import { useContext } from "react";
 import { PostContext } from "../Post";
-import { Name, UserInfo, ImageContainer, Image } from "./PostUserInfo.style";
+import {
+	Name,
+	UserInfo,
+	ImageContainer,
+	Image,
+	UserTextAvater,
+} from "./PostUserInfo.style";
 
 export function PostUserInfo() {
 	const { response } = useContext(PostContext);
@@ -8,16 +14,33 @@ export function PostUserInfo() {
 
 	return (
 		<UserInfo>
-			<UserImage userImage={user_image} />
+			<UserImage userImage={user_image} userName={user_name} />
 			<UserName userName={user_name} />
 		</UserInfo>
 	);
 }
 
-function UserImage({ userImage }) {
+function UserImage({ userImage, userName }) {
+	const isAvaterObject = userImage instanceof Object;
+	const { background_color, text_color } = userImage;
+
+	const initialsName = userName
+		.split(" ")
+		.slice(0, 2)
+		.map((name) => name[0])
+		.join(" ");
+
 	return (
-		<ImageContainer>
-			<Image src={userImage} alt="User Image" draggable="false" />
+		<ImageContainer backgroundColor={isAvaterObject && background_color}>
+			{isAvaterObject && (
+				<UserTextAvater textColor={isAvaterObject && text_color}>
+					{initialsName}
+				</UserTextAvater>
+			)}
+
+			{!isAvaterObject && (
+				<Image src={userImage} alt="User Image" draggable="false" />
+			)}
 		</ImageContainer>
 	);
 }

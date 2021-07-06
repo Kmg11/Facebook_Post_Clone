@@ -18,6 +18,15 @@ const BTNERROR = "Error Please Try Again Later";
 const BTNTYPESOMETHING = "Please Type Someting";
 const BTNLOADING = <SmallLoading />;
 
+function getAvater() {
+	const r = Math.round(Math.random() * 255);
+	const g = Math.round(Math.random() * 255);
+	const b = Math.round(Math.random() * 255);
+	const backgroundColor = `rgb(${r}, ${g}, ${b})`;
+	const textColor = r * 0.299 + g * 0.587 + b * 0.114 > 150 ? "#000" : "#FFF";
+	return { background_color: backgroundColor, text_color: textColor };
+}
+
 export function Form() {
 	const history = useHistory();
 	const { postData } = useFetchPost();
@@ -73,7 +82,7 @@ export function Form() {
 					{
 						user_info: {
 							user_name: userName,
-							user_image: userImage,
+							user_image: userImage === "" ? getAvater() : userImage,
 						},
 						post_info: {
 							title,
