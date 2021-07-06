@@ -3,8 +3,12 @@ import { PostContext } from "../Post";
 import { Description } from "./PostDescription.style";
 
 export function PostDescription() {
-	const { single, response } = useContext(PostContext);
-	const { description } = response.post_info;
+	const {
+		single,
+		response: {
+			post_info: { description },
+		},
+	} = useContext(PostContext);
 
 	return (
 		<Description>

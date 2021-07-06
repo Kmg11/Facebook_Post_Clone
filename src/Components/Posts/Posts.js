@@ -22,13 +22,14 @@ export function Posts() {
 		posts && posts.length > 0 ? (
 			Array.from(posts)
 				.reverse()
-				.map(({ id, user_info, post_info, buttons_info }) => {
+				.map(({ id, global_info, user_info, post_info, buttons_info }) => {
 					return (
 						<Post
 							key={id}
 							single={false}
 							response={{
 								id,
+								global_info,
 								user_info,
 								post_info,
 								buttons_info,

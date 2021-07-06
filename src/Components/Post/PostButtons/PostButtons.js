@@ -20,16 +20,18 @@ import {
 export function PostButtons() {
 	const history = useHistory();
 	const { updateData } = useFetchPatch();
-	const { single, response, deleteData } = useContext(PostContext);
-
 	const {
-		id,
-		post_info: { title },
-		buttons_info: {
-			like: { likes, like_status },
+		single,
+		response: {
+			id,
+			post_info: { title },
+			buttons_info: {
+				like: { likes, like_status },
+			},
+			getData,
 		},
-		getData,
-	} = response;
+		deleteData,
+	} = useContext(PostContext);
 
 	const [likeCounter, setLikeCounter] = useState(likes);
 	const [likeStatue, setLikeStatue] = useState(like_status);

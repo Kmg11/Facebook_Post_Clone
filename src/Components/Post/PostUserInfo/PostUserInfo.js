@@ -1,21 +1,28 @@
 import { useContext } from "react";
 import { PostContext } from "../Post";
+
 import {
 	Name,
 	UserInfo,
 	ImageContainer,
 	Image,
 	UserTextAvater,
+	NameDate,
+	Date,
 } from "./PostUserInfo.style";
 
 export function PostUserInfo() {
-	const { response } = useContext(PostContext);
-	const { user_name, user_image } = response.user_info;
+	const {
+		response: {
+			global_info,
+			user_info: { user_name, user_image },
+		},
+	} = useContext(PostContext);
 
 	return (
 		<UserInfo>
 			<UserImage userImage={user_image} userName={user_name} />
-			<UserName userName={user_name} />
+			<UserNameDate userName={user_name} globalInfo={global_info} />
 		</UserInfo>
 	);
 }
@@ -45,6 +52,11 @@ function UserImage({ userImage, userName }) {
 	);
 }
 
-function UserName({ userName }) {
-	return <Name>{userName}</Name>;
+function UserNameDate({ userName, globalInfo }) {
+	return (
+		<NameDate>
+			<Name>{userName}</Name>
+			<Date>{globalInfo.post_date}</Date>
+		</NameDate>
+	);
 }

@@ -74,9 +74,14 @@ export function Form() {
 			) {
 				setButtonValue(BTNLOADING);
 
+				const date = new Date().toDateString().split(" ").slice(1).join(" ");
+
 				postData(
 					"http://localhost:8000/posts",
 					{
+						global_info: {
+							post_date: date,
+						},
 						user_info: {
 							user_name: userName,
 							user_image: userImage === "" ? getAvater() : userImage,

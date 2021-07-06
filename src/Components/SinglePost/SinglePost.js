@@ -42,6 +42,7 @@ export function SinglePost() {
 						single={true}
 						response={{
 							id,
+							global_info: post.global_info,
 							user_info: post.user_info,
 							post_info: post.post_info,
 							buttons_info: post.buttons_info,

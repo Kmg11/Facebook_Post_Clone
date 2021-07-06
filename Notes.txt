@@ -60,7 +60,7 @@
 - [ Done ] Add Object For Post Info & Buttons Info
 - [ Done ] Add Dynamic Avater If No User Image
 - [ Done ] Make Avater Colors Fixed
-- Post Date
+- [ Done ] Post Date
 - Comments
 - Infinity Scroll On HOme Page & Images In Post
 - SEO

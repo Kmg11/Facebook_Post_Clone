@@ -11,8 +11,16 @@ export const UserInfo = styled.section`
 	padding-bottom: 15px;
 `;
 
+export const NameDate = styled.div``;
+
 export const Name = styled.h4`
 	color: ${textColor};
+`;
+
+export const Date = styled.p`
+	color: #999;
+	font-size: 12px;
+	margin-top: 6px;
 `;
 
 export const ImageContainer = styled.div`

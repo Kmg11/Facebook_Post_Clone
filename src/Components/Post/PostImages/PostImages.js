@@ -9,11 +9,13 @@ import {
 } from "./PostImages.style";
 
 export function PostImages() {
-	const { single, response } = useContext(PostContext);
 	const {
-		id,
-		post_info: { title, images },
-	} = response;
+		single,
+		response: {
+			id,
+			post_info: { title, images },
+		},
+	} = useContext(PostContext);
 
 	const slicedImages =
 		images && (!single && images.length > 4 ? images.slice(0, 4) : images);
