@@ -69,11 +69,8 @@ export function Form() {
 
 		if (buttonValue === BTNPUBLISH) {
 			if (
-				userImage.trim() !== "" ||
-				userName.trim() !== "" ||
-				title.trim() !== "" ||
-				description.trim() !== "" ||
-				images.length > 0
+				userName.trim() !== "" &&
+				(title.trim() !== "" || description.trim() !== "" || images.length > 0)
 			) {
 				setButtonValue(BTNLOADING);
 
