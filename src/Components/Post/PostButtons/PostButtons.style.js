@@ -20,7 +20,7 @@ export const ButtonWrapper = styled.div``;
 
 export const ButtonIcon = styled.span`
 	color: #999;
-	font-size: 1.5rem;
+	font-size: 1.4rem;
 	display: block;
 	transition: color 0.2s linear;
 
@@ -30,7 +30,7 @@ export const ButtonIcon = styled.span`
 `;
 
 export const ButtonText = styled.span`
-	font-size: 1rem;
+	font-size: .9rem;
 	color: #999;
 	font-weight: 600;
 	transition: color 0.2s linear;
@@ -38,9 +38,11 @@ export const ButtonText = styled.span`
 
 export const ButtonCounter = styled.span`
 	color: #999;
-	font-size: 1.1rem;
+	font-size: 1rem;
 	font-weight: 600;
 	transition: color 0.2s linear;
+	position: relative;
+	top: 1px;
 `;
 
 export const Button = styled.button`

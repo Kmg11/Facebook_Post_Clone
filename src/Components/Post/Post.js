@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 import { useFetchDelete } from "../../Hooks/useFetch/useFetchDelete";
 import { PostTitle } from "./PostTitle/PostTitle";
 import { PostDescription } from "./PostDescription/PostDescription";
@@ -6,6 +6,7 @@ import { PostImages } from "./PostImages/PostImages";
 import { PostButtons } from "./PostButtons/PostButtons";
 import { PostContainer, Loading } from "./Post.style";
 import { PostUserInfo } from "./PostUserInfo/PostUserInfo";
+import { PostComments } from "./PostComments/PostComments";
 
 export const PostContext = createContext();
 
@@ -13,6 +14,7 @@ export function Post({ single, response }) {
 	const { user_info, post_info } = response;
 	const { deleteData, isPending } = useFetchDelete();
 	const postContextData = { single, response, deleteData };
+	const [showComments, setShowComments] = useState(single ? true : false);
 
 	return (
 		<PostContext.Provider value={postContextData}>
@@ -27,7 +29,9 @@ export function Post({ single, response }) {
 
 				{post_info.images && <PostImages />}
 
-				<PostButtons />
+				<PostButtons setShowComments={setShowComments} />
+
+				{showComments && <PostComments />}
 			</PostContainer>
 		</PostContext.Provider>
 	);

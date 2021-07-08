@@ -1,130 +1,23 @@
-import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
-import { useHistory } from "react-router";
-import { useFetchPatch } from "../../../Hooks/useFetch/useFetchPatch";
-import { BiLike } from "react-icons/bi";
-import { GoCommentDiscussion } from "react-icons/go";
-import { IoEyeOutline } from "react-icons/io5";
-import { RiDeleteBin7Line } from "react-icons/ri";
+import { useContext } from "react";
 import { PostContext } from "../Post";
+import { LikeBtn } from "./Like/Like";
+import { CommentBtn } from "./Comment/Comment";
+import { MoreBtn } from "./More/More";
+import { DeleteBtn } from "./Delete/Delete";
+import { Buttons } from "./PostButtons.style";
 
-import {
-	Button,
-	ButtonCounter,
-	ButtonIcon,
-	Buttons,
-	ButtonText,
-	ButtonWrapper,
-} from "./PostButtons.style";
-
-export function PostButtons() {
-	const history = useHistory();
-	const { updateData } = useFetchPatch();
-	const {
-		single,
-		response: {
-			id,
-			post_info: { title },
-			buttons_info: {
-				like: { likes, like_status },
-			},
-			getData,
-		},
-		deleteData,
-	} = useContext(PostContext);
-
-	const [likeCounter, setLikeCounter] = useState(likes);
-	const [likeStatue, setLikeStatue] = useState(like_status);
-
-	const likePost = () => {
-		setLikeStatue((prevValue) => !prevValue);
-
-		if (likeStatue) {
-			updateData(
-				`http://localhost:8000/posts/${id}`,
-				{
-					buttons_info: {
-						like: {
-							likes: likeCounter - 1,
-							like_status: false,
-						},
-					},
-				},
-				() => setLikeCounter((prevValue) => prevValue - 1)
-			);
-		} else {
-			updateData(
-				`http://localhost:8000/posts/${id}`,
-				{
-					buttons_info: {
-						like: {
-							likes: likeCounter + 1,
-							like_status: true,
-						},
-					},
-				},
-				() => setLikeCounter((prevValue) => prevValue + 1)
-			);
-		}
-	};
+export function PostButtons({ setShowComments }) {
+	const { single } = useContext(PostContext);
 
 	return (
 		<Buttons single={!single}>
-			<ButtonWrapper>
-				<Button counter liked={likeStatue ? true : false} onClick={likePost}>
-					<ButtonIcon>
-						<BiLike />
-					</ButtonIcon>
-					<ButtonText>Like</ButtonText>
-					<ButtonCounter>
-						{likeCounter
-							? likeCounter >= 1000
-								? !single
-									? Math.round(likeCounter / 1000) + "K"
-									: (likeCounter / 1000).toFixed(2) + "K"
-								: likeCounter
-							: 0}
-					</ButtonCounter>
-				</Button>
-			</ButtonWrapper>
+			<LikeBtn />
 
-			<ButtonWrapper>
-				<Button>
-					<ButtonIcon>
-						<GoCommentDiscussion />
-					</ButtonIcon>
-					<ButtonText>Comment</ButtonText>
-				</Button>
-			</ButtonWrapper>
+			<CommentBtn setShowComments={setShowComments} />
 
-			{!single && (
-				<ButtonWrapper>
-					<Button
-						as={Link}
-						to={`posts/${id}/${title && title.replaceAll(" ", "-")}`}
-					>
-						<ButtonIcon>
-							<IoEyeOutline />
-						</ButtonIcon>
-						<ButtonText>More</ButtonText>
-					</Button>
-				</ButtonWrapper>
-			)}
+			{!single && <MoreBtn />}
 
-			<ButtonWrapper>
-				<Button
-					onClick={() => {
-						deleteData(`http://localhost:8000/posts/${id}`, () => {
-							single ? history.push("/") : getData();
-						});
-					}}
-				>
-					<ButtonIcon>
-						<RiDeleteBin7Line />
-					</ButtonIcon>
-					<ButtonText>Delete</ButtonText>
-				</Button>
-			</ButtonWrapper>
+			<DeleteBtn />
 		</Buttons>
 	);
 }

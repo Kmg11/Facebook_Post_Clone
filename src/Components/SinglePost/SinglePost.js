@@ -46,6 +46,7 @@ export function SinglePost() {
 							user_info: post.user_info,
 							post_info: post.post_info,
 							buttons_info: post.buttons_info,
+							comments: post.comments,
 							getData,
 						}}
 					/>
