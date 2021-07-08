@@ -67,16 +67,41 @@
 - [ Done ] Toggle Comments By Click Comment Button
 - [ Done ] Split Comments To Small Components
 - [ Done ] Create UserAvater Component
+- [ Done ] improve style [
+			[ Done ] Change Main Color,
+			[ Done ] Change Navbar Font,
+			[ Done ] Change Scrollbar Thumb Color
+			[ Done ] Change Selection Background Color	
+		]
+- [ Done ] Fix Add Post With Comments
 - Comments Counter Not Sync
 - Infinity Scroll On HOme Page & Images In Post
 - SEO
-- improve style with Change Page Title With New Font
 - Make API Link Global Using Context
 - Form Validation
 
 - way to run json-server on github
 - Edit README FIle
 - Make Repo Publich
+
+Tests In Video
+- Create Post
+- Like Post
+- Comment On Post
+- See Single Page For Post
+- Delete Post
+- Add Comment
+- Delete Comment
+- Users Without Images
+- Images In Post
+- How Comments Appear
+- Arabic Post
+- Loading
+- Errors
+- Empty Posts
+- Type Something Error In Create Post
+- How To Use This App
+- Features Of The App
 
 Targets:-
 1- Training On Fetch [ Get - Post - Delete - Patch ]

@@ -97,6 +97,7 @@ export function Form() {
 								like_status: false,
 							},
 						},
+						comments: [],
 					},
 					requestSuccessCallback,
 					requestErrorCallback

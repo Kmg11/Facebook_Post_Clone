@@ -35,6 +35,9 @@ export const Logo = styled(Link)`
 	color: ${mainColor};
 	font-size: 1.7rem;
 	text-decoration: none;
+	font-weight: bold;
+	font-family: 'Courgette', cursive;
+	letter-spacing: 1px;
 `;
 
 export const List = styled.ul`
@@ -51,6 +54,8 @@ export const ItemLink = styled(NavLink)`
 	margin: 10px 20px;
 	transition: all 0.2s linear;
 	font-weight: bold;
+	font-family: 'Courgette', cursive;
+	letter-spacing: 1px;
 
 	:hover,
 	&.active {

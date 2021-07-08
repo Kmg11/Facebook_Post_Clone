@@ -16,7 +16,11 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-	background-color: #444;
+	background-color: #1877f2;
+}
+
+::selection {
+	background-color: #1877f2;
 }
 
 .container {

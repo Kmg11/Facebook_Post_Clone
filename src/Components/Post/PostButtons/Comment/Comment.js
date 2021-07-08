@@ -30,7 +30,7 @@ export function CommentBtn({ setShowComments }) {
 
 				<ButtonText>Comment</ButtonText>
 
-				{commentsLength && (
+				{commentsLength !== 0 && (
 					<ButtonCounter>
 						{commentsLength >= 1000
 							? !single
