@@ -11,12 +11,8 @@ import {
 } from "../PostButtons.style";
 
 export function CommentBtn({ setShowComments }) {
-	const {
-		single,
-		response: { comments },
-	} = useContext(PostContext);
-
-	const commentsLength = comments.length;
+	const { single, commentsState } = useContext(PostContext);
+	const commentsLength = commentsState.commentsLength;
 
 	return (
 		<ButtonWrapper>

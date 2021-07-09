@@ -11,7 +11,7 @@ export const UserDetails = styled.section`
 	grid-template-columns: auto 1fr;
 	gap: 15px;
 	align-items: center;
-	margin-bottom: 15px;
+	margin-bottom: 20px;
 `;
 
 export const ImageContainer = styled.div`

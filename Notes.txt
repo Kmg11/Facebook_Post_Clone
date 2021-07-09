@@ -78,12 +78,18 @@
 - [ Done ] Accessibility - Change Post Username Tag From h4 to p
 - [ Done ] Best Practices - Add object-fit Proprety For User Image
 - [ Done ] Make API End Point Global Using Context
-- Infinity Scroll On HOme Page & Images In Post
-- Comments Counter Not Sync
+- [ Done ] Improve Like Functionality
+- [ Done ] Comments Counter Not Sync [ Sync When Click On The Button ]
+- [ Done ] Word-wrap css not-working
+- [ Done ] uploade input problem on firefox :before & :after removed
+- [ Done ] Firefox input type file cursore pointer problem
+- Infinity Scroll On Home Page & Images In Post
 
 - way to run json-server on github
 - Edit README FIle
 - Make Repo Publich
+- Change Folder Name
+- Copy Project To Web Design Folder
 
 Tests In Video
 - Create Post

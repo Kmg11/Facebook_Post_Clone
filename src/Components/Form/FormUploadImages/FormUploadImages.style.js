@@ -1,5 +1,29 @@
 import styled from "styled-components";
-import { elementsBG } from "../../../Styles/Variables/Variables.style";
+import { elementsBG, textColor } from "../../../Styles/Variables/Variables.style";
+
+export const InputHolder = styled.div`
+	position: relative;
+	width: 100%;
+	background-color: ${elementsBG};
+	margin-bottom: 20px;
+	border-radius: 10px;
+	overflow: hidden;
+	cursor: pointer;
+	z-index: 2;
+`;
+
+export const ImageHolderText = styled.p`
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 2;
+	display: grid;
+	place-items: center;
+	color: ${textColor};
+	cursor: pointer;
+`;
 
 export const ImagesPreview = styled.section`
 	padding: 10px;

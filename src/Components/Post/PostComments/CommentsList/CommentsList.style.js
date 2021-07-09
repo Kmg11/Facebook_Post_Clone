@@ -20,6 +20,8 @@ export const CommentText = styled.p`
 	padding: 15px;
 	padding-right: 50px;
 	line-height: 1.5;
+	display: inline-block;
+	word-break: break-word;
 	word-wrap: break-word;
 `;
 

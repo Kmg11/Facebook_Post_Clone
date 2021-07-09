@@ -18,6 +18,7 @@ export const PostContainer = styled.article`
 `;
 
 export const PostText = styled.p`
+	word-break: break-word;
 	word-wrap: break-word;
 	line-height: 1.7;
 `;

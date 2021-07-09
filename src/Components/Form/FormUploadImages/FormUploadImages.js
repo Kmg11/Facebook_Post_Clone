@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useRef } from "react";
 import { Input } from "../Form.style";
 
 import {
@@ -6,6 +6,8 @@ import {
 	Image,
 	ImageContainer,
 	ImagesPreview,
+	InputHolder,
+	ImageHolderText,
 } from "./FormUploadImages.style";
 
 export function UploadImages({ images, setImages, setImagesLS }) {
@@ -104,9 +106,14 @@ export function UploadImages({ images, setImages, setImagesLS }) {
 		setImagesLS(newImages);
 	};
 
+	const inputFile = useRef(0);
+
 	return (
 		<Fragment>
-			<Input type="file" multiple accept="image/*" onChange={handleImages} />
+			<InputHolder onClick={() => inputFile.current.click()}>
+				<Input type="file" multiple accept="image/*" onChange={handleImages} ref={inputFile} />
+				<ImageHolderText>Add Image</ImageHolderText>
+			</InputHolder>
 
 			<ImagesPreview haveImages={images.length > 0 ? true : false}>
 				{images &&

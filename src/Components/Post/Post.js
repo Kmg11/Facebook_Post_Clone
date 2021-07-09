@@ -11,10 +11,12 @@ import { PostComments } from "./PostComments/PostComments";
 export const PostContext = createContext();
 
 export function Post({ single, response }) {
-	const { user_info, post_info } = response;
+	const { user_info, post_info, comments } = response;
 	const { deleteData, isPending } = useFetchDelete();
-	const postContextData = { single, response, deleteData };
 	const [showComments, setShowComments] = useState(single ? true : false);
+	const [commentsLength, setCommentsLength] = useState(comments.length);
+	const commentsState = { commentsLength, setCommentsLength };
+	const postContextData = { single, response, deleteData, commentsState };
 
 	return (
 		<PostContext.Provider value={postContextData}>

@@ -27,39 +27,33 @@ export function LikeBtn() {
 	} = useContext(PostContext);
 
 	const [likeCounter, setLikeCounter] = useState(likes);
-	const [likeStatue, setLikeStatue] = useState(like_status);
+	const [likeStatus, setLikeStatus] = useState(like_status);
 
 	const likePost = () => {
-		setLikeStatue((prevValue) => !prevValue);
-
-		if (likeStatue) {
-			updateData(
-				`${API}/${id}`,
-				{
-					buttons_info: {
-						like: { likes: likeCounter - 1, like_status: false },
+		updateData(
+			`${API}/${id}`,
+			{
+				buttons_info: {
+					like: {
+						likes: like_status ? likeCounter - 1 : likeCounter + 1,
+						like_status: !like_status,
 					},
 				},
-				() => setLikeCounter((prevValue) => prevValue - 1)
-			);
-		} else {
-			updateData(
-				`${API}/${id}`,
-				{
-					buttons_info: {
-						like: { likes: likeCounter + 1, like_status: true },
-					},
-				},
-				() => setLikeCounter((prevValue) => prevValue + 1)
-			);
-		}
+			},
+			() => {
+				setLikeStatus((prevValue) => !prevValue);
+				setLikeCounter((prevValue) =>
+					likeStatus ? prevValue - 1 : prevValue + 1
+				);
+			}
+		);
 	};
 
 	return (
 		<ButtonWrapper>
 			<Button
 				counter={likeCounter ? true : false}
-				liked={likeStatue ? true : false}
+				liked={likeStatus ? true : false}
 				onClick={likePost}
 				title="Like Post"
 			>

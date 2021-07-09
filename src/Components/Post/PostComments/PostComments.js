@@ -12,10 +12,12 @@ export function PostComments() {
 
 	const {
 		response: { id },
+		commentsState,
 	} = useContext(PostContext);
 
 	const updateComments = (newComments, successCallback) => {
 		updateData(`${API}/${id}`, { comments: newComments }, successCallback);
+		commentsState.setCommentsLength(newComments.length);
 	};
 
 	return (
