@@ -1,6 +1,8 @@
+import { useContext } from "react";
 import { useFetchGet } from "../../Hooks/useFetch/useFetchGet";
 import { PostsList } from "./Posts.style";
 import { Post } from "./../Post/Post";
+import { APIContext } from "../../App.js";
 
 import {
 	LoadingWrapper,
@@ -16,7 +18,7 @@ export function Posts() {
 		isPending,
 		success,
 		error,
-	} = useFetchGet("http://localhost:8000/posts");
+	} = useFetchGet(useContext(APIContext));
 
 	const postsList =
 		posts && posts.length > 0 ? (

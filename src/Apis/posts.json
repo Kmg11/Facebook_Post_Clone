@@ -2544,32 +2544,11 @@
         }
       },
       "id": 95,
-      "comments": []
-    },
-    {
-      "global_info": {
-        "post_date": "Jul 06 2021"
-      },
-      "user_info": {
-        "user_name": "ddsads",
-        "user_image": {
-          "background_color": "rgb(181, 182, 242)",
-          "text_color": "#000"
+      "comments": [
+        {
+          "text": "dsadsad"
         }
-      },
-      "post_info": {
-        "title": "dsadsad",
-        "description": "",
-        "images": []
-      },
-      "buttons_info": {
-        "like": {
-          "likes": 1,
-          "like_status": true
-        }
-      },
-      "id": 96,
-      "comments": []
+      ]
     }
   ]
 }

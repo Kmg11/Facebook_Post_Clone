@@ -23,12 +23,13 @@ export function MoreBtn() {
 			<Button
 				as={Link}
 				to={`posts/${id}/${title && title.replaceAll(" ", "-")}`}
+				title="Continue Reading"
 			>
 				<ButtonIcon>
 					<IoEyeOutline />
 				</ButtonIcon>
 
-				<ButtonText>More</ButtonText>
+				<ButtonText>Continue</ButtonText>
 			</Button>
 		</ButtonWrapper>
 	);

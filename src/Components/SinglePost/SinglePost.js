@@ -1,8 +1,9 @@
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
 import { useParams } from "react-router";
 import { useDocumentTitle } from "../../Hooks/useDocumentTitle/useDocumentTitle";
 import { useFetchGet } from "../../Hooks/useFetch/useFetchGet";
 import { Post } from "./../Post/Post";
+import { APIContext } from "../../App";
 
 import {
 	LoadingWrapper,
@@ -19,7 +20,7 @@ export function SinglePost() {
 		isPending,
 		success,
 		error,
-	} = useFetchGet(`http://localhost:8000/posts/${id}`);
+	} = useFetchGet(`${useContext(APIContext)}/${id}`);
 
 	// This Code Here Because I Need To Set Document Title Using Post Title
 	useDocumentTitle(success && post.title);

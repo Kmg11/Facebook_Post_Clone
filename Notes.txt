@@ -74,11 +74,12 @@
 			[ Done ] Change Selection Background Color	
 		]
 - [ Done ] Fix Add Post With Comments
-- Comments Counter Not Sync
+- [ Done ] SEO - Fixed By Change Post Button More With Continue
+- [ Done ] Accessibility - Change Post Username Tag From h4 to p
+- [ Done ] Best Practices - Add object-fit Proprety For User Image
+- [ Done ] Make API End Point Global Using Context
 - Infinity Scroll On HOme Page & Images In Post
-- SEO
-- Make API Link Global Using Context
-- Form Validation
+- Comments Counter Not Sync
 
 - way to run json-server on github
 - Edit README FIle
@@ -114,6 +115,7 @@ Targets:-
 8- String, Arrays & Numbers Methods
 9- Images Upload
 10- Date Object
+11- Google Lighthouse [ Accessibility, SEO, Best Practices ]
 
 Project Features:-
 - Interaction With Posts By [ Like, Comment, Delete ]
@@ -132,3 +134,7 @@ Project Features:-
 - Styled Components For Hight Level Of Styling
 - Dynamic Avater Colors & Initials For Users Without Images
 - Limitation [ Only 4 Images Appear In The Main Page - Only One Comment Appear In Main Page ]
+- 100% SEO - Google Lighthouse
+- 97% Accessibility - Google Lighthouse
+- 100% Best Practices - Google Lighthouse
+- Infinity Scroll

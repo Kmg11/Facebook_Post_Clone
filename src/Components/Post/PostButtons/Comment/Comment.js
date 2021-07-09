@@ -23,6 +23,7 @@ export function CommentBtn({ setShowComments }) {
 			<Button
 				counter={commentsLength ? true : false}
 				onClick={() => !single && setShowComments((prev) => !prev)}
+				title="Comment On Post"
 			>
 				<ButtonIcon>
 					<GoCommentDiscussion />

@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
+import { APIContext } from "../../App";
 
 import { useFetchPost } from "../../Hooks/useFetch/useFetchPost";
 import { useLocalStorage } from "../../Hooks/useLocalStorage/useLocalStorage";
@@ -28,6 +29,8 @@ function getAvater() {
 }
 
 export function Form() {
+	const API = useContext(APIContext);
+
 	const history = useHistory();
 	const { postData } = useFetchPost();
 
@@ -77,7 +80,7 @@ export function Form() {
 				const date = new Date().toDateString().split(" ").slice(1).join(" ");
 
 				postData(
-					"http://localhost:8000/posts",
+					API,
 					{
 						global_info: {
 							post_date: date,

@@ -1,4 +1,7 @@
 import { useContext } from "react";
+import { useHistory } from "react-router-dom";
+import { APIContext } from "./../../../../App";
+import { RiDeleteBin7Line } from "react-icons/ri";
 import { PostContext } from "./../../Post";
 
 import {
@@ -7,11 +10,10 @@ import {
 	ButtonText,
 	ButtonWrapper,
 } from "../PostButtons.style";
-import { useHistory } from "react-router-dom";
-import { RiDeleteBin7Line } from "react-icons/ri";
 
 export function DeleteBtn() {
 	const history = useHistory();
+	const API = useContext(APIContext);
 
 	const {
 		single,
@@ -22,8 +24,9 @@ export function DeleteBtn() {
 	return (
 		<ButtonWrapper>
 			<Button
+				title="Delete Post"
 				onClick={() => {
-					deleteData(`http://localhost:8000/posts/${id}`, () => {
+					deleteData(`${API}/${id}`, () => {
 						single ? history.push("/") : getData();
 					});
 				}}

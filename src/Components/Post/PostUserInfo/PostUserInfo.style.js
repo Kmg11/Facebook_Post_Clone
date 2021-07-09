@@ -13,8 +13,9 @@ export const UserInfo = styled.section`
 
 export const NameDate = styled.div``;
 
-export const Name = styled.h4`
+export const Name = styled.p`
 	color: ${textColor};
+	font-size: 1.1rem;
 `;
 
 export const Date = styled.p`

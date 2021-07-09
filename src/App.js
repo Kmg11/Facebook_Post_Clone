@@ -4,10 +4,15 @@ import { CreatePostPage } from "./Pages/CreatePost/CreatePost";
 import { PostPage } from "./Pages/Post/Post";
 import { NotFoundPage } from "./Pages/NotFound/NotFound";
 import "./App.css";
+import { createContext } from "react";
+
+export const APIContext = createContext();
+
+const URL = `http://localhost:8000/posts`;
 
 function App() {
 	return (
-		<div className="App">
+		<APIContext.Provider value={URL}>
 			<Router>
 				<Switch>
 					<Route exact path="/" component={HomePage} />
@@ -17,7 +22,7 @@ function App() {
 					<Route path="*" component={NotFoundPage} />
 				</Switch>
 			</Router>
-		</div>
+		</APIContext.Provider>
 	);
 }
 

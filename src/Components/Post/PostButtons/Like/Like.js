@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import { APIContext } from "../../../../App";
 import { useFetchPatch } from "../../../../Hooks/useFetch/useFetchPatch";
 import { BiLike } from "react-icons/bi";
 import { PostContext } from "./../../Post";
@@ -12,6 +13,7 @@ import {
 } from "../PostButtons.style";
 
 export function LikeBtn() {
+	const API = useContext(APIContext);
 	const { updateData } = useFetchPatch();
 
 	const {
@@ -32,7 +34,7 @@ export function LikeBtn() {
 
 		if (likeStatue) {
 			updateData(
-				`http://localhost:8000/posts/${id}`,
+				`${API}/${id}`,
 				{
 					buttons_info: {
 						like: { likes: likeCounter - 1, like_status: false },
@@ -42,7 +44,7 @@ export function LikeBtn() {
 			);
 		} else {
 			updateData(
-				`http://localhost:8000/posts/${id}`,
+				`${API}/${id}`,
 				{
 					buttons_info: {
 						like: { likes: likeCounter + 1, like_status: true },
@@ -59,6 +61,7 @@ export function LikeBtn() {
 				counter={likeCounter ? true : false}
 				liked={likeStatue ? true : false}
 				onClick={likePost}
+				title="Like Post"
 			>
 				<ButtonIcon>
 					<BiLike />
