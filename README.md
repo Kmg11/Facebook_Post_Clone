@@ -1,3 +1,51 @@
+# Facebook Post Clone
+## Links
+- Live Preview - This Live Preview For Design Only Any Funtionality Not Working For Testing Features You Must Follow Next Steps
+- Notes File For Viewing How Devolpeing Proccess
+## How To Run This App
+- install json-server [ npm install -g json-server ]
+- Download Repo
+- [npm run mock]
+- or json-server --watch .\\src\\Apis\\posts.json --port 8000
+- npm start
+
+## Project Features
+- Interaction With Posts By [ Like, Comment, Delete ]
+- See In Posts [ User [Name, Image], Post [Date, Title, Description, Images]]
+- Form For Creating Posts Contain [ User [Name, Image], Post [Date, Title, Description, Images]]
+- Single Page For Every Post
+- Custome Hooks For Handle Repeated Parts In The App
+- 404 Page For Handling Wrong Routes
+- Good File Structure
+- Reusable Component
+- Responsive
+- Loading Handler
+- Error Handler
+- Simple Animation
+- Handle Requests With Custome React Hooks
+- Styled Components For Hight Level Of Styling
+- Dynamic Avater Colors & Initials For Users Without Images
+- Limitation [ Only 4 Images Appear In The Main Page - Only One Comment Appear In Main Page ]
+- 100% SEO - Google Lighthouse
+- 97% Accessibility - Google Lighthouse
+- 100% Best Practices - Google Lighthouse
+- Infinity Scroll
+
+## Why I Create This App . Targets Of This App
+- Training On Fetch [ Get - Post - Delete - Patch ]
+- Traninig On Styled Component
+- Traning On Usable Components
+- Improve Files Structure
+- Traning On React Router
+- Traning On Hooks [ useContext - useReducer - useEffect - useState - useRef ]
+- Training On Custome Hooks
+- String, Arrays & Numbers Methods
+- Images Upload
+- Date Object
+- Google Lighthouse [ Accessibility, SEO, Best Practices ]
+- Infinty Scroll
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

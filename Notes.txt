@@ -83,12 +83,11 @@
 - [ Done ] Word-wrap css not-working
 - [ Done ] uploade input problem on firefox :before & :after removed
 - [ Done ] Firefox input type file cursore pointer problem
+- [ Done ] Edit README FIle
 - Infinity Scroll On Home Page & Images In Post
 
 - way to run json-server on github
-- Edit README FIle
-- Make Repo Publich
-- Change Folder Name
+- Make Repo Public
 - Copy Project To Web Design Folder
 
 Tests In Video
@@ -122,6 +121,7 @@ Targets:-
 9- Images Upload
 10- Date Object
 11- Google Lighthouse [ Accessibility, SEO, Best Practices ]
+12- Infinty Scroll
 
 Project Features:-
 - Interaction With Posts By [ Like, Comment, Delete ]
