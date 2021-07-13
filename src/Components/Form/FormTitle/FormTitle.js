@@ -1,6 +1,13 @@
 import { Input } from "../Form.style";
 
-export function FormTitle({ title, setTitle, setTitleLS }) {
+export function FormTitle(props) {
+	const {
+		title,
+		setTitle,
+		setTitleLS,
+		focusValues: { titleRef, descriptionRef, handleFocus },
+	} = props;
+
 	return (
 		<Input
 			type="text"
@@ -8,6 +15,8 @@ export function FormTitle({ title, setTitle, setTitleLS }) {
 			value={title}
 			name="title"
 			autoComplete="off"
+			ref={titleRef}
+			onKeyUp={(e) => handleFocus(e, descriptionRef)}
 			onChange={(e) => {
 				setTitle(e.target.value);
 				setTitleLS(e.target.value);

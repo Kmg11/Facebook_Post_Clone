@@ -5,6 +5,7 @@ export function useFetchGet(url) {
 	const [isPending, setIsPending] = useState(false);
 	const [error, setError] = useState(null);
 	const [success, setSuccess] = useState(null);
+
 	const abortCount = useRef(new AbortController());
 	const abortCountCurrent = abortCount.current;
 

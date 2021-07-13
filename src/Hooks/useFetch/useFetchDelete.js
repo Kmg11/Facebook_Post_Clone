@@ -1,17 +1,19 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export function useFetchDelete() {
 	const [isPending, setIsPending] = useState(false);
 	const [error, setError] = useState(null);
 	const [success, setSuccess] = useState(null);
-	const [abortCoun] = useState(new AbortController());
+
+	const abortCount = useRef(new AbortController());
+	const abortCountCurrent = abortCount.current;
 
 	function deleteData(url, successCallback, errorCallback) {
 		setIsPending(true);
 
 		fetch(url, {
 			method: "DELETE",
-			signal: abortCoun.signal,
+			signal: abortCount.signal,
 		})
 			.then((response) => {
 				// Handling Errors From Server
@@ -38,8 +40,8 @@ export function useFetchDelete() {
 	}
 
 	useEffect(() => {
-		return () => abortCoun.abort();
-	}, [abortCoun]);
+		return () => abortCountCurrent.abort();
+	}, [abortCountCurrent]);
 
 	return { deleteData, isPending, error, success };
 }

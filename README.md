@@ -1,8 +1,12 @@
 # Facebook Post Clone
+
 ## Links
+
 - Live Preview - This Live Preview For Design Only Any Funtionality Not Working For Testing Features You Must Follow Next Steps
 - Notes File For Viewing How Devolpeing Proccess
+
 ## How To Run This App
+
 - First You Need To Install Nodejs
 - Second Make Sure That You Type Next Commands On Rerminal Open In Project Folder
 - Third Clone Repo
@@ -13,6 +17,7 @@
 - npm start
 
 ## Project Features
+
 - Interaction With Posts By [ Like, Comment, Delete ]
 - See In Posts [ User [Name, Image], Post [Date, Title, Description, Images]]
 - Form For Creating Posts Contain [ User [Name, Image], Post [Date, Title, Description, Images]]
@@ -33,8 +38,10 @@
 - 97% Accessibility - Google Lighthouse
 - 100% Best Practices - Google Lighthouse
 - Infinity Scroll
+- Change Focus In Form Inputs By Press Enter
 
 ## Why I Create This App . Targets Of This App
+
 - Training On Fetch [ Get - Post - Delete - Patch ]
 - Traninig On Styled Component
 - Traning On Usable Components
@@ -47,7 +54,6 @@
 - Date Object
 - Google Lighthouse [ Accessibility, SEO, Best Practices ]
 - Infinty Scroll
-
 
 # Getting Started with Create React App
 

@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export function useFetchPost() {
 	const [isPending, setIsPending] = useState(false);
 	const [error, setError] = useState(null);
 	const [success, setSuccess] = useState(null);
-	const [abortCoun] = useState(new AbortController());
+
+	const abortCount = useRef(new AbortController());
+	const abortCountCurrent = abortCount.current;
 
 	function postData(url, data, successCallback, errorCallback) {
 		setIsPending(true);
@@ -16,7 +18,7 @@ export function useFetchPost() {
 					"Content-Type": "application/json",
 				},
 				body: JSON.stringify(data),
-				signal: abortCoun.signal,
+				signal: abortCount.signal,
 			})
 				.then((response) => {
 					// Handling Errors From Server
@@ -43,8 +45,8 @@ export function useFetchPost() {
 	}
 
 	useEffect(() => {
-		return () => abortCoun.abort();
-	}, [abortCoun]);
+		return () => abortCountCurrent.abort();
+	}, [abortCountCurrent]);
 
 	return { postData, isPending, error, success };
 }

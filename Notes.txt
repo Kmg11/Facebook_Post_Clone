@@ -85,8 +85,8 @@
 - [ Done ] Firefox input type file cursore pointer problem
 - [ Done ] Edit README FIle
 - [ Done ] Infinity Scroll On Home Page
-- Change Focus On Form Inputs By Press Tab To Move to next input
-- change abortCountCurrent to ref
+- [ Done ] Improve useFetch Hooks By change abortCountCurrent to ref
+- [ Done ] Change Focus On Form Inputs By Press Tab To Move to next input
 - delete function not working & All Functions Depend On getData Function
 
 - way to run json-server on github
@@ -147,3 +147,4 @@ Project Features:-
 - 97% Accessibility - Google Lighthouse
 - 100% Best Practices - Google Lighthouse
 - Infinity Scroll
+- Change Focus In Form Inputs By Press Enter

@@ -47,7 +47,12 @@ function UserImage({ userImageInfo }) {
 }
 
 function UserName({ userNameInfo }) {
-	const { userName, setUserName, setUserNameLS } = userNameInfo;
+	const {
+		userName,
+		setUserName,
+		setUserNameLS,
+		focusValues: { userNameRef, titleRef, handleFocus },
+	} = userNameInfo;
 
 	return (
 		<NameInput
@@ -57,6 +62,8 @@ function UserName({ userNameInfo }) {
 			reqiured
 			autoFocus
 			autoComplete="off"
+			ref={userNameRef}
+			onKeyUp={(e) => handleFocus(e, titleRef)}
 			onChange={(e) => {
 				setUserName(e.target.value);
 				setUserNameLS(e.target.value);
