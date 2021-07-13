@@ -2,7 +2,7 @@ import { Fragment, useContext } from "react";
 import { useParams } from "react-router";
 import { useDocumentTitle } from "../../Hooks/useDocumentTitle/useDocumentTitle";
 import { useFetchGet } from "../../Hooks/useFetch/useFetchGet";
-import { Post } from "./../Post/Post";
+import { PostFR } from "./../Post/Post";
 import { APIContext } from "../../App";
 
 import {
@@ -39,7 +39,7 @@ export function SinglePost() {
 				)}
 
 				{success && post && (
-					<Post
+					<PostFR
 						single={true}
 						response={{
 							id,

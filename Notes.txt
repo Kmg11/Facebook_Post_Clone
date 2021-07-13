@@ -84,7 +84,10 @@
 - [ Done ] uploade input problem on firefox :before & :after removed
 - [ Done ] Firefox input type file cursore pointer problem
 - [ Done ] Edit README FIle
-- Infinity Scroll On Home Page & Images In Post
+- [ Done ] Infinity Scroll On Home Page
+- Change Focus On Form Inputs By Press Tab To Move to next input
+- change abortCountCurrent to ref
+- delete function not working & All Functions Depend On getData Function
 
 - way to run json-server on github
 - Make Repo Public

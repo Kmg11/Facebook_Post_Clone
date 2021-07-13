@@ -1,10 +1,10 @@
+import { createContext } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { HomePage } from "./Pages/Home/Home";
 import { CreatePostPage } from "./Pages/CreatePost/CreatePost";
 import { PostPage } from "./Pages/Post/Post";
 import { NotFoundPage } from "./Pages/NotFound/NotFound";
 import "./App.css";
-import { createContext } from "react";
 
 export const APIContext = createContext();
 

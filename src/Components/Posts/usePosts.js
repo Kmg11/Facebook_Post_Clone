@@ -1,18 +1,25 @@
-import { useCallback, useEffect, useState, useRef } from "react";
+import { useCallback, useEffect, useState, useContext, useRef } from "react";
+import { APIContext } from "../../App.js";
 
-export function useFetchGet(url) {
-	const [data, setData] = useState(null);
+export function usePosts(pageNumber) {
+	const API = useContext(APIContext);
+
+	const [posts, setPosts] = useState([]);
 	const [isPending, setIsPending] = useState(false);
 	const [error, setError] = useState(null);
 	const [success, setSuccess] = useState(null);
+	const [hasMore, setHasMore] = useState(false);
+
 	const abortCount = useRef(new AbortController());
 	const abortCountCurrent = abortCount.current;
 
-	const getData = useCallback(() => {
+	const getPosts = useCallback(() => {
 		setIsPending(true);
 
 		setTimeout(() => {
-			fetch(url, { signal: abortCount.signal })
+			fetch(`${API}?_sort=id&_order=desc&_page=${pageNumber}&_limit=10`, {
+				signal: abortCount.currentsignal,
+			})
 				.then((response) => {
 					// Handling Errors From Server
 					if (!response.ok) {
@@ -22,9 +29,10 @@ export function useFetchGet(url) {
 					return response.json();
 				})
 				.then((data) => {
-					setIsPending(false);
-					setData(data);
+					setPosts((prevPosts) => [...prevPosts, ...data]);
+					setHasMore(data.length);
 					setSuccess(true);
+					setIsPending(false);
 					setError(null);
 				})
 				.catch((err) => {
@@ -35,12 +43,12 @@ export function useFetchGet(url) {
 					}
 				});
 		}, 500);
-	}, [url, abortCount]);
+	}, [API, pageNumber, abortCount]);
 
 	useEffect(() => {
-		getData();
+		getPosts();
 		return () => abortCountCurrent.abort();
-	}, [abortCountCurrent, getData]);
+	}, [abortCount, getPosts, abortCountCurrent]);
 
-	return { getData, data, isPending, error, success };
+	return { getPosts, posts, isPending, error, success, hasMore };
 }

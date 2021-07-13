@@ -3,10 +3,13 @@
 - Live Preview - This Live Preview For Design Only Any Funtionality Not Working For Testing Features You Must Follow Next Steps
 - Notes File For Viewing How Devolpeing Proccess
 ## How To Run This App
+- First You Need To Install Nodejs
+- Second Make Sure That You Type Next Commands On Rerminal Open In Project Folder
+- Third Clone Repo
+- npm install
 - install json-server [ npm install -g json-server ]
-- Download Repo
 - [npm run mock]
-- or json-server --watch .\\src\\Apis\\posts.json --port 8000
+- or json-server --watch .\src\Apis\posts.json --port 8000
 - npm start
 
 ## Project Features

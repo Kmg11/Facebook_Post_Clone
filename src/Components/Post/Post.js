@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import React, { createContext, forwardRef, useState } from "react";
 import { useFetchDelete } from "../../Hooks/useFetch/useFetchDelete";
 import { PostTitle } from "./PostTitle/PostTitle";
 import { PostDescription } from "./PostDescription/PostDescription";
@@ -10,7 +10,7 @@ import { PostComments } from "./PostComments/PostComments";
 
 export const PostContext = createContext();
 
-export function Post({ single, response }) {
+export function Post({ single, response }, ref) {
 	const { user_info, post_info, comments } = response;
 	const { deleteData, isPending } = useFetchDelete();
 	const [showComments, setShowComments] = useState(single ? true : false);
@@ -20,7 +20,7 @@ export function Post({ single, response }) {
 
 	return (
 		<PostContext.Provider value={postContextData}>
-			<PostContainer>
+			<PostContainer ref={ref}>
 				{isPending && <Loading />}
 
 				{user_info && <PostUserInfo />}
@@ -38,3 +38,5 @@ export function Post({ single, response }) {
 		</PostContext.Provider>
 	);
 }
+
+export const PostFR = forwardRef(Post);

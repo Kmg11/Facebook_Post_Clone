@@ -1,8 +1,7 @@
-import { useContext } from "react";
-import { useFetchGet } from "../../Hooks/useFetch/useFetchGet";
+import { useCallback, useRef, useState } from "react";
 import { PostsList } from "./Posts.style";
-import { Post } from "./../Post/Post";
-import { APIContext } from "../../App.js";
+import { PostFR } from "./../Post/Post";
+import { usePosts } from "./usePosts";
 
 import {
 	LoadingWrapper,
@@ -12,44 +11,61 @@ import {
 } from "./../../Styles/Components/Components.style";
 
 export function Posts() {
+	// const API = useContext(APIContext);
+	const [pageNumber, setPageNumber] = useState(1);
+
 	const {
-		getData,
-		data: posts,
+		getPosts: getData,
+		posts,
 		isPending,
-		success,
 		error,
-	} = useFetchGet(useContext(APIContext));
+		success,
+		hasMore,
+	} = usePosts(pageNumber);
+
+	const observer = useRef();
+
+	const lastPost = useCallback(
+		(node) => {
+			if (isPending) return;
+			if (observer.current) observer.current.disconnect();
+
+			observer.current = new IntersectionObserver((entries) => {
+				if (entries[0].isIntersecting && hasMore) {
+					setPageNumber((prevPageNumber) => prevPageNumber + 1);
+				}
+			});
+
+			if (node) observer.current.observe(node);
+		},
+		[isPending, hasMore]
+	);
 
 	const postsList =
 		posts && posts.length > 0 ? (
-			Array.from(posts)
-				.reverse()
-				.map(
-					({
-						id,
-						global_info,
-						user_info,
-						post_info,
-						buttons_info,
-						comments,
-					}) => {
-						return (
-							<Post
-								key={id}
-								single={false}
-								response={{
-									id,
-									global_info,
-									user_info,
-									post_info,
-									buttons_info,
-									comments,
-									getData,
-								}}
-							></Post>
-						);
-					}
-				)
+			posts.map(
+				(
+					{ id, global_info, user_info, post_info, buttons_info, comments },
+					index
+				) => {
+					return (
+						<PostFR
+							key={id}
+							ref={posts.length === index + 1 ? lastPost : null}
+							single={false}
+							response={{
+								id,
+								global_info,
+								user_info,
+								post_info,
+								buttons_info,
+								comments,
+								getData,
+							}}
+						></PostFR>
+					);
+				}
+			)
 		) : (
 			<EmptyMessage>No Posts Added</EmptyMessage>
 		);
@@ -57,6 +73,8 @@ export function Posts() {
 	return (
 		<PostsList>
 			<div className="container">
+				{success && postsList}
+
 				{isPending && (
 					<LoadingWrapper>
 						<Loading />
@@ -64,8 +82,6 @@ export function Posts() {
 				)}
 
 				{error && <ErrorMessage>{error} Please Try Again Later</ErrorMessage>}
-
-				{success && postsList}
 			</div>
 		</PostsList>
 	);
