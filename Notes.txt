@@ -87,11 +87,21 @@
 - [ Done ] Infinity Scroll On Home Page
 - [ Done ] Improve useFetch Hooks By change abortCountCurrent to ref
 - [ Done ] Change Focus On Form Inputs By Press Tab To Move to next input
-- delete function not working & All Functions Depend On getData Function
+- [ Done ] Improve Data Send To Server By Remove Spaces Before & After Content
+- [ Done ] Change Post Loading Place
+- Half Fixed delete function not working & All Functions Depend On getData Function [
+	- [ Done ] take setPosts & slice Removed Item And Update The State Again
+	- [ Done ] Half Fixed - Sometime Delete Post But Not Update The Page
+	- [ Done ] The Problem Can Be In useFetchDelete Hook
+	- [ Done ] test posts Component
+	- All Functions Work Good But Sometimes Not Update The Page
+	- Make Delete Button In Single Page Only
+]
 
 - way to run json-server on github
 - Make Repo Public
 - Copy Project To Web Design Folder
+- Create A Build And Run Server On It - Make Options In Readme FIle For Trigger Project On Build Mode Or Dev Mode
 
 Tests In Video
 - Create Post
@@ -148,3 +158,4 @@ Project Features:-
 - 100% Best Practices - Google Lighthouse
 - Infinity Scroll
 - Change Focus In Form Inputs By Press Enter
+- Save Not Send Data In Form To Local Storage

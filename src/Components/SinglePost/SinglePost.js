@@ -15,7 +15,6 @@ export function SinglePost() {
 	const { id } = useParams();
 
 	const {
-		getData,
 		data: post,
 		isPending,
 		success,
@@ -48,7 +47,6 @@ export function SinglePost() {
 							post_info: post.post_info,
 							buttons_info: post.buttons_info,
 							comments: post.comments,
-							getData,
 						}}
 					/>
 				)}

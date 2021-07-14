@@ -13,7 +13,7 @@ export function usePosts(pageNumber) {
 	const abortCount = useRef(new AbortController());
 	const abortCountCurrent = abortCount.current;
 
-	const getPosts = useCallback(() => {
+	const getPosts = useCallback((emptyPosts) => {
 		setIsPending(true);
 
 		setTimeout(() => {
@@ -29,7 +29,12 @@ export function usePosts(pageNumber) {
 					return response.json();
 				})
 				.then((data) => {
-					setPosts((prevPosts) => [...prevPosts, ...data]);
+					!emptyPosts && setPosts((prevPosts) => [...prevPosts, ...data]);
+					emptyPosts && setPosts(prev => {
+						prev.splice((pageNumber - 1) * 10, 10, ...data)
+						return prev;
+					})
+
 					setHasMore(data.length);
 					setSuccess(true);
 					setIsPending(false);

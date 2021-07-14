@@ -22,7 +22,7 @@ export function Posts() {
 		success,
 		hasMore,
 	} = usePosts(pageNumber);
-
+	console.log(posts)
 	const observer = useRef();
 
 	const lastPost = useCallback(

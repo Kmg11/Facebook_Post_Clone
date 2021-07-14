@@ -26,7 +26,7 @@ export const PostText = styled.p`
 export const Loading = styled(SmallLoading)`
 	transform: none;
 	left: auto;
-	right: 0;
-	top: 0;
+	right: 20px;
+	top: 20px;
 	background-color: #232323;
 `;

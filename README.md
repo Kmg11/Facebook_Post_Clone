@@ -39,6 +39,7 @@
 - 100% Best Practices - Google Lighthouse
 - Infinity Scroll
 - Change Focus In Form Inputs By Press Enter
+- Save Not Send Data In Form To Local Storage
 
 ## Why I Create This App . Targets Of This App
 

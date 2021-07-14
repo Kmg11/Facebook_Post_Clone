@@ -27,7 +27,7 @@ export function DeleteBtn() {
 				title="Delete Post"
 				onClick={() => {
 					deleteData(`${API}/${id}`, () => {
-						single ? history.push("/") : getData();
+						single ? history.push("/") : getData(true);
 					});
 				}}
 			>

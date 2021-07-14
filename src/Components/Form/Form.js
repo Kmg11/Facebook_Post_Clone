@@ -86,12 +86,12 @@ export function Form() {
 							post_date: date,
 						},
 						user_info: {
-							user_name: userName,
-							user_image: userImage === "" ? getAvater() : userImage,
+							user_name: userName.trim(),
+							user_image: userImage.trim() === "" ? getAvater() : userImage.trim(),
 						},
 						post_info: {
-							title,
-							description,
+							title: title.trim(),
+							description: description.trim(),
 							images,
 						},
 						buttons_info: {
