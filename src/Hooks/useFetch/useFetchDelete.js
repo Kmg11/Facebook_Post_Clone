@@ -13,7 +13,7 @@ export function useFetchDelete() {
 
 		fetch(url, {
 			method: "DELETE",
-			signal: abortCount.signal,
+			signal: abortCountCurrent.signal,
 		})
 			.then((response) => {
 				// Handling Errors From Server

@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { APIContext } from "../../App";
 
@@ -118,15 +118,6 @@ export function Form() {
 		return () => clearTimeout(time);
 	}, [buttonValue]);
 
-	// Move Focus From Input To Next
-	const userNameRef = useRef();
-	const titleRef = useRef();
-	const descriptionRef = useRef();
-
-	const handleFocus = (event, focusOn) => {
-		if (event.key === "Enter") focusOn.current.focus();
-	};
-
 	return (
 		<CreatePostContainer>
 			<div className="container">
@@ -143,11 +134,6 @@ export function Form() {
 							userName,
 							setUserName,
 							setUserNameLS,
-							focusValues: {
-								userNameRef,
-								titleRef,
-								handleFocus,
-							},
 						}}
 					/>
 
@@ -155,20 +141,12 @@ export function Form() {
 						title={title}
 						setTitle={setTitle}
 						setTitleLS={setTitleLS}
-						focusValues={{
-							titleRef,
-							descriptionRef,
-							handleFocus,
-						}}
 					/>
 
 					<FormDescription
 						description={description}
 						setDescription={setDescription}
 						setDescriptionLS={setDescriptionLS}
-						focusValues={{
-							descriptionRef,
-						}}
 					/>
 
 					<UploadImages

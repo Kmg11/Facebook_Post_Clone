@@ -11,7 +11,6 @@ import {
 } from "./../../Styles/Components/Components.style";
 
 export function Posts() {
-	// const API = useContext(APIContext);
 	const [pageNumber, setPageNumber] = useState(1);
 
 	const {
@@ -22,7 +21,7 @@ export function Posts() {
 		success,
 		hasMore,
 	} = usePosts(pageNumber);
-	console.log(posts)
+
 	const observer = useRef();
 
 	const lastPost = useCallback(
@@ -31,7 +30,7 @@ export function Posts() {
 			if (observer.current) observer.current.disconnect();
 
 			observer.current = new IntersectionObserver((entries) => {
-				if (entries[0].isIntersecting && hasMore) {
+				if (entries[0].isIntersecting && hasMore >= 10) {
 					setPageNumber((prevPageNumber) => prevPageNumber + 1);
 				}
 			});
@@ -61,6 +60,7 @@ export function Posts() {
 								buttons_info,
 								comments,
 								getData,
+								index,
 							}}
 						></PostFR>
 					);

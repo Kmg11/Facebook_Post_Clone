@@ -89,18 +89,32 @@
 - [ Done ] Change Focus On Form Inputs By Press Tab To Move to next input
 - [ Done ] Improve Data Send To Server By Remove Spaces Before & After Content
 - [ Done ] Change Post Loading Place
-- Half Fixed delete function not working & All Functions Depend On getData Function [
+- [ Done ] Form Focus Functionlity submit data
+- [ Done Fixed By Change Macanisme ] Half Fixed delete function not working & All Functions Depend On getData Function [
 	- [ Done ] take setPosts & slice Removed Item And Update The State Again
 	- [ Done ] Half Fixed - Sometime Delete Post But Not Update The Page
 	- [ Done ] The Problem Can Be In useFetchDelete Hook
 	- [ Done ] test posts Component
-	- All Functions Work Good But Sometimes Not Update The Page
-	- Make Delete Button In Single Page Only
+	- [ Done ] Items That Take Ref Can't Deleted
+	- [ Done ] All Functions Work Good But Sometimes Not Update The Page
+	- [ Done ] Problem Come From getData Functionality - Delete Next Post Because Index Is Wrong
+	- [ Done ] The Problem In PageNumber
+	- [ Done ] Index Not Causing Any Problem But Id Cause Problems
+	- [ Done ] Problem Happen Because We Update Only 10 Items That Mean Id Will Repeat
+	- [ Done ] Working Good Most Time The Last Page Have Problem Test Page By Page
+	- [ Done ] Send State From Delete Button Function
+	- [ Done ] Redirect To The Same Page
+	- [ Done ] Last ELments Cannot Delete
+	- [ Done ] When Delete Something & Rerender 10 Items The First Item From Next Page Not Deleted So It Dublicate
 ]
+- Check Again & Try Delete Items From Uppear Page While Next Page Loaded [
+	- Problem Happen When Delete Item From First Page & Delete Last Item From Second Page
+]
+- abort ref make problem in posts page [ Add All Things In useEffect & Send Delete From State In Posts ]
+- About Page For Details About Me
 
-- way to run json-server on github
+- way to run json-server on github	
 - Make Repo Public
-- Copy Project To Web Design Folder
 - Create A Build And Run Server On It - Make Options In Readme FIle For Trigger Project On Build Mode Or Dev Mode
 
 Tests In Video

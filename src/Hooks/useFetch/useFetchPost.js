@@ -18,7 +18,7 @@ export function useFetchPost() {
 					"Content-Type": "application/json",
 				},
 				body: JSON.stringify(data),
-				signal: abortCount.signal,
+				signal: abortCountCurrent.signal,
 			})
 				.then((response) => {
 					// Handling Errors From Server

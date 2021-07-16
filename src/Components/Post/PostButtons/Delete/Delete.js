@@ -17,7 +17,7 @@ export function DeleteBtn() {
 
 	const {
 		single,
-		response: { id, getData },
+		response: { id, getData, index },
 		deleteData,
 	} = useContext(PostContext);
 
@@ -27,7 +27,7 @@ export function DeleteBtn() {
 				title="Delete Post"
 				onClick={() => {
 					deleteData(`${API}/${id}`, () => {
-						single ? history.push("/") : getData(true);
+						single ? history.push("/") : getData(true, index);
 					});
 				}}
 			>

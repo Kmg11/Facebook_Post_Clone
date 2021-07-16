@@ -13,7 +13,7 @@ export function useFetchGet(url) {
 		setIsPending(true);
 
 		setTimeout(() => {
-			fetch(url, { signal: abortCount.signal })
+			fetch(url, { signal: abortCountCurrent.signal })
 				.then((response) => {
 					// Handling Errors From Server
 					if (!response.ok) {
@@ -36,7 +36,7 @@ export function useFetchGet(url) {
 					}
 				});
 		}, 500);
-	}, [url, abortCount]);
+	}, [url, abortCountCurrent]);
 
 	useEffect(() => {
 		getData();

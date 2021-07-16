@@ -13,47 +13,63 @@ export function usePosts(pageNumber) {
 	const abortCount = useRef(new AbortController());
 	const abortCountCurrent = abortCount.current;
 
-	const getPosts = useCallback((emptyPosts) => {
-		setIsPending(true);
+	const getPosts = useCallback(
+		(deletePost, index) => {
+			let APIPage = deletePost ? Math.ceil(index / 10) : pageNumber;
 
-		setTimeout(() => {
-			fetch(`${API}?_sort=id&_order=desc&_page=${pageNumber}&_limit=10`, {
-				signal: abortCount.currentsignal,
-			})
-				.then((response) => {
-					// Handling Errors From Server
-					if (!response.ok) {
-						throw Error("Could Not Fetch The Data For That Resource");
-					}
+			setIsPending(true);
 
-					return response.json();
+			setTimeout(() => {
+				fetch(`${API}?_sort=id&_order=desc&_page=${APIPage}`, {
+					signal: abortCount.currentsignal,
 				})
-				.then((data) => {
-					!emptyPosts && setPosts((prevPosts) => [...prevPosts, ...data]);
-					emptyPosts && setPosts(prev => {
-						prev.splice((pageNumber - 1) * 10, 10, ...data)
-						return prev;
+					.then((response) => {
+						// Handling Errors From Server
+						if (!response.ok) {
+							throw Error("Could Not Fetch The Data For That Resource");
+						}
+
+						return response.json();
 					})
+					.then((data) => {
+						!deletePost && setPosts((prevPosts) => [...prevPosts, ...data]);
 
-					setHasMore(data.length);
-					setSuccess(true);
-					setIsPending(false);
-					setError(null);
-				})
-				.catch((err) => {
-					if (err.name !== "AbortError") {
+						deletePost &&
+							setPosts((prev) => {
+								let itemsBeforePage =
+									APIPage !== 1 ? prev.slice(0, (APIPage - 1) * 10) : [];
+
+								let startEnd = (pageNumber - APIPage) * 10;
+
+								let itemsAfterPage =
+									pageNumber > APIPage
+										? prev.slice(startEnd + 1, startEnd * 2)
+										: [];
+
+								return [...itemsBeforePage, ...data, ...itemsAfterPage];
+							});
+
+						setHasMore(data.length);
+						setSuccess(true);
 						setIsPending(false);
-						setError(err.message);
-						setSuccess(null);
-					}
-				});
-		}, 500);
-	}, [API, pageNumber, abortCount]);
+						setError(null);
+					})
+					.catch((err) => {
+						if (err.name !== "AbortError") {
+							setIsPending(false);
+							setError(err.message);
+							setSuccess(null);
+						}
+					});
+			}, 500);
+		},
+		[API, pageNumber, abortCount]
+	);
 
 	useEffect(() => {
 		getPosts();
 		return () => abortCountCurrent.abort();
-	}, [abortCount, getPosts, abortCountCurrent]);
+	}, [getPosts, abortCountCurrent]);
 
 	return { getPosts, posts, isPending, error, success, hasMore };
 }
