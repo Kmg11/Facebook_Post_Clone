@@ -159,31 +159,6 @@
         "post_date": "Jul 16 2021"
       },
       "user_info": {
-        "user_name": "Hello Again",
-        "user_image": {
-          "background_color": "rgb(212, 226, 102)",
-          "text_color": "#000"
-        }
-      },
-      "post_info": {
-        "title": "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
-        "description": "",
-        "images": []
-      },
-      "buttons_info": {
-        "like": {
-          "likes": 0,
-          "like_status": false
-        }
-      },
-      "comments": [],
-      "id": 9
-    },
-    {
-      "global_info": {
-        "post_date": "Jul 16 2021"
-      },
-      "user_info": {
         "user_name": "New User",
         "user_image": "/images/software_enginner_1-01.webp"
       },
@@ -385,31 +360,6 @@
       },
       "comments": [],
       "id": 18
-    },
-    {
-      "global_info": {
-        "post_date": "Jul 16 2021"
-      },
-      "user_info": {
-        "user_name": "sadsadsdsa",
-        "user_image": {
-          "background_color": "rgb(121, 42, 140)",
-          "text_color": "#FFF"
-        }
-      },
-      "post_info": {
-        "title": "dsadsadsa",
-        "description": "dsadsadsadsa",
-        "images": []
-      },
-      "buttons_info": {
-        "like": {
-          "likes": 0,
-          "like_status": false
-        }
-      },
-      "comments": [],
-      "id": 19
     },
     {
       "global_info": {

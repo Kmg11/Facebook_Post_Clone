@@ -15,7 +15,9 @@ export function usePosts(pageNumber) {
 
 	const getPosts = useCallback(
 		(deletePost, index) => {
-			let APIPage = deletePost ? Math.ceil(index / 10) : pageNumber;
+			let getPageOfIndex =
+				Math.ceil(index / 10) === 0 ? 1 : Math.ceil(index / 10);
+			let APIPage = deletePost ? getPageOfIndex : pageNumber;
 
 			setIsPending(true);
 
@@ -49,7 +51,7 @@ export function usePosts(pageNumber) {
 								return [...itemsBeforePage, ...data, ...itemsAfterPage];
 							});
 
-						setHasMore(data.length);
+						!deletePost && setHasMore(data.length);
 						setSuccess(true);
 						setIsPending(false);
 						setError(null);
