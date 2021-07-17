@@ -26,7 +26,11 @@
           "like_status": false
         }
       },
-      "comments": [],
+      "comments": [
+        {
+          "text": "New Comment"
+        }
+      ],
       "id": 1
     },
     {
@@ -332,8 +336,8 @@
       },
       "buttons_info": {
         "like": {
-          "likes": 0,
-          "like_status": false
+          "likes": 1,
+          "like_status": true
         }
       },
       "comments": [],
@@ -341,28 +345,32 @@
     },
     {
       "global_info": {
-        "post_date": "Jul 16 2021"
+        "post_date": "Jul 17 2021"
       },
       "user_info": {
-        "user_name": "sadwfehgthgt",
+        "user_name": "Kirolos Mahfouz",
         "user_image": {
-          "background_color": "rgb(41, 242, 208)",
-          "text_color": "#000"
+          "background_color": "rgb(4, 156, 67)",
+          "text_color": "#FFF"
         }
       },
       "post_info": {
-        "title": "dsadsadsad",
-        "description": "sdsadsadsadsa",
+        "title": "Test Title",
+        "description": "Test Description",
         "images": []
       },
       "buttons_info": {
         "like": {
-          "likes": 0,
-          "like_status": false
+          "likes": 1,
+          "like_status": true
         }
       },
-      "comments": [],
-      "id": 20
+      "comments": [
+        {
+          "text": "This Is Comment"
+        }
+      ],
+      "id": 19
     }
   ]
 }

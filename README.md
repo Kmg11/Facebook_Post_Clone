@@ -1,20 +1,24 @@
 # Facebook Post Clone
 
-## Links
-
-- Live Preview - This Live Preview For Design Only Any Funtionality Not Working For Testing Features You Must Follow Next Steps
-- Notes File For Viewing How Devolpeing Proccess
+This App Can't Be Deploy On Github Because It Use Json Server
 
 ## How To Run This App
 
-- First You Need To Install Nodejs
-- Second Make Sure That You Type Next Commands On Rerminal Open In Project Folder
-- Third Clone Repo
-- npm install
-- install json-server [ npm install -g json-server ]
+- Make Sure That You Type This Commands On The Correct Project Path
+
+- Install Node Js [ First Time Only ]
+- Download / Clone Repo
+- install json-server [ npm install -g json-server ] [ First Time Only ]
 - [npm run mock]
 - or json-server --watch .\src\Apis\posts.json --port 8000
+
+### Run On Devolper Mode
 - npm start
+
+### Run On Optimize Version
+- npm run build
+- npm install -g serve [ First Time Only ]
+- serve -s build
 
 ## Project Features
 
@@ -35,10 +39,10 @@
 - Dynamic Avater Colors & Initials For Users Without Images
 - Limitation [ Only 4 Images Appear In The Main Page - Only One Comment Appear In Main Page ]
 - 100% SEO - Google Lighthouse
-- 97% Accessibility - Google Lighthouse
 - 100% Best Practices - Google Lighthouse
+- 99% Preformance - Google Lighthouse
+- 97% Accessibility - Google Lighthouse
 - Infinity Scroll
-- Change Focus In Form Inputs By Press Enter
 - Save Not Send Data In Form To Local Storage
 
 ## Why I Create This App . Targets Of This App
