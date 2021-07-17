@@ -9,6 +9,7 @@
 - Make Sure That You Type This Commands On The Correct Project Path
 - Install Node Js [ First Time Only ]
 - Download / Clone Repo
+- npm install
 - install json-server [ npm install -g json-server ] [ First Time Only ]
 - [npm run mock]
 - or json-server --watch .\src\Apis\posts.json --port 8000
