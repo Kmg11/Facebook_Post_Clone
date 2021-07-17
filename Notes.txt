@@ -115,9 +115,6 @@
 - [ Can't Fix The Problem ]
 	- abort ref make problem in posts page [ Add All Things In useEffect & Send Delete From State In Posts ]
 
-- way to run json-server on github	
-- Create A Build And Run Server On It - Make Options In Readme FIle For Trigger Project On Build Mode Or Dev Mode
-
 Tests In Video
 - Create Post
 - Like Post
