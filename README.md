@@ -1,11 +1,12 @@
 # Facebook Post Clone
 
-This App Can't Be Deploy On Github Because It Use Json Server
+## Important Notes
+- This App Can't Be Deploy On Github Because It Use Json Server
+- If You Want To Add Image In Post All Images Must Be In public/images Folder
 
 ## How To Run This App
 
 - Make Sure That You Type This Commands On The Correct Project Path
-
 - Install Node Js [ First Time Only ]
 - Download / Clone Repo
 - install json-server [ npm install -g json-server ] [ First Time Only ]
