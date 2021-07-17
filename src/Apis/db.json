@@ -166,31 +166,6 @@
         "post_date": "Jul 16 2021"
       },
       "user_info": {
-        "user_name": "Dammy Text Again",
-        "user_image": {
-          "background_color": "rgb(44, 130, 53)",
-          "text_color": "#FFF"
-        }
-      },
-      "post_info": {
-        "title": "ffff New",
-        "description": "dsdasdsadad sddad sadsaa  sada",
-        "images": []
-      },
-      "buttons_info": {
-        "like": {
-          "likes": 0,
-          "like_status": false
-        }
-      },
-      "comments": [],
-      "id": 11
-    },
-    {
-      "global_info": {
-        "post_date": "Jul 16 2021"
-      },
-      "user_info": {
         "user_name": "Kirolos Mahfouz",
         "user_image": {
           "background_color": "rgb(123, 185, 8)",
@@ -274,55 +249,6 @@
         "post_date": "Jul 16 2021"
       },
       "user_info": {
-        "user_name": "sadsdsadsa",
-        "user_image": {
-          "background_color": "rgb(198, 168, 112)",
-          "text_color": "#000"
-        }
-      },
-      "post_info": {
-        "title": "dsdsadsad",
-        "description": "dasdsadsadsadsadsa",
-        "images": [
-          "/images/wallpaperflare.com_wallpaper.jpg"
-        ]
-      },
-      "buttons_info": {
-        "like": {
-          "likes": 0,
-          "like_status": false
-        }
-      },
-      "comments": [],
-      "id": 16
-    },
-    {
-      "global_info": {
-        "post_date": "Jul 16 2021"
-      },
-      "user_info": {
-        "user_name": "dsad",
-        "user_image": "/images/500_F_119931048_F0fHuMn1qEL0WZbtup5Sa4hKt7Pf7DID.jpg"
-      },
-      "post_info": {
-        "title": "dsadsad",
-        "description": "dsadd",
-        "images": []
-      },
-      "buttons_info": {
-        "like": {
-          "likes": 0,
-          "like_status": false
-        }
-      },
-      "comments": [],
-      "id": 17
-    },
-    {
-      "global_info": {
-        "post_date": "Jul 16 2021"
-      },
-      "user_info": {
         "user_name": "Javscript Is The Best Way",
         "user_image": {
           "background_color": "rgb(20, 98, 9)",
@@ -348,29 +274,173 @@
         "post_date": "Jul 17 2021"
       },
       "user_info": {
-        "user_name": "Kirolos Mahfouz",
-        "user_image": {
-          "background_color": "rgb(4, 156, 67)",
-          "text_color": "#FFF"
-        }
+        "user_name": "Ahmed Helmy",
+        "user_image": "/images/CM6PQNFF_400x400.jpg"
       },
       "post_info": {
-        "title": "Test Title",
-        "description": "Test Description",
-        "images": []
+        "title": "Ahmed Helmy Post",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        "images": [
+          "/images/Ahmed-Helmy.jpg"
+        ]
       },
       "buttons_info": {
         "like": {
-          "likes": 1,
-          "like_status": true
+          "likes": 0,
+          "like_status": false
+        }
+      },
+      "comments": [],
+      "id": 19
+    },
+    {
+      "global_info": {
+        "post_date": "Jul 17 2021"
+      },
+      "user_info": {
+        "user_name": "Elone Musk",
+        "user_image": "/images/GettyImages-1215628293.jpg"
+      },
+      "post_info": {
+        "title": "Elone Musk New Post For Showing Information About Him",
+        "description": "Musk made headlines in May 2012, when SpaceX launched a rocket that would send the first commercial vehicle to the International Space Station. He bolstered his portfolio with the purchase of SolarCity in 2016 and cemented his standing as a leader of industry by taking on an advisory role in the early days of President Donald Trump's administration.\n\nMusk made headlines in May 2012, when SpaceX launched a rocket that would send the first commercial vehicle to the International Space Station. He bolstered his portfolio with the purchase of SolarCity in 2016 and cemented his standing as a leader of industry by taking on an advisory role in the early days of President Donald Trump's administration.",
+        "images": [
+          "/images/ap21114783083708_custom-75a1c4f0411b4d20016eb8696f1a4ea2519f599d-s800-c85.jpg"
+        ]
+      },
+      "buttons_info": {
+        "like": {
+          "likes": 0,
+          "like_status": false
+        }
+      },
+      "comments": [],
+      "id": 20
+    },
+    {
+      "global_info": {
+        "post_date": "Jul 17 2021"
+      },
+      "user_info": {
+        "user_name": "Jeff Bezos",
+        "user_image": "/images/20150224165308-jeff-bezos-amazon.jpeg"
+      },
+      "post_info": {
+        "title": "Jeff Bezos Post",
+        "description": "Born in Albuquerque and raised in Houston and later Miami, Bezos graduated from Princeton University in 1986. He holds a degree in electrical engineering and computer science. He worked on Wall Street in a variety of related fields from 1986 to early 1994. Bezos founded Amazon in late 1994, on a cross-country road trip from New York City to Seattle. The company began as an online bookstore and has since expanded to a wide variety of other e-commerce products and services, including video and audio streaming, cloud computing, and artificial intelligence. It is currently the world's largest online sales company, the largest Internet company by revenue, and the world's largest provider of virtual assistants[6] and cloud infrastructure services through its Amazon Web Services branch.",
+        "images": [
+          "/images/64b9dbb4c4a14c682a9d7ca38a46021e6fae9fcd.webp",
+          "/images/3290.jpg",
+          "/images/20150224165308-jeff-bezos-amazon.jpeg",
+          "/images/download.jfif"
+        ]
+      },
+      "buttons_info": {
+        "like": {
+          "likes": 0,
+          "like_status": false
+        }
+      },
+      "comments": [],
+      "id": 21
+    },
+    {
+      "global_info": {
+        "post_date": "Jul 17 2021"
+      },
+      "user_info": {
+        "user_name": "Bill Gates",
+        "user_image": "/images/_118547313_gettyimages-1174968719.jpg"
+      },
+      "post_info": {
+        "title": "Bill Gates Post",
+        "description": "Gates was born and raised in Seattle, Washington. In 1975, he and Allen founded Microsoft in Albuquerque, New Mexico. It became the world's largest personal computer software company.[6][a] Gates led the company as chairman and CEO until stepping down as CEO in January 2000, succeeded by Steve Ballmer, but he remained chairman of the board of directors and became chief software architect.[9] During the late 1990s, he was criticized for his business tactics, which have been considered anti-competitive. This opinion has been upheld by numerous court rulings.[10] In June 2008, Gates transitioned to a part-time role at Microsoft and full-time work at the Bill & Melinda Gates Foundation, the private charitable foundation he and his wife, Melinda Gates, established in 2000.[11] He stepped down as chairman of the board of Microsoft in February 2014 and assumed a new post as technology adviser to support the newly appointed CEO Satya Nadella.[12] In March 2020, Gates left his board positions at Microsoft and Berkshire Hathaway to focus on his philanthropic efforts including climate change, global health and development, and education.[13]\n\nGates was born and raised in Seattle, Washington. In 1975, he and Allen founded Microsoft in Albuquerque, New Mexico. It became the world's largest personal computer software company.[6][a] Gates led the company as chairman and CEO until stepping down as CEO in January 2000, succeeded by Steve Ballmer, but he remained chairman of the board of directors and became chief software architect.[9] During the late 1990s, he was criticized for his business tactics, which have been considered anti-competitive. This opinion has been upheld by numerous court rulings.[10] In June 2008, Gates transitioned to a part-time role at Microsoft and full-time work at the Bill & Melinda Gates Foundation, the private charitable foundation he and his wife, Melinda Gates, established in 2000.[11] He stepped down as chairman of the board of Microsoft in February 2014 and assumed a new post as technology adviser to support the newly appointed CEO Satya Nadella.[12] In March 2020, Gates left his board positions at Microsoft and Berkshire Hathaway to focus on his philanthropic efforts including climate change, global health and development, and education.[13]",
+        "images": [
+          "/images/_118547313_gettyimages-1174968719.jpg",
+          "/images/64b9dbb4c4a14c682a9d7ca38a46021e6fae9fcd.webp",
+          "/images/120421.jpg",
+          "/images/106635601-1595938600994SG-Gates-072820-04-jpg.jfif",
+          "/images/download (1).jfif"
+        ]
+      },
+      "buttons_info": {
+        "like": {
+          "likes": 0,
+          "like_status": false
         }
       },
       "comments": [
         {
-          "text": "This Is Comment"
+          "text": "New Comment"
+        },
+        {
+          "text": "Bill Gates Comment"
         }
       ],
-      "id": 19
+      "id": 22
+    },
+    {
+      "global_info": {
+        "post_date": "Jul 17 2021"
+      },
+      "user_info": {
+        "user_name": "New User",
+        "user_image": {
+          "background_color": "rgb(248, 160, 200)",
+          "text_color": "#000"
+        }
+      },
+      "post_info": {
+        "title": "New Post",
+        "description": "Post For Test Post For Test Post For Test Post For Test Post For Test Post For Test Post For Test",
+        "images": []
+      },
+      "buttons_info": {
+        "like": {
+          "likes": 0,
+          "like_status": false
+        }
+      },
+      "comments": [],
+      "id": 23
+    },
+    {
+      "global_info": {
+        "post_date": "Jul 17 2021"
+      },
+      "user_info": {
+        "user_name": "Famous",
+        "user_image": {
+          "background_color": "rgb(241, 185, 163)",
+          "text_color": "#000"
+        }
+      },
+      "post_info": {
+        "title": "Famous Mans",
+        "description": "Post For Test Post For Test Post For Test Post For Test Post For Test Post For Test Post For Test Post For Test",
+        "images": [
+          "/images/_118547313_gettyimages-1174968719.jpg",
+          "/images/64b9dbb4c4a14c682a9d7ca38a46021e6fae9fcd.webp",
+          "/images/3290.jpg",
+          "/images/120421.jpg",
+          "/images/106635601-1595938600994SG-Gates-072820-04-jpg.jfif",
+          "/images/20150224165308-jeff-bezos-amazon.jpeg",
+          "/images/Ahmed-Helmy.jpg",
+          "/images/ap21114783083708_custom-75a1c4f0411b4d20016eb8696f1a4ea2519f599d-s800-c85.jpg",
+          "/images/bill-gates-foundation.jfif",
+          "/images/CM6PQNFF_400x400.jpg",
+          "/images/download.jfif",
+          "/images/GettyImages-1215628293.jpg"
+        ]
+      },
+      "buttons_info": {
+        "like": {
+          "likes": 0,
+          "like_status": false
+        }
+      },
+      "comments": [],
+      "id": 24
     }
   ]
 }
