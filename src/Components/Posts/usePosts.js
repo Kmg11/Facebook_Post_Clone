@@ -23,7 +23,7 @@ export function usePosts(pageNumber) {
 
 			setTimeout(() => {
 				fetch(`${API}?_sort=id&_order=desc&_page=${APIPage}`, {
-					signal: abortCount.currentsignal,
+					signal: abortCount.current.signal,
 				})
 					.then((response) => {
 						// Handling Errors From Server
@@ -70,7 +70,8 @@ export function usePosts(pageNumber) {
 
 	useEffect(() => {
 		getPosts();
-		return () => abortCountCurrent.abort();
+		// The Next Code Broke All Functionality
+		// return () => abortCountCurrent.abort();
 	}, [getPosts, abortCountCurrent]);
 
 	return { getPosts, posts, isPending, error, success, hasMore };

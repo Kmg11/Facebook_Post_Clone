@@ -107,12 +107,13 @@
 	- [ Done ] Last ELments Cannot Delete
 	- [ Done ] When Delete Something & Rerender 10 Items The First Item From Next Page Not Deleted So It Dublicate
 ]
-- [ Done Fixed The Problem Was In hasMore Logic & APIPage ] Check Again & Try Delete Items From Uppear Page While Next Page Loaded [
+- [ Done ] Fixed The Problem Was In hasMore Logic & APIPage
+	- [ Done ] Check Again & Try Delete Items From Uppear Page While Next Page Loaded [
 	- [ Done ] Problem Happen When Delete Item From First Page & Delete Last Item From Second Page
 	- [ Done ] PageNumber > APIPage - Wrong Condation
 ]
-- abort ref make problem in posts page [ Add All Things In useEffect & Send Delete From State In Posts ]
-- About Page For Details About Me
+- [ Can't Fix The Problem ]
+	- abort ref make problem in posts page [ Add All Things In useEffect & Send Delete From State In Posts ]
 
 - way to run json-server on github	
 - Make Repo Public

@@ -59,28 +59,6 @@
         "post_date": "Jul 16 2021"
       },
       "user_info": {
-        "user_name": "Ahmed Ahmed",
-        "user_image": "/images/cropped-1360-768-927025.png"
-      },
-      "post_info": {
-        "title": "New World",
-        "description": "Sed suscipit, mi in ultrices cursus, libero ipsum varius diam, non posuere enim purus a justo. Quisque tempus aliquet posuere. Nunc sed pharetra libero, eu cursus justo. Phasellus et felis magna. Etiam varius mattis dolor id accumsan. Nullam fringilla eros id venenatis fermentum. Ut quis pellentesque massa. Quisque elementum, diam quis tristique elementum, nibh odio dapibus sem, sed consequat metus leo et nisi. Curabitur semper orci egestas ullamcorper condimentum. Suspendisse potenti. Donec fringilla sem blandit nisi tincidunt, vel interdum tellus ultricies. Aenean in mauris velit. Proin quis nibh urna.",
-        "images": []
-      },
-      "buttons_info": {
-        "like": {
-          "likes": 0,
-          "like_status": false
-        }
-      },
-      "comments": [],
-      "id": 3
-    },
-    {
-      "global_info": {
-        "post_date": "Jul 16 2021"
-      },
-      "user_info": {
         "user_name": "Hello Wold",
         "user_image": {
           "background_color": "rgb(41, 208, 177)",
