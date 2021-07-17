@@ -24,7 +24,7 @@
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
-		"mock": "json-server --watch .\\src\\Apis\\db.json --port 8000"
+		"mock": "json-server --watch db.json --port 8000"
 	},
 	"eslintConfig": {
 		"extends": [
