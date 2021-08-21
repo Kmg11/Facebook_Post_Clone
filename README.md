@@ -78,9 +78,9 @@ OR
 - Run On Optimize Version
 
 ```bash
-	npm run build
-	npm install -g serve [ First Time Only ]
-	serve -s build
+  npm run build
+  npm install -g serve [ First Time Only ]
+  serve -s build
 ```
 
 ---
