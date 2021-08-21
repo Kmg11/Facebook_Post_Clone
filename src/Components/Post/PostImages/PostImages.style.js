@@ -4,13 +4,14 @@ import { textColor } from "../../../Styles/Variables/Variables.style";
 
 export const ImagesPreview = styled.section`
 	display: grid;
+	grid-template-columns: repeat(2, 1fr);
 	place-items: center center;
 	gap: 10px;
 
 	${(props) =>
 		props.imagesNumber === 1
 			? css`
-					grid-template-areas: "one";
+					grid-template-areas: "one one";
 			  `
 			: props.imagesNumber === 2
 			? css`

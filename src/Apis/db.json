@@ -341,7 +341,14 @@
           "like_status": false
         }
       },
-      "comments": [],
+      "comments": [
+        {
+          "text": "New Comment"
+        },
+        {
+          "text": "This Is Comment"
+        }
+      ],
       "id": 21
     },
     {
@@ -397,8 +404,8 @@
       },
       "buttons_info": {
         "like": {
-          "likes": 0,
-          "like_status": false
+          "likes": 1,
+          "like_status": true
         }
       },
       "comments": [],
@@ -435,8 +442,8 @@
       },
       "buttons_info": {
         "like": {
-          "likes": 0,
-          "like_status": false
+          "likes": 1,
+          "like_status": true
         }
       },
       "comments": [],

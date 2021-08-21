@@ -1,51 +1,96 @@
 # Facebook Post Clone
 
-## Important Notes
-- This App Can't Be Deploy On Github Because It Use Json Server
-- If You Want To Add Image In Post All Images Must Be In public/images Folder
+### Description
 
-## How To Run This App
+SPA application Clone facebook post function like interacting with posts by liking, commenting, deleting comment, deleting posts and creating posts with front-end technologies only using json server as mock database, design with responsive and dark mode with simple animations.
 
-- Make Sure That You Type This Commands On The Correct Project Path
-- Install Node Js [ First Time Only ]
-- Download / Clone Repo
-- npm install
-- install json-server [ npm install -g json-server ] [ First Time Only ]
-- [npm run mock]
-- or json-server --watch .\src\Apis\posts.json --port 8000
+---
 
-### Run On Devolper Mode
-- npm start
+### Links
 
-### Run On Optimize Version
-- npm run build
-- npm install -g serve [ First Time Only ]
-- serve -s build
+- [Github](https://github.com/Kmg11/Facebook_Post_Clone "Github Repo")
 
-## Project Features
+---
 
-- Interaction With Posts By [ Like, Comment, Delete ]
+### Features
+
+- Interact with posts by [ like, comment, delete ] and single page for every post
 - See In Posts [ User [Name, Image], Post [Date, Title, Description, Images]]
-- Form For Creating Posts Contain [ User [Name, Image], Post [Date, Title, Description, Images]]
-- Single Page For Every Post
+- Form for creating posts that contain user ( name, image ), post ( title, description, images )
+- A random image containing a distinctive color and the first letter of the first and second name of the user who did not put a picture
+- Infinity Scroll
+- Loading handler, error handler and 404 page
+- Limitation [ Only 4 Images Appear In The Main Page - Only One Comment Appear In Main Page ]
 - Custome Hooks For Handle Repeated Parts In The App
-- 404 Page For Handling Wrong Routes
-- Good File Structure
-- Reusable Component
-- Responsive
-- Loading Handler
-- Error Handler
 - Simple Animation
 - Handle Requests With Custome React Hooks
 - Styled Components For Hight Level Of Styling
-- Dynamic Avater Colors & Initials For Users Without Images
-- Limitation [ Only 4 Images Appear In The Main Page - Only One Comment Appear In Main Page ]
-- 100% SEO - Google Lighthouse
-- 100% Best Practices - Google Lighthouse
-- 99% Preformance - Google Lighthouse
-- 97% Accessibility - Google Lighthouse
-- Infinity Scroll
-- Save Not Send Data In Form To Local Storage
+- Reusable Components
+- Save unsent data in local storage
+- Compatible with all devices such as mobile
+- Compatible with all browsers such as Chrome and Firefox
+- Compatible with search engines
+- Compatible with screen readers
+- High performance
+
+---
+
+### Technologies
+
+- React
+- Styled Components
+- Json
+- Html
+- Css
+- Javascript
+
+---
+
+### How To Run Website On Your Maachine
+
+- You Need To Setup [ nodejs, gulp ] on your machine
+- Clone Repo
+- On Terminal
+
+```bash
+  npm install -g json-server
+  npm install
+```
+
+- Run json-server
+
+```bash
+  npm run mock
+```
+
+OR
+
+```bash
+  json-server --watch .\src\Apis\posts.json --port 8000
+```
+
+- Run On Developing Mode
+
+```bash
+  npm run start
+```
+
+- Run On Optimize Version
+
+```bash
+	npm run build
+	npm install -g serve [ First Time Only ]
+	serve -s build
+```
+
+---
+
+## Important Notes
+
+- This App Can't Be Deploy On Github Because It Use Json Server
+- If You Want To Add Image In Post All Images Must Be In public/images Folder
+
+---
 
 ## Why I Create This App . Targets Of This App
 
@@ -62,73 +107,10 @@
 - Google Lighthouse [ Accessibility, SEO, Best Practices ]
 - Infinty Scroll
 
-# Getting Started with Create React App
+---
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### My Links
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Linkedin](https://www.linkedin.com/in/kirolos-m-a29134165/)
+- [Github](https://github.com/Kmg11)
+- [Facebook](https://www.facebook.com/KirolosMahfouz/)
