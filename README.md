@@ -27,10 +27,7 @@ SPA application Clone facebook post function like interacting with posts by liki
 - Styled Components For Hight Level Of Styling
 - Reusable Components
 - Save unsent data in local storage
-- Compatible with all devices such as mobile
-- Compatible with all browsers such as Chrome and Firefox
-- Compatible with search engines
-- Compatible with screen readers
+- Compatible with all devices, browsers, search engines and screen readers
 - High performance
 
 ---
@@ -40,9 +37,6 @@ SPA application Clone facebook post function like interacting with posts by liki
 - React
 - Styled Components
 - Json
-- Html
-- Css
-- Javascript
 
 ---
 
